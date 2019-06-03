@@ -1,0 +1,92 @@
+.moment__detail {
+	display: none;
+	opacity: 0;
+	font-size: 0;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+
+	margin: 0 var(--gridFallbackMargin); // grid fallback
+
+	transition: opacity ease 0.5s;
+}
+
+// .moment__detail--active {
+// 	// display: flex;
+//     // flex-wrap: wrap;
+// 	align-items: stretch;
+// 	padding: 0 20px;
+// }
+
+.no-flexbox .moment__detail--active {
+	display: block;
+}
+.moment__detail--checksize {
+	transition: none;
+	display: block;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.moment__detail--show {
+	opacity: 1;
+    // padding: 20px;
+    text-align: left;
+    display: block;
+}
+.moment__inner {
+	position: relative;
+}
+
+// START grid fallback
+	@media screen and (min-width: 1000px){
+		.moment__photo,
+		.moment__copy {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.moment__photo {
+			width: 60%;
+		}
+		.moment__copy {
+			width: 38%;
+		}
+	}
+	@supports (display: grid) {
+		.moment__detail {
+			margin: 0;
+		}
+		.moment__photo,
+		.moment__copy {
+			display: block;
+			width: auto;
+		}
+	}
+
+// END grid fallback
+
+
+@supports (display: grid) {
+	.moment__inner {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		grid-template-columns: 1fr;
+	}
+		@media screen and (min-width: 1000px){
+			.moment__inner {
+				grid-template-columns: 1fr 60rem;
+			}
+		}
+}
+// Once browsers support 'display: contents' properly:
+    // .moment__detail--show {
+    //     display: contents;
+    // }
+    // .moment__detail--show .moment__inner {
+    //     grid-column-start: 1;
+    //     grid-column-end: -1;
+    // }
+// end

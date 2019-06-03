@@ -1,0 +1,103 @@
+{% include "partials/header.njk" %}
+{% set bodyClass = "" %}
+{% set threshold = 1000 %}
+{% if content.length < threshold %}
+    {% set bodyClass = "shortcopy" %}
+{% endif %}
+{% if (images[0].media) and (images[0].media == "video") %}
+    {% set bodyClass = "" %}
+{% endif %}
+<body class="{{ bodyClass }}" data-tags="{{ tags }}">
+    {% include "partials/menu.njk" %}
+    <main>
+        <div class="wrap">
+            <article>
+                <div class="inner">
+                    <div class="head">
+                        <h1>{{ title }}</h1>
+                        <time class="post-date" datetime="{{ date | getYear }}-{{ date | getMonth }}-{{ date | getDay }}">{{ date | parseDate }}</time>
+                    </div>
+
+                    {{ content | safe }}
+
+                    {% for image in images %}
+                    {% set currentItemIndex = loop.index0 %}
+
+                        {% if (currentItemIndex) % 2 == 0 %}
+                        <div class="photoinsert">
+                        {% endif %}
+                            <figure>
+                                <a href="https://flickr.com/photos/adamliptrot/{{ image.id }}">
+                                    <img data-source="https://farm9.static.flickr.com/{{ image.server }}/{{ image.id }}_{{ image.secret }}"
+                                                srcset="https://farm9.static.flickr.com/{{ image.server }}/{{ image.id }}_{{ image.secret }}_m.jpg 500w,
+                                                https://farm9.static.flickr.com/{{ image.server }}/{{ image.id }}_{{ image.secret }}_z.jpg 640w,
+                                                https://farm9.static.flickr.com/{{ image.server }}/{{ image.id }}_{{ image.secret }}_c.jpg 800w,
+                                                https://farm9.static.flickr.com/{{ image.server }}/{{ image.id }}_{{ image.secret }}_b.jpg 1024w"
+                                                {% if content.length < threshold %}sizes="(max-width: 2000px) 100%"{% else %}sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"{% endif %}
+                                                {% if image.media '==' "video" %}data-video="{{ image.secret }},{{ image.id }}"{% endif %} data-orient="landscape" src="https://farm9.static.flickr.com/{{ image.server }}/{{ image.id }}_{{ image.secret }}_b.jpg" alt="{{ image.alt }}" />
+                                </a>
+                                <figcaption>{{ image.caption }}</figcaption>
+                            </figure>
+                        {% if ((currentItemIndex) % 2 != 0) or (currentItemIndex == images.length - 1) %}
+                        </div>
+                        {% endif %}
+
+                    {% endfor %}
+
+                    <footer class="tags">
+                        <h2>categories</h2>
+                        <ul role="list">
+                            {% for tag in tags %}
+                                <li><a href="/archives/{{ tag | slug }}" data-tag="{{ tag }}"><span class="hide">see more posts related to </span>{{ tag }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </footer>
+                </div>
+            </article>
+
+            <div class="hero">
+                <div class="hero__outer">
+                    <div class="hero__imagewrap">
+                        {% if (images[0].media) and (images[0].media == "video") %}
+                            <video src="https://live.staticflickr.com/video/{{ images[0].id }}/{{images[0].secret }}/appletv.mp4" width="100%" poster="https://farm9.static.flickr.com/{{ images[0].server }}/{{ images[0].id }}_{{ images[0].secret }}_d.jpg" controls=""></video>
+                        {% else %}
+                            <img aria-hidden="true" class="placeholder" src="https://farm9.static.flickr.com/{{ images[0].server }}/{{ images[0].id }}_{{ images[0].secret }}_m.jpg" alt="" />
+                            <img class="hero__image" data-source="https://farm9.static.flickr.com/{{ images[0].server }}/{{ images[0].id }}_{{ images[0].secret }}"
+                                srcset="https://farm9.static.flickr.com/{{ images[0].server }}/{{ images[0].id }}_{{ images[0].secret }}_m.jpg 500w,
+                                https://farm9.static.flickr.com/{{ images[0].server }}/{{ images[0].id }}_{{ images[0].secret }}_z.jpg 640w,
+                                https://farm9.static.flickr.com/{{ images[0].server }}/{{ images[0].id }}_{{ images[0].secret }}_c.jpg 800w,
+                                https://farm9.static.flickr.com/{{ images[0].server }}/{{ images[0].id }}_{{ images[0].secret }}_b.jpg 1024w"
+                                sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"
+                                data-orient="landscape" src="https://farm9.static.flickr.com/{{ images[0].server }}/{{ images[0].id }}_{{ images[0].secret }}_b.jpg" alt="" />
+
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <nav class="further-reading further-reading--post" aria-label="Read previous or next post">
+                {% set currentItemIndex = 0 %}
+                {% for item in collections.posts  %}{% if item.url == page.url %}{% set currentItemIndex = loop.index0 %}{% endif %}{% endfor %}
+                <ul>
+                {% set nextItemIndex = currentItemIndex - 1  %}
+                {% if nextItemIndex >= 0 %}
+                    {% set nextItem = collections.posts[nextItemIndex] %}
+                    <li class="further-reading__prev">
+                        <a title="read previous post" href="{{ nextItem.url  }}" rel="Previous"><span aria-hidden="true">&larr;&nbsp;</span>{{ nextItem.data.title }}</a>
+                    </li>
+                {% endif %}
+
+                {% set prevItemIndex = currentItemIndex + 1  %}
+                {% if prevItemIndex < collections.posts.length %}
+                    {% set prevItem = collections.posts[prevItemIndex] %}
+                    <li class="further-reading__next">
+                        <a title="read next post" href="{{ prevItem.url  }}" rel="Next">{{ prevItem.data.title }}<span aria-hidden="true">&nbsp;&rarr;</span></a>
+                    </li>
+                {% endif %}
+                </ul>
+            </nav>
+        </div>
+        {% include "partials/footer.njk" %}
+
+    </main>

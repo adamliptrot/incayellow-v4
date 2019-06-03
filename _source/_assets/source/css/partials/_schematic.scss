@@ -1,0 +1,196 @@
+
+.archive-map {
+    text-align: right;
+    grid-column: 1 / 2;
+    grid-row: 1;
+    position: relative;
+    z-index: 2;
+}
+.archive-map li {
+    padding-bottom: 0.5em;
+    line-height: 0.8;
+}
+.archive-map a {
+    font-size: 1.3rem;
+    color:var(--textOnDark);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Source Sans';
+    font-weight: 300;
+    position: relative;
+    padding: 2px;
+}
+@supports (font-variation-settings: normal) {
+    .archive-map a {
+        font-family: 'Source Sans Variable';
+        font-variation-settings: "wght" 400;
+    }
+}
+.archive-map a::after{
+    content: "";
+    width: 60px;
+    height: 1px;
+    background: var(--textOnDark);
+    position: absolute;
+    top: 50%;
+    right: -70px;
+}
+.archive-map .active {
+    color: var(--textOnLight);
+    background: var(--incayellow)
+}
+.archive-map .active:before {
+    content: "";
+    left: -0.1em;
+    right: -0.1em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: var(--incayellow);
+    z-index: -1;
+    transform: skewX(-14deg);
+}
+.archive-map a.active::after {
+    background: var(--incayellow);
+}
+.schematic__blueprint {
+    transform: rotate(90deg);
+    position: relative;
+    z-index: 1;
+    grid-column: 2 / -1;
+    width: 55vw;
+    min-width: 500px;
+    left: -80px;
+    background: var(--footerBg);
+    transition: transform 0.5s ease-in-out;
+}
+.schematic {
+    //outline: 1px solid rgba(255,255,255,0.5);
+    padding: 4rem 0;
+
+    display: flex;
+
+}
+@supports (display: grid) {
+    .schematic {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+#schematic > g.inactive,
+#schematic > g.inactive [stroke] {
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 1000px) {
+    .schematic__blueprint {
+        float: right;
+        transform: rotate(66deg);
+        width: 60rem;
+        height: 40rem;
+        min-width: 0;
+        left: auto;
+        shape-outside: polygon(0.42% -1px, 39.7% 541px, 99.96% 534px, 100% 0px);
+    }
+    .schematic {
+        display: block;
+        direction: rtl;
+    }
+
+}
+
+
+    #body {
+        fill: rgb(247, 198, 6);
+        transition: opacity 0.5s ease-in-out;
+    }
+    #electrics #right-taillight > path,
+    #electrics #left-taillight > path {
+        fill: rgb(190,72,6);
+    }
+    #electrics #right-taillight > path + path,
+    #electrics #left-taillight > path + path {
+        fill: rgb(162,66,12);
+    }
+
+    #bodywork-and-exterior *[stroke] {
+        opacity: 0.6;
+        stroke: rgba(0,0,0,0.5)
+    }
+    #bodywork-and-exterior ~ g *[stroke] {
+        opacity: 0.2;
+    }
+
+    #bodywork-and-exterior:hover {
+        z-index: 100;
+    }
+    #bodywork-and-exterior:hover ~ #interior {
+        z-index: 99;
+    }
+
+    svg > g,
+    svg > g *[stroke] {
+        opacity: 0.5;
+        stroke-width: 3px;
+        @include transition(opacity, 0.75s, ease);
+    }
+    svg > g.active.fade {
+        opacity: 0.2!important;
+    }
+    #schematic > g.inactive,
+    #schematic > g.inactive *[stroke] {
+        opacity: 0.2;
+    }
+
+    svg > g.active,
+    svg > g.active *,
+    svg > g.active.fade.hover,
+    svg > g.active.fade.hover *,
+    svg > g.hover,
+    svg > g.hover *,
+    svg > g:hover,
+    svg > g:hover * {
+        opacity: 1!important;
+    }
+
+    #schematic > g.active *[stroke] {
+        opacity: 1;
+    }
+    g.active path,
+    g.active rect,
+    g:hover path,
+    g:hover rect {
+        fill: var(--textOnDark);
+        cursor: pointer;
+    }
+    g.active [fill="none"],
+    g:hover [fill="none"] {
+        fill: none;
+    }
+    g.active path.solid,
+    g:hover path.solid {
+        fill: inherit;
+    }
+
+
+    g.active path.flow,
+    g:hover path.flow{
+        stroke:var(--textOnDark);
+        fill: none;
+        stroke-width:4;
+        stroke-dasharray:12, 12;
+        @include animation-duration(2s);
+        @include animation-name(flow);
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(infinite);
+    }
+    g.active path.flow.rev,
+    g:hover path.flow.rev {
+        @include animation-direction(reverse);
+    }
+
+    @keyframes flow {
+        from {stroke-dashoffset: 96;}
+        to   {stroke-dashoffset: 0;}
+    }

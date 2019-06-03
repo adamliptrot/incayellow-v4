@@ -1,0 +1,45 @@
+@import 'partials/mixins';
+@import 'partials/dark-mode';
+@import 'partials/vars';
+
+@import 'partials/base';
+@import 'partials/banner';
+
+@import 'partials/further-reading';
+@import 'partials/tags';
+
+@import 'partials/moments';
+
+@import 'partials/home';
+@import 'partials/article';
+@import 'partials/hero';
+@import 'partials/photos';
+
+@import 'partials/footer';
+@import 'partials/schematic';
+
+
+
+
+// @import 'partials/scrollbars';
+
+/* Exact aspect ratio */
+// @media (aspect-ratio: 1/1) {
+//     body {
+//       background: red;
+//     }
+//   }
+
+//   /* Minimum aspect ratio */
+//   @media (min-aspect-ratio: 8/5) {
+//     body {
+//       background: yellow;
+//     }
+//   }
+
+//   /* Maximum aspect ratio */
+//   @media (max-aspect-ratio: 2/1) {
+//     body {
+//         background: blue;
+//     }
+//   }

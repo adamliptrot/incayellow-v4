@@ -1,0 +1,33 @@
+{% import "./macros.njk" as snippets with context %}
+    <ol class="moments__list" role="list">
+        {% for post in postlist  %}
+            {% set currentItemIndex = loop.index0  %}
+            {% set figClass = ""  %}
+            {% if loop.index0 % 3 == 0 %}
+                {% set figClass = "moment__caption--three"  %}
+            {% endif %}
+            {% if loop.index0 % 4 == 0 %}
+                {% set figClass = "moment__caption--four"  %}
+            {% endif %}
+            {% if loop.index0 % 5 == 0 %}
+                {% set figClass = "moment__caption--five"  %}
+            {% endif %}
+            {% if loop.index0 % 6 == 0 %}
+                {% set figClass = "moment__caption--six"  %}
+            {% endif %}
+            {% if loop.index0 % 7 == 0 %}
+                {% set figClass = "moment__caption--seven"  %}
+            {% endif %}
+            {% if loop.index0 % 8 == 0 %}
+                {% set figClass = "moment__caption--eight"  %}
+            {% endif %}
+            {% if loop.index0 % 9 == 0 %}
+                {% set figClass = "moment__caption--nine"  %}
+            {% endif %}
+
+
+            <li class="monthArchive__post">
+                {{ snippets.moment(post, "q", figClass, false, currentItemIndex) }}
+            </li>
+        {% endfor %}
+    </ol>

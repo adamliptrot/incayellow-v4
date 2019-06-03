@@ -1,0 +1,90 @@
+@media (prefers-color-scheme: dark) {
+   :root {
+      --logo: #f0f2f3;
+      --background: #193449;
+      --backgroundDark: #15232D;
+      --backgroundVeryDark: #ccc;
+      --text: #f0f2f3;
+      --footerBg: #15232D;
+      --lineHeight: 1.8;
+   }
+   article {
+      word-spacing: .05em;
+   }
+   // img {
+   //    filter: grayscale(35%);
+   // }
+}
+
+.theme--dark {
+   --logo: #f0f2f3;
+   --background: #193449;
+   --backgroundDark: #15232D;
+   --backgroundVeryDark: #ccc;
+   --text: #f0f2f3;
+   --footerBg: #15232D;
+   --lineHeight: 1.8;
+}
+.theme--dark article {
+   word-spacing: .05em;
+}
+
+// .theme--dark img {
+//    filter: grayscale(35%);
+// }
+
+// mode toggle
+.toggle {
+   display: none; // don't support switcher where variables not supported
+}
+@supports(--css: variables) {
+   .toggle {
+      display: table; // grid fallback
+   }
+}
+.toggle {
+   row-gap: 0.5rem;
+   margin-left: 2rem;
+   margin-right: 1rem;
+}
+.toggle__copy {
+   text-transform: uppercase;
+   font-size: 0.9rem;
+   order: 1;
+   display: table-footer-group; // grid fallback
+}
+@supports (display: grid) {
+   .toggle {
+      display: grid; // unset
+   }
+   .toggle__copy {
+      display: inline; // unset
+   }
+}
+
+.toggle__track {
+   width: 2.5em;
+   height: 1.4em;
+   border-radius: 0.7em;
+   background-color: var(--background);
+   position: relative;
+   transition: background-color 0.4s ease-in-out;
+   border: 2px solid var(--footerBg);
+}
+.toggle__slider {
+   width: 1em;
+   height: 1em;
+   border-radius: 50%;
+   position: absolute;
+   top: 0.1em;
+   right: 0.1em;
+   background: #333;
+   transform: translate(-1.1em, 0);
+   transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+}
+.toggle--on .toggle__track {
+   background-color: var(--incayellow);
+}
+.toggle--on .toggle__slider {
+   transform: translate(0, 0);
+}

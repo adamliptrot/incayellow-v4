@@ -1,0 +1,39 @@
+{% import "partials/macros.njk" as snippets with context %}
+
+{% include "partials/header.njk" %}
+
+<body class="{{ bodyClass }}">
+
+
+    {% include "partials/menu.njk" %}
+
+    <main class="wrap wrap--latest">
+        <h1 class="intro">The story of <a href="{{ collections.posts[0].url }}">getting a B back on the road</a> and the ongoing work to <a href="/archives/">keep it there</a>.</h1>
+
+        <div class="latest">
+        <!--<h2 class="hide">Latest posts</h2>-->
+
+        <style>
+
+        </style>
+
+        {% for item in collections.latestPosts %}
+            <div class="moment latest__post latest__post--{{loop.index0}}">
+
+                <style>
+                    .latest__post--{{loop.index0}} a {
+                        background-image: url(https://farm9.static.flickr.com/{{ item.data.images[0].server }}/{{ item.data.images[0].id }}_{{ item.data.images[0].secret }}_d.jpg);
+                    }
+                </style>
+                <a href="{{ item.url }}">
+                    <span class="latest__post-title">
+                        {{ item.data.title }}
+                    </span>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </main>
+
+
+{% include "partials/footer.njk" %}

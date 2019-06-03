@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="3 days">
+    <meta name="copyright" content="Adam Liptrot">
+    <link rel="author" href="https://adamliptrot.com">
+    <meta name="author" content="Adam Liptrot">
+    <link href="https://farm9.static.flickr.com" rel="preconnect" crossorigin>
+
+{% if layout == "post.njk" %}
+
+    {% set pageDesc = content | firstPara | safe | stripHTML %}
+    {% set metaImg = "https://farm9.static.flickr.com/" + images[0].server + "/" + images[0].id + "_" + images[0].secret + "_q.jpg" %}
+    {% set metaImgLarge = "https://farm9.static.flickr.com/" + images[0].server + "/" + images[0].id + "_" + images[0].secret + "_b.jpg" %}
+    {% set metaUrl = "https://www.incayellow.com" + page.url %}
+    {% set metaDate = date | getYear + "-" + date | getMonth + "-" + date | getDay + "T09:00:00Z" %}
+    {% set authorUrl = "https://www.liptrot.org" %}
+
+    <title>{{ title }} | Inca Yellow</title>
+    <meta name="title" content="{{ title }}">
+    <meta name="description" content="{{ pageDesc }}">
+
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ metaUrl }}">
+    <meta property="og:image" content="{{ metaImg }}">
+    <meta property="og:description" content="{{ pageDesc }}">
+
+    <meta property="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ pageDesc }}">
+    <meta name="twitter:image:src" content="{{ metaImg }}">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta property="article:author" content="{{ authorUrl }}">
+    <meta property="article:published_time" content="{{ date | getYear }}-{{ date | getMonth }}-{{ date | getDay }}T09:00:00Z">
+
+    <script type="application/ld+json">
+        {
+            "@context":"http://schema.org",
+            "@type":"NewsArticle",
+            "image":{
+                "@type":"ImageObject",
+                "url":"{{ metaImgLarge }}"
+            },
+            "url":"{{ metaUrl }}",
+            "dateCreated":"{{ metaDate }}",
+            "datePublished":"{{ metaDate }}",
+            "dateModified":"{{ metaDate }}",
+            "headline":"{{ title }}",
+            "name":"{{ title }}",
+            "thumbnailUrl":"{{ metaImg }}",
+            "keywords":[
+                {% for tag in tags %}
+                "Tag:{{ tag }}"{% if (loop.index0 != tags.length - 1) %},{% endif %}
+                {% endfor %}
+            ],
+            "author":{
+                "@type":"Person",
+                "name":"Adam Liptrot",
+                "url":"{{ authorUrl }}"
+            },
+            "creator":[
+                "Adam Liptrot"
+            ],
+            "mainEntityOfPage":"{{ metaUrl }}",
+            "publisher":{
+                "@type":"Organization",
+                "name":"Inca Yellow",
+                "url":"https://incayellow.com/",
+                "logo":{
+                    "@type":"ImageObject",
+                    "width":687,"height":166,
+                    "url":"https://incayellow.com/assets/images/incayellow.svg"
+                }
+            }
+        }
+    </script>
+
+{% else %}
+
+    <title>Inca Yellow</title>
+
+    <meta name="description" content="Getting a 1979 MGB GT back on the road after 17 years.">
+    <meta name="keywords" content="MGB, MGB GT, 1979, restoration, Adam Liptrot, Inca Yellow">
+
+{% endif %}
+
+    {% include 'partials/head_includes.njk' %}
+</head>
+

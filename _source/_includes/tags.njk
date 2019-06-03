@@ -1,0 +1,11 @@
+{% include "partials/header.njk" %}
+<body class="archive" data-tags="{{ tag }}">
+    {% include "partials/menu.njk" %}
+
+    <main class="wrap moments">
+        {% if title %}
+        <h1>{{title}}</h1>
+        {% endif %}
+        {{content | safe }}
+    </main>
+{% include "partials/footer.njk" %}

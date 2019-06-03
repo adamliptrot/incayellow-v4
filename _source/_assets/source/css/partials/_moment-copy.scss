@@ -1,0 +1,27 @@
+// ---------------------------------
+// COPY
+// ---------------------------------
+.moment__copy {
+    font-size: 2rem;
+    color: var(--textOnDark);
+    padding: 0 4rem 6rem;
+    z-index: 5;
+}
+.moment__copy a {
+    color: var(--textOnDark);
+    text-decoration-line: none;
+    border-bottom: 1px solid;
+}
+.moment__date {
+    font-size: 2.4rem;
+    color: var(--textOnDark);
+    padding-bottom: 0.5em;
+}
+@media screen and (min-width: 1000px){
+    .moment__copy {
+        grid-column: 2 / -1;
+        grid-row-start: 1;
+        padding: 0 6rem 6rem 0;
+        margin-top: 6rem;
+    }
+}

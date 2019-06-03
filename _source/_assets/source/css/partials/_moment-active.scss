@@ -1,0 +1,62 @@
+.moment {
+    position: relative;
+    cursor: pointer;
+    // overflow: hidden;
+    height: 100%;
+    transition: transform 0.25s ease-in-out;
+}
+.moment--active {
+    transform: scale(1.1);
+    z-index: 999;
+    outline: 8px solid var(--incayellow);
+}
+.moment--active:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 20px solid var(--incayellow);
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 20px);
+    transform: rotate(45deg);
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+
+
+.moment__preview {
+    display: none;
+}
+
+@media screen and (min-width: 800px) {
+    .moment__preview {
+        display: block;
+        background: transparent;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        border: none;
+        height: 3rem;
+        padding: 0.5rem 0 1rem;
+        opacity: 1;
+        transition: all 0.25s ease-in-out;
+    }
+    .moment--active .moment__preview {
+        opacity: 0;
+    }
+    .moment__preview path {
+        fill: rgba(222, 221, 221, 0.8);
+    }
+    .moment__preview:focus path,
+    .moment__preview:hover path {
+        fill: rgb(222, 221, 221);
+    }
+}
+
+// IE10 + 11
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .moment__preview {
+        display: none;
+    }
+}

@@ -1,0 +1,97 @@
+article {
+    line-height: var(--lineHeight);
+    font-weight: 300;
+    font-variation-settings: "wght" 350;
+}
+    article .head {
+        margin-bottom: 2em;
+    }
+    article h1 {
+        font-size: 5rem;
+        font-weight: 400;
+        font-variation-settings: "wght" 350;
+        margin-top: 0;
+        margin-right: auto; // grid fallback
+        margin-bottom: 0.25em;
+        line-height: 1;
+    }
+    article p {
+        text-indent: 2rem;
+    }
+    article .inner > p:first-of-type {
+        font-size: 140%;
+        text-indent: 0;
+        line-height: 1.4em;
+        font-weight: 250;
+        font-variation-settings: "wght" 275;
+    }
+    article .inner > p:first-of-type:first-letter {
+        font-size: 1.4em;
+    }
+
+    article .post-date {
+        font-size: 2rem;
+        line-height: 1.1;
+        font-weight: 400;
+        font-variation-settings: "wght" 500;
+    }
+
+@media screen and (min-width: 600px){
+    article .head {
+        display: flex; // grid fallback
+    }
+    @supports (display: grid) {
+        article .head {
+            display: grid;
+            grid-template-columns: 1fr 3em;
+            align-items: self-start;
+            grid-column-gap: 2rem;
+        }
+    }
+    article .post-date {
+        display: flex;
+        position: relative;
+        text-align: center;
+        height: 4em;
+        padding: 0 0.25em;
+        width: 3em;
+        align-items: center;
+        color: var(--text);
+        background: var(--backgroundDark);
+    }
+
+}
+@media screen and (min-width: 1000px){
+    article {
+        // START grid fallback
+        width: 50%;
+        float: right;
+        padding-left: 10rem;
+        // END grid fallback
+        padding-right: 4rem;
+    }
+    @supports (display: grid) {
+        article {
+            grid-column: 2 / -1;
+            grid-row: span 3;
+            width: auto; // unset
+            float: none; // unset
+            padding-left: 0; // unset
+        }
+        .shortcopy article {
+            grid-row-start: 2;
+            margin-top: -22rem;
+            background: var(--background);
+            // transition: all 0.5s ease-in-out;
+            padding: 4rem 4rem 0 4rem;
+            z-index: 2;
+        }
+    }
+}
+
+@media screen and (min-width: calc(2000px + 4rem)){
+    article,
+    .shortcopy article {
+        padding-right: 0;
+    }
+}

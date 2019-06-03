@@ -1,0 +1,52 @@
+@mixin transition($property, $duration, $timing) {
+    -webkit-transition: $property $duration $timing;
+    -ms-transition: $property $duration $timing;
+    transition: $property $duration $timing;
+}
+
+@mixin transition-with-prefix($property, $duration, $timing) {
+    -webkit-transition: -webkit-#{$property} $duration $timing;
+    -ms-transition: -ms-#{$property} $duration $timing;
+    transition: $property $duration $timing;
+}
+
+@mixin transform($type) {
+	-webkit-transform: $type;
+	-ms-transform: $type;
+	transform: $type;
+}
+
+@mixin animation-name($name) {
+	-webkit-animation-name: $name;
+	-moz-animation-name: $name;
+	-ms-animation-name: $name;
+	animation-name: $name;
+}
+
+@mixin animation-duration($duration) {
+	-webkit-animation-duration: $duration;
+	-moz-animation-duration: $duration;
+	-ms-animation-duration: $duration;
+	animation-duration: $duration;
+}
+
+@mixin animation-timing-function($function) {
+	-webkit-animation-timing-function: $function;
+	-moz-animation-timing-function: $function;
+	-ms-animation-timing-function: $function;
+	animation-timing-function: $function;
+}
+
+@mixin animation-iteration-count($iterations) {
+	-webkit-animation-iteration-count: $iterations;
+	-moz-animation-iteration-count: $iterations;
+	-ms-animation-iteration-count: $iterations;
+	animation-iteration-count: $iterations;
+}
+
+@mixin animation-direction($direction) {
+	-webkit-animation-direction: $direction;
+	-moz-animation-direction: $direction;
+	-ms-animation-direction: $direction;
+	animation-direction: $direction;
+}

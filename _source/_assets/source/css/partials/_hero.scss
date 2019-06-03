@@ -1,0 +1,118 @@
+.hero {
+    position: relative;
+    grid-row-start: 1;
+    display: none; // grid fallback (hides hero on small viewports as we aren't doing a fallback for hero first in view order)
+}
+@supports (display: grid) {
+    .hero {
+        display: block; // unset
+    }
+}
+    .hero__outer {
+        overflow: hidden;
+        position: relative;
+    }
+    .hero__imagewrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+        .hero__image {
+            z-index: 2;
+            width: 100%;
+            opacity: 0;
+            display: none;
+            transition: opacity 1s ease;
+            transition-delay: 2s;
+        }
+        .hero__image,
+        .placeholder {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            width: 100%;
+        }
+
+        .no-js .hero__image,
+        .hero__image--loaded {
+            display: block;
+            opacity: 1;
+        }
+        .placeholder {
+            z-index: 1;
+            filter: blur(10px);
+        }
+        // .no-js .placeholder,
+        // .hero__image--loaded + .placeholder {
+        //     display: none;
+        // }
+
+@media screen and (min-width: 1000px){
+    .hero {
+        width: 50%; // grid fallback
+        float: left; // grid fallback
+        display: inline-block;
+    }
+    @supports (display: grid) {
+        .hero {
+            width: auto; // unset
+            float: none; // unset
+            display: block;
+        }
+    }
+    .hero {
+        grid-column: 1 / -2;
+        grid-row-start: 1;
+    }
+    .shortcopy .hero {
+        grid-column: 1 / -1;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .shortcopy .hero__outer {
+        padding-bottom: 0;
+        /* height: 80vh; */
+        height: 100%;
+    }
+    .hero__imagewrap {
+        padding-bottom: 75%; // grid fallback
+    }
+    @supports (display: grid) {
+        .hero__imagewrap {
+            padding-bottom: 0; // unset
+        }
+    }
+    .shortcopy .hero__imagewrap {
+        position: static;
+        height: 100%;
+    }
+    .hero {
+        padding-left: 2rem;
+    }
+    @supports (display: grid) {
+        .shortcopy .hero {
+            padding-right: 2rem;
+        }
+    }
+    .hero__image,
+    .placeholder {
+        position: absolute; // grid fallback
+    }
+    .shortcopy .hero__image,
+    .shortcopy .placeholder {
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+    @supports (display: grid) {
+        .hero__image,
+        .placeholder {
+            position: relative; // unset
+        }
+    }
+}
+
+@media screen and (min-width: calc(2000px + 4rem)){
+    .hero {
+        padding-left: 0;
+    }
+}

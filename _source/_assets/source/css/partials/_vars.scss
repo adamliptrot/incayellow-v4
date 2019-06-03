@@ -1,0 +1,39 @@
+:root {
+    --logo: #193449; // logo fill
+    --background: #efefef; // page background
+    --backgroundDark: #1934491a; // further reading (post) background; post photo background
+    --backgroundVeryDark: #1934495d; // hr color
+    --text: #0d1b25; // nav links; body text; further reading (post) links
+    --footerBg: #193449; // footer (+ schematic) bg
+    --textOnLight: #333;
+    --textOnDark: #efefef;
+    --incayellow: #ead436;
+    --lineHeight: 1.6;
+    --gridFallbackMargin: 5px;
+}
+
+// general fallback settings for not supporting css variables
+body {
+    line-height: 1.6;
+}
+a {
+    color: #333;
+}
+.fatfooter {
+    background: #193449
+}
+.moment__caption span {
+    background: #efefef;
+    color: #0d1b25;
+}
+.photoinsert {
+    background: #dcdee0;
+}
+.archive-map a {
+    color: #efefef;
+}
+.tags a,
+.archive-map .active {
+    color: #333;
+    background: #ead436;
+}

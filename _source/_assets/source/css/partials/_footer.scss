@@ -1,0 +1,25 @@
+.fatfooter {
+    background: var(--footerBg);
+    color: var(--textOnDark);
+    overflow: hidden;
+    flex-shrink: 0;
+    clear: both;
+}
+    .fatfooter__inner {
+        max-width: 2000px;
+        margin: 4rem auto 0;
+        padding: 8rem 2.5rem 4rem;
+    }
+    .fatfooter__wrap {
+        outline: 1px solid rgba(255,255,255,0.5);
+    }
+    @media screen and (min-width: 1200px) {
+        .fatfooter__wrap {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+    }
+
+.backstory {
+    padding-left: 4rem;
+}

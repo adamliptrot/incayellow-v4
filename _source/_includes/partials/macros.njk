@@ -1,0 +1,62 @@
+{% macro moment(post, size, captionClass, showPreview, currentItemIndex) %}
+    <div class="moment moment--photo">
+
+            <a href="{{ post.url | url }}">
+                <img class="moment__thumb" src="https://farm9.static.flickr.com/{{ post.data.images[0].server }}/{{ post.data.images[0].id }}_{{ post.data.images[0].secret }}_{{ size }}.jpg" alt="" />
+                <span class="moment__caption {{captionClass}}"><span>{{ post.data.title }}</span></span>
+            </a>
+
+
+        {% if showPreview %}
+        <button class="moment__preview">
+            <svg focusable="false" width="100%" height="100%" viewBox="0 0 39 15" xmlns="http://www.w3.org/2000/svg">
+                <title>Preview {{ post.data.title }}</title>
+                <path d="M19.5 15L39 0h-5.003L19.5 10.924 5.018 0H0z" />
+            </svg>
+        </button>
+        {% endif %}
+    </div>
+    {% if showPreview %}
+        <div class="moment__detail">
+            <div class="moment__inner">
+                <a class="moment__close" href="#" aria-label="Close">
+                    <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"></path>
+                    </svg>
+                </a>
+
+                {% set modClass = '' %}
+                {% if(currentItemIndex == 0 or currentItemIndex == collections.postsRev.length - 1) %}
+                    {% set modClass = 'further-reading--justone' %}
+                {% endif %}
+                    <nav class="further-reading further-reading--archive {{ modClass }}" aria-label="Preview previous or next post">
+                        <ul>
+                        {% set nextItemIndex = currentItemIndex - 1  %}
+                        {% if nextItemIndex >= 0 %}
+                            {% set nextItem = collections.postsRev[nextItemIndex] %}
+                            <li class="further-reading__prev">
+                                <a title="read next post" href="{{ nextItem.url  }}" rel="Previous">&larr; {{ nextItem.data.title }}</a>
+                            </li>
+                        {% endif %}
+
+                        {% set prevItemIndex = currentItemIndex + 1  %}
+                        {% if prevItemIndex < collections.postsRev.length %}
+                            {% set prevItem = collections.postsRev[prevItemIndex] %}
+                            <li class="further-reading__next">
+                                <a title="read previous post" href="{{ prevItem.url  }}" rel="Next">{{ prevItem.data.title }} &rarr;</a>
+                            </li>
+                        {% endif %}
+                        </ul>
+                    </nav>
+                <div class="moment__photo moment__photo--landscape">
+                    <img src="/assets/images/blank.png" data-src="https://farm9.static.flickr.com/{{ post.data.images[0].server }}/{{ post.data.images[0].id }}_{{ post.data.images[0].secret }}_d.jpg" alt="">
+                </div>
+                <div class="moment__copy">
+                    <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+                    <!--<div class="moment__date">{{ post.data.date | parseDate }}</div>-->
+                    {{ post.templateContent | firstPara | safe }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}

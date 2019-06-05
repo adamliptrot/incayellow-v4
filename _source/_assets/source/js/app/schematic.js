@@ -70,23 +70,23 @@ class Schematic {
         },2000);
         //fill bodywork
 		setTimeout(function(){
-			[].slice.call(queryAll('#schematic path')).forEach(function(path, j){
+			[].slice.call(queryAll('#schematic g path')).forEach(function(path, j){
 				path.removeAttribute("style");
 				path.style.strokeWidth = "4px";
 			});
-			query('#schematic path').style.WebkitTransition = "fill 0.75s ease-in-out";
-			query('#schematic path').style.fill = "#f7c606";
+			query('#schematic g path').style.WebkitTransition = "fill 0.75s ease-in-out";
+			query('#schematic g path').style.fill = "#f7c606";
 		}, 3000);
     }
     reset(callback){
         var _this = this;
-        query(_this.el + ' path').style.fill = "transparent";
+        query(_this.el + ' g path').style.fill = "transparent";
         // hide the body
 		[].slice.call(queryAll(_this.el + ' #bodywork-and-exterior path')).forEach(function(el,i){
 			el.style.stroke = "none";
 		});
         // line-draw each path
-		[].slice.call(queryAll(_this.el + ' > g')).forEach(function(el,i){
+		[].slice.call(queryAll(_this.el + ' #blueprint > g')).forEach(function(el,i){
 			el.style.opacity = 0;
 			if(el.getAttribute('id') != 'bodywork-and-exterior'){
 				[].slice.call(el.querySelectorAll('path')).forEach(function(path, j){
@@ -127,9 +127,9 @@ class Schematic {
         //MAP
         //-----------
         if(queryAll('#'+ comp).length == 0){
-            console.log('reset all');
+            //console.log('reset all');
             //set all components to inactive - one of the non-component nav items has been actioned (general, all, driving etc)
-            [].slice.call(queryAll(_this.el + ' > g')).forEach(function(g, i){
+            [].slice.call(queryAll(_this.el + ' #blueprint > g')).forEach(function(g, i){
                 g.setAttribute('class', 'inactive');
             });
         }else{
@@ -145,12 +145,12 @@ class Schematic {
             //     });
 
                 //set other components to inactive (this effectively just removes the hover/fade classes)
-                [].slice.call(siblings(query('#' + comp), queryAll(_this.el + ' > g'))).forEach(function(n, i){
+                [].slice.call(siblings(query('#' + comp), queryAll(_this.el + ' #blueprint  > g'))).forEach(function(n, i){
                     n.classList.remove('hover');
                     n.classList.remove('fade');
                 });
 
-            var sib = [].slice.call(siblings(query('#' + comp), queryAll(_this.el + ' > g.active')))
+            var sib = [].slice.call(siblings(query('#' + comp), queryAll(_this.el + ' #blueprint > g.active')))
             if(sib.length > 0){
                 sib[0].setAttribute('class','active fade');
             }
@@ -200,13 +200,13 @@ class Schematic {
         });
 
 		//handle schematic
-		if(queryAll(_this.el + ' > g.active').length == 0){
-			[].slice.call(queryAll(_this.el + ' > g.active')).forEach(function(c, i){
+		if(queryAll(_this.el + ' #blueprint > g.active').length == 0){
+			[].slice.call(queryAll(_this.el + ' #blueprint > g.active')).forEach(function(c, i){
 				c.classList.remove('hover');
                 c.classList.remove('fade');
 			});
 		} else {
-			query(_this.el + ' > g.active').setAttribute('class','active');
+			query(_this.el + ' #blueprint > g.active').setAttribute('class','active');
 		}
     }
     assignEvents(){
@@ -227,7 +227,7 @@ class Schematic {
 			});
 		}, this);
 
-		[].slice.call(queryAll('svg > g')).forEach(function(el,i){
+		[].slice.call(queryAll('svg #blueprint > g')).forEach(function(el,i){
 			el.addEventListener('mousemove',function(ev){
 				_this.highlightComponent(el.getAttribute('id'));
 			});
@@ -239,7 +239,7 @@ class Schematic {
 
 
 
-		[].slice.call(queryAll(_this.el + ' > g')).forEach(function(c, i){
+		[].slice.call(queryAll(_this.el + ' #blueprint > g')).forEach(function(c, i){
 			c.addEventListener('click', function(e){
 				e.preventDefault();
 				window.location.href='/archives/' + c.getAttribute('id');

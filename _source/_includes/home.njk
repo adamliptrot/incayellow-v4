@@ -8,17 +8,12 @@
     {% include "partials/menu.njk" %}
 
     <main class="wrap wrap--latest">
+
         <h1 class="intro">The story of <a href="{{ collections.posts[0].url }}">getting a B back on the road</a> and the ongoing work to <a href="/archives/">keep it there</a>.</h1>
-
-        <div class="latest">
-        <!--<h2 class="hide">Latest posts</h2>-->
-
-        <style>
-
-        </style>
-
+        <h2 class="hide">Latest posts</h2>
+        <ul class="latest__posts" role="list">
         {% for item in collections.latestPosts %}
-            <div class="moment latest__post latest__post--{{loop.index0}}">
+            <li class="moment latest__post latest__post--{{loop.index0}}">
 
                 <style>
                     .latest__post--{{loop.index0}} a {
@@ -30,10 +25,11 @@
                         {{ item.data.title }}
                     </span>
                 </a>
-            </div>
+            </li>
         {% endfor %}
-        </div>
+        </ul>
     </main>
+
 
 
 {% include "partials/footer.njk" %}

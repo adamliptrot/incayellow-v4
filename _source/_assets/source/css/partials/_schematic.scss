@@ -61,7 +61,6 @@
     width: 55vw;
     min-width: 500px;
     left: -80px;
-    background: var(--footerBg);
     transition: transform 0.5s ease-in-out;
 }
 .schematic {
@@ -74,7 +73,8 @@
 @supports (display: grid) {
     .schematic {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr minmax(0,1fr);
+        overflow: hidden;
     }
 }
 
@@ -87,15 +87,18 @@
     .schematic__blueprint {
         float: right;
         transform: rotate(66deg);
-        width: 60rem;
-        height: 40rem;
+        width: 80rem;
+        height: 60rem;
         min-width: 0;
         left: auto;
-        shape-outside: polygon(0.42% -1px, 39.7% 541px, 99.96% 534px, 100% 0px);
+        top: -30%;
+        shape-outside: polygon(11.75% 7px, 56.3% 815px, 99.16% 805px, 100% 0px);
     }
     .schematic {
         display: block;
         direction: rtl;
+        min-width: 50em;
+        overflow: visible;
     }
 
 }
@@ -105,6 +108,18 @@
         fill: rgb(247, 198, 6);
         transition: opacity 0.5s ease-in-out;
     }
+        #bodyFill {
+            // adds layered bg to the body to ensure color is retained
+            fill: #fff;
+            opacity: 0.5;
+        }
+        #bodyBg {
+            // adds blue bg to part of schematic which pops above the footer
+            fill: #354550;
+            // adds sticker effect border
+            stroke: #fff;
+            stroke-width: 20px;
+        }
     #electrics #right-taillight > path,
     #electrics #left-taillight > path {
         fill: rgb(190,72,6);
@@ -129,13 +144,13 @@
         z-index: 99;
     }
 
-    svg > g,
-    svg > g *[stroke] {
+    #blueprint  > g,
+    #blueprint  > g *[stroke] {
         opacity: 0.5;
         stroke-width: 3px;
         @include transition(opacity, 0.75s, ease);
     }
-    svg > g.active.fade {
+    #blueprint  > g.active.fade {
         opacity: 0.2!important;
     }
     #schematic > g.inactive,
@@ -143,14 +158,14 @@
         opacity: 0.2;
     }
 
-    svg > g.active,
-    svg > g.active *,
-    svg > g.active.fade.hover,
-    svg > g.active.fade.hover *,
-    svg > g.hover,
-    svg > g.hover *,
-    svg > g:hover,
-    svg > g:hover * {
+    #blueprint  > g.active,
+    #blueprint  > g.active *,
+    #blueprint  > g.active.fade.hover,
+    #blueprint  > g.active.fade.hover *,
+    #blueprint  > g.hover,
+    #blueprint  > g.hover *,
+    #blueprint  > g:hover,
+    #blueprint  > g:hover * {
         opacity: 1!important;
     }
 

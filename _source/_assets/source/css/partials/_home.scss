@@ -7,10 +7,15 @@
     row-gap: 2rem;
 }
 .latest {
+    grid-column: 1 / -1;
+}
+.latest__posts {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 4rem;
     margin: 4rem 0;
+    padding: 0;
+    list-style: none;
 }
 .latest__post {
     min-height: 50vh;
@@ -32,48 +37,15 @@
     z-index: 4;
     position: relative;
 }
-// @media screen and (min-width: 600px){
-//     .wrap--latest {
-//         grid-template-columns: 1fr 1fr 1fr;
-//     }
-//     .monthArchive__post--feature {
-//         grid-column: 1 / span 3;
-//     }
-//     .monthArchive__post--large {
-//         grid-column: auto / span 3;
-//     }
-//     .monthArchive__post--large + .monthArchive__post {
-//         grid-column: auto / span 2;
-//     }
-// }
 @media screen and (min-width: 1000px){
     .wrap--latest {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .latest {
+    .latest__posts {
         grid-column: 1 / -1;
         grid-template-columns: repeat(4, 1fr);
     }
-
-    // @supports (display: grid) {
-    //     .monthArchive__post--mid,
-    //     .monthArchive__post--large,
-    //     .monthArchive__post--feature {
-    //         height: 360px;
-    //     }
-    // }
 }
-
-// @media screen and (min-width: 2000px){
-//     @supports (display: grid) {
-//         .monthArchive__post--mid {
-//             height: 480px;
-//         }
-//     }
-// }
-
-
-
 
 .intro {
     grid-column: 1 / -1;
@@ -96,3 +68,4 @@
 .intro a {
     white-space: nowrap;
 }
+

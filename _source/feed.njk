@@ -3,18 +3,18 @@ permalink: '/feed.xml'
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ site.name }}</title>
-	<subtitle></subtitle>
-	<link href="{{ site.url }}{{ permalink }}" rel="self"/>
-	<link href="{{ site.url }}/"/>
+  <title>Inca yellow</title>
+	<subtitle>The story of getting a B back on the road and the ongoing work to keep it there.</subtitle>
+	<link href="https://incayellow.com{{ permalink }}" rel="self"/>
+	<link href="https://incayellow.com/"/>
 	<updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
-	<id>{{ site.url }}</id>
+	<id>https://incayellow.com/</id>
 	<author>
   <name>Adam Liptrot</name>
   <email>adam@incayellow.com</email>
 	</author>
 	{% for post in collections.postsRev %}
-  {% set absolutePostUrl %}{{ site.url }}{{ post.url | url }}{% endset %}
+  {% set absolutePostUrl %}https://incayellow.com{{ post.url | url }}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>

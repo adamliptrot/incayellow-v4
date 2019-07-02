@@ -64,11 +64,8 @@
     transition: transform 0.5s ease-in-out;
 }
 .schematic {
-    //outline: 1px solid rgba(255,255,255,0.5);
-    padding: 4rem 0;
-
+    padding: 6rem 0;
     display: flex;
-
 }
 @supports (display: grid) {
     .schematic {
@@ -99,6 +96,7 @@
         direction: rtl;
         min-width: 50em;
         overflow: visible;
+        padding: 4rem 0;
     }
 
 }

@@ -2,7 +2,7 @@
     <div class="moment moment--photo">
 
             <a href="{{ post.url | url }}">
-                <img class="moment__thumb" src="https://farm9.static.flickr.com/{{ post.data.images[0].server }}/{{ post.data.images[0].id }}_{{ post.data.images[0].secret }}_{{ size }}.jpg" alt="" />
+                <img loading="lazy" class="moment__thumb" src="https://farm9.static.flickr.com/{{ post.data.images[0].server }}/{{ post.data.images[0].id }}_{{ post.data.images[0].secret }}_{{ size }}.jpg" alt="" />
                 <span class="moment__caption {{captionClass}}"><span>{{ post.data.title }}</span></span>
             </a>
 

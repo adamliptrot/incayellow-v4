@@ -105,6 +105,8 @@ article p a {
     grid-row-gap: 4rem; /*Safari*/
     row-gap: 4rem;
     width: 100%;
+    z-index: 2;
+    position: relative;
 }
 
 // shortcopy and archive

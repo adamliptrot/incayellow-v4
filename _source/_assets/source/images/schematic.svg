@@ -1,0 +1,393 @@
+<?xml-stylesheet type="text/css" href="/assets/css/schematic-svg.css" ?>
+<svg class="hide" focusable="false" aria-hidden="true" id="schematic" viewBox="0 0 2490 1262" style="background-color:#ffffff00" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" x="0" y="0" width="100%" height="100%">
+  <defs>
+    <radialGradient cx="96.552%" cy="39.07%" fx="96.552%" fy="39.07%" r="93.672%" gradientTransform="translate(0.965520,0.390697),scale(1.000000,0.944469),rotate(178.647166),scale(1.000000,0.925105),translate(-0.965520,-0.390697)" id="radialGradient-1">
+      <stop stop-color="#FBDB78" stop-opacity=".691" offset="0%"/>
+      <stop stop-color="#FFCF3B" stop-opacity="0" offset="100%"/>
+    </radialGradient>
+    <radialGradient cx="96.551%" cy="62.865%" fx="96.551%" fy="62.865%" r="94.913%" gradientTransform="translate(0.965510,0.628646),scale(1.000000,0.915915),rotate(-178.943987),scale(1.000000,1.377440),translate(-0.965510,-0.628646)" id="radialGradient-2">
+      <stop stop-color="#FBDB78" stop-opacity=".695" offset="0%"/>
+      <stop stop-color="#FFCF3B" stop-opacity="0" offset="100%"/>
+    </radialGradient>
+    <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-3">
+      <stop stop-color="#C50202" stop-opacity="0" offset="0%"/>
+      <stop stop-color="#AB0101" stop-opacity=".722" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="37.41%" y1="81.844%" x2="0%" y2="0%" id="linearGradient-4">
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"/>
+      <stop stop-color="#DED5B7" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="131.3%" y1="44.159%" x2="13.836%" y2="44.159%" id="linearGradient-5">
+      <stop stop-color="#FBEFC4" stop-opacity="0" offset="0%"/>
+      <stop stop-color="#F8EECE" stop-opacity=".679" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <path transform="translate(200,200)" fill="#efefef" d="M163.28 0h1897.025c90.722 38.258 141.495 249.563 141.495 433.5 0 73.779-6.35 122.143 10.55 148.093 8.67 11.636 0 63.998 0 63.998-39.277 28.754-85.59 172.487-124.417 211.026-28.819 10.61-1937.43 0-1956.538 0C58.254 826.972 0 636.237 0 424.159 0 212.079 91.173 16.597 163.28 0z" id="body-wrap"/>
+  <path transform="translate(244,216)" fill="#354550" d="M111.84 798.907c57.212 44.608 664.509 19.783 726.649 19.783 62.14 0 1116.663-4.809 1166.328-13.876 116.164-21.209 95.749-377.124 95.749-399.124s29.898-320.17-95.75-389.553C1983.024 4.102 907.057 1.69 840.632 5.69c-49.227 2.964-622.433-22.76-716.117 19.148C30.83 66.748-1.468 329.69.675 413.69 3.383 519.83 24.943 731.155 111.84 798.907z" id="body-fill"/>
+  <g id="blueprint" transform="translate(200,220)">
+    <g id="bodywork-and-exterior" class="layer-hide layer-notrans inactive">
+      <path id="body" opacity=".851" d="M1144 280.5c0-31.757 25.743-57.5 57.5-57.5h115c31.757 0 57.5 25.743 57.5 57.5v258c0 31.757-25.743 57.5-57.5 57.5h-115c-31.757 0-57.5-25.743-57.5-57.5v-258zM1916 148c54 18 58.373 233.974 60 260 2 32-14 252-60 272-23.2 10.087-196-10-208-32s-14-222-14-240 2-216 20-230 162.93-43.023 202-30zM978 775c-4-5 108-70 116-72s504 6 519 8 154 32 157 39-6.926 18.78-24 20c-28 2-764 10-768 5zm0-720.7c4-5 740 3 768 5 17.074 1.22 27 13 24 20s-142 37-157 39-511 10-519 8-120-67-116-72zM932 60c20.894-11.81 148.492 59.511 138 74-42 58-38 246-36 276s6 236 38 282c8.076 11.61-126.515 85.3-138 80-52-24-70-254-72-358-2.038-106 24-328 70-354zM234 792c60.786 42.908 618 27 676 27s1080.212 4.03 1104-15c90-72 74-376 74-398s18-306-78-388C1994.492 4.753 974 2 912 6 866.052 8.964 332-4 232 36c-96.293 38.517-106 294-104 378 2.527 106.14 4 306 106 378z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Right-headlight-cowl" opacity=".851" d="M158 164s68.612-.306 84-8c4-2 21.069-123.34 5-122-48 4-97 106-89 130z" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Left-headlight-cowl" opacity=".851" d="M158 663.989s68.612.306 84 8c4 2 21.069 123.34 5 122-48-4-97-106-89-130z" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Right-bonnet-joint" opacity=".851" d="M146 213S648 92 880 84c21.987-.758 20-28 32-34s32-6 32-6 1020 4 1076 16" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Left-bonnet-joint" opacity=".851" d="M150 620s498 118 730 126c21.987.758 20 28 32 34s32 6 32 6 1020-4 1076-16" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Rear-bonner-joint" opacity=".851" d="M818 91c-14 24-43.878 220.062-40 317 4 100 22 300 42 330" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Air-intake" opacity=".851" d="M798 300l-4.54 112.007L800 530s33.595.454 34-4c3-33 1-199.91 1-222 0-4-37-4-37-4z" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Rear-hatch" opacity=".851" d="M1664 412s-8-240 22-264 312.36-55.369 330-50c15.333 4.667 20 4.667 34 22 21.947 27.172 32 266 34 284s-16 286-28 304-18 14-34 20-304-20-334-50-20-236-24-266z" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Front-bumper" class="solid" opacity=".851" d="M242 24s-49.812-12.61-73 6C12 156 16 648 151 794c17.013 18.4 69 14 87 14 10 0-33-26-33-26s-52-110-65-166c-5.427-23.378-17-202-17-202s11.014-184.364 15-206c7-38 42.16-146.966 65-166 24-20 39-18 39-18z" stroke="#000000" stroke-width="4" fill="#111111"/>
+      <path id="Rear-bumper" class="solid" opacity=".851" d="M2021.922 24s15.476-5.246 43 6c93 38 87 297.788 87 383 0 69-2 351-69 381-22.872 10.241-39 14-57 14-10 0 23-26 23-26s37.078-112 41-166c1.738-23.937 7-202 7-202s-6.936-188.364-10.922-210c-7-38-32.238-142.966-55.078-162-24-20-9-18-9-18z" stroke="#000000" stroke-width="4" fill="#111111"/>
+      <path id="Right-headlight2" opacity=".851" d="M242 47.5a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5v61c0 .828-4.5 41.5-4.5 41.5a1.5 1.5 0 0 1-1.5-1.5v-101zm6-1.457" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Right-headlight-cover2" opacity=".851" d="M240 46c-9 0-15 25.804-15 49s3.5 55.5 15 55" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Left-headlight2" opacity=".851" d="M242 778.506a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5v-61c0-.828-4.5-41.5-4.5-41.5a1.5 1.5 0 0 0-1.5 1.5v101zm6 1.458" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Left-headlight-cover2" opacity=".851" d="M240 780.006c-9 0-14-28.803-14-52 0-23.196 2.5-52.5 14-52" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Right-rear-light">
+        <path opacity=".851" d="M2009 12h28l10 11.333v35.819L2037 70h-28V12z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path opacity=".851" d="M2037 12l10 11.333v35.819L2037 70V12z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Left-rear-light">
+        <path opacity=".851" d="M2009 752h28l10 11.333v35.819L2037 810h-28v-58z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path opacity=".851" d="M2037 752l10 11.333v35.819L2037 810v-58z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <path id="Right-gutter" opacity=".851" d="M906 6c-2 24 176 116 176 116" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Left-gutter" opacity=".851" d="M906 821c-2-24 176-115 176-115" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Right-door-joint" opacity=".851" d="M1438 4s-6 26-22 38-8 18-8 18" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Left-door-joint" opacity=".851" d="M1438 816s-6-26-22-38-8-18-8-18" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Rear-window-surround" opacity=".502" d="M1678 412c0 16 5.333 234.667 18 248 9.933 10.456 221.704 56.685 258 34 64-40 56-242 56-278s14-276-74-286c-38.38-4.361-226.796 10.648-238 30-14.667 25.333-20 236-20 252z" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Fuel-cap" opacity=".851" d="M2062 137c0-14.912 2.686-27 6-27s6 12.088 6 27-2.686 27-6 27-6-12.088-6-27z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <rect id="Rear-license-plate" opacity=".851" x="2089" y="312" width="11" height="188" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Right-side-window" opacity=".851" d="M1396 122.3l9-65m-360-3l84 72m-151-72c-4 5 108 70 116 72s504-6 519-8 154-32 157-39-6.926-18.78-24-20c-28-2-764-10-768-5z" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Left-side-window" opacity=".851" d="M1396 707l9 65m-360 3l84-72m-151 72c-4-5 108-70 116-72s504 6 519 8 154 32 157 39-6.926 18.78-24 20c-28 2-764 10-768 5z" stroke="#000000" stroke-width="4" fill="none"/>
+      <path id="Right-wiper" opacity=".851" d="M835.34 290.334l20.822 9.507 3.973-57.597 19.005-63.045 7.89-6.452 5.02 67.845 4.535-70.561 17.763-85.547-24.992 78.778s-13.18 12.434-13.828 12.55c-.65.116-40.187 114.522-40.187 114.522z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Left-wiper" opacity=".851" d="M845.663 551.358l21.75 7.666-.82-58.015 13.86-64.877 7.4-7.136 10.674 67.611-1.294-71.13L908 338l-18.596 81.274s-12.227 13.585-12.87 13.756c-.644.17-30.871 118.328-30.871 118.328z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Sunroof-surround" opacity=".502">
+        <path d="M1134 273.583c0-33.46 27.982-60.583 62.5-60.583h125c34.518 0 62.5 27.124 62.5 60.583v271.834c0 33.46-27.982 60.583-62.5 60.583h-125c-34.518 0-62.5-27.124-62.5-60.583V273.583z" stroke="#000000" stroke-width="4" fill="none"/>
+      </g>
+      <g id="Bonnet-marks" opacity=".502">
+        <path opacity=".851" d="M192 384l-62 6" stroke="#000000" stroke-width="4" fill="none"/>
+        <path opacity=".851" d="M192 440l-62-6" stroke="#000000" stroke-width="4" fill="none"/>
+      </g>
+      <rect x="1320" y="12" width="86" height="11" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <rect x="1320" y="795" width="86" height="11" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Ellipse20" d="M2047 405c0-11.598 4.7-21 10.5-21s10.5 9.402 10.5 21-4.7 21-10.5 21-10.5-9.402-10.5-21z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path class="solid" d="M134 722c5.474 15.034-2-256-12-272s-46.242-15.151-46.242-15.151l1.03-56.061S116 374 122 366s17-250 16-248c-77.232 154.464-86.485 377.455-4 604z" stroke="#010101" stroke-width="4" fill="#000000"/>
+    </g>
+    <g id="interior" class="layer-hide layer-notrans inactive">
+      <g id="Floor-pan" opacity=".702" visibility="hidden">
+        <path d="M794 101.5c0-39.336 9.164-48.5 48.5-48.5H1318l101.5 80c39.336 0 48.5 9.164 48.5 48.5v472c0 39.336-9.164 48.5-48.5 48.5L1318 772H842.5c-39.336 0-48.5-9.164-48.5-48.5v-622z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <path id="Console" opacity=".702" d="M896 362l136 18 2 78-140 22 2-118z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      <g id="Gearstick2">
+        <path id="Ellipse18" opacity=".702" d="M928 424c0-15.464 12.536-28 28-28s28 12.536 28 28-12.536 28-28 28-28-12.536-28-28z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+        <path id="Ellipse19" opacity=".702" d="M944 424c0-6.627 5.372-12 12-12s12 5.373 12 12-5.372 12-12 12-12-5.373-12-12z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <rect id="Armrest" opacity=".702" x="1023" y="397" width="154" height="40" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      <g id="Right-seat-base" opacity=".702">
+        <path d="M979 168.479c0-25.346 16.487-42.479 40.877-42.479h219.246c24.39 0 40.877 17.133 40.877 42.479V325.52c0 25.346-16.487 42.479-40.877 42.479h-219.246C995.487 368 979 350.867 979 325.521V168.48z" stroke="#000000" stroke-width="5" fill="#ebebeb"/>
+      </g>
+      <g id="Right-seat-back" opacity=".702">
+        <path d="M1213 158.75c0-9.25 7.5-16.75 16.75-16.75h33.5c9.25 0 16.75 7.5 16.75 16.75v178.5c0 9.25-7.5 16.75-16.75 16.75h-33.5c-9.25 0-16.75-7.5-16.75-16.75v-178.5z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <g id="Right-headrest" opacity=".702">
+        <path d="M1235 209.75c0-8.146 6.604-14.75 14.75-14.75h29.5c8.146 0 14.75 6.604 14.75 14.75v71.5c0 8.146-6.604 14.75-14.75 14.75h-29.5c-8.146 0-14.75-6.604-14.75-14.75v-71.5z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <g id="Left-seat-base" opacity=".702">
+        <path d="M979 512.803c0-25.24 16.487-42.303 40.877-42.303h219.246c24.39 0 40.877 17.063 40.877 42.303v156.394c0 25.24-16.487 42.303-40.877 42.303h-219.246c-24.39 0-40.877-17.063-40.877-42.303V512.803z" stroke="#000000" stroke-width="5" fill="#ebebeb"/>
+      </g>
+      <g id="Left-seat-back" opacity=".702">
+        <path d="M1213 501.75c0-9.25 7.5-16.75 16.75-16.75h33.5c9.25 0 16.75 7.5 16.75 16.75v178.5c0 9.25-7.5 16.75-16.75 16.75h-33.5c-9.25 0-16.75-7.5-16.75-16.75v-178.5z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <g id="Left-headrest" opacity=".702">
+        <path d="M1235 552.75c0-8.146 6.604-14.75 14.75-14.75h29.5c8.146 0 14.75 6.604 14.75 14.75v71.5c0 8.146-6.604 14.75-14.75 14.75h-29.5c-8.146 0-14.75-6.604-14.75-14.75v-71.5z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <g id="Rear-seat" opacity=".702">
+        <path d="M1324 144.5c0-10.786 5.714-16.5 16.5-16.5h37.5l19.5 50c10.786 0 56.5 5.714 56.5 16.5v448c0 10.786-45.714 16.5-56.5 16.5l-21.5 40h-35.5c-10.786 0-16.5-5.714-16.5-16.5v-538z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <g id="Rear-seat-back" opacity=".702">
+        <path d="M1436 156a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v518a8 8 0 0 1-8 8h-16a8 8 0 0 1-8-8V156z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <g id="Boot-cover" opacity=".702" visibility="hidden">
+        <path d="M1468 136.25c0-2.25 0-2.25 2.25-2.25h609.5c2.25 0 2.25 0 2.25 2.25v564.5c0 2.25 0 2.25-2.25 2.25h-609.5c-2.25 0-2.25 0-2.25-2.25v-564.5z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <g id="Right-wheel-arch" opacity=".702" visibility="hidden">
+        <path d="M1314.25 53h431.5c11.184 0 20.25 9.066 20.25 20.25v40.5c0 11.184-9.066 20.25-20.25 20.25h-341.5c-11.184 0-101.184-81-90-81z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      </g>
+      <path id="Left-wheel-arch" opacity=".702" visibility="hidden" d="M1314.25 772h431.5c11.184 0 20.25-9.066 20.25-20.25v-40.5c0-11.184-9.066-20.25-20.25-20.25h-341.5c-11.184 0-101.184 81-90 81z" stroke="#000000" stroke-width="4" fill="#ebebeb"/>
+      <g id="Wheel" opacity=".702">
+        <path d="M990.5 140.282c14.083-3.952 25.5 34.132 25.5 85.063 0 50.931-11.417 95.422-25.5 99.373-14.083 3.952-25.5-34.132-25.5-85.063 0-50.931 11.417-95.422 25.5-99.373zm0 21.797c10.755-3.018 19.473 26.064 19.473 64.957 0 38.893-8.718 72.868-19.473 75.885-10.755 3.018-19.473-26.064-19.473-64.957 0-38.893 8.718-72.868 19.473-75.885z" stroke="#000000" stroke-width="2" fill="#000000"/>
+      </g>
+      <path opacity=".702" d="M914.095 253.05L944 268l35.605-9.89c2.874 4.32 6.479 6.89 10.395 6.89 9.389 0 17-14.774 17-33s-7.611-33-17-33c-3.372 0-6.517 1.908-9.16 5.195l-61.87 10.31L938 64s0-26-16 2-66 256-64 332 34 334 58 364 16-18 16-18l-38-332 20.095-158.95z" stroke="#000000" stroke-width="4" fill="#000000"/>
+    </g>
+    <g id="suspension" class="layer-hide layer-notrans inactive">
+      <path id="Crossmember" d="M423 321c0-11.046 8.954-20 20-20s20 8.954 20 20-8.954 20-20 20-20-8.954-20-20zm0 179c0-12.703 10.297-23 23-23s23 10.297 23 23-10.297 23-23 23-23-10.297-23-23zm-29-325l-12 70-2 332 11 66 103 2 12-64-2-341-10-61-100-4z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Right-front-typre">
+        <path d="M256 33.75C256 21.738 265.738 12 277.75 12h350.5C640.262 12 650 21.738 650 33.75v43.5C650 89.262 640.262 99 628.25 99h-350.5C265.738 99 256 89.262 256 77.25v-43.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <path id="Right-kingpin" d="M435 107.5c0-4.695 4.253-8.5 9.5-8.5s9.5 3.805 9.5 8.5-4.253 8.5-9.5 8.5-9.5-3.805-9.5-8.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Left-front-tyre">
+        <path d="M256 793.25c0 12.012 9.738 21.75 21.75 21.75h350.5c12.012 0 21.75-9.738 21.75-21.75v-43.5c0-12.012-9.738-21.75-21.75-21.75h-350.5c-12.012 0-21.75 9.738-21.75 21.75v43.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <path id="Left-kinpin" d="M435 719.5c0 4.694 4.253 8.5 9.5 8.5s9.5-3.806 9.5-8.5-4.253-8.5-9.5-8.5-9.5 3.806-9.5 8.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Right-spring" d="M1548 130v15h32l3 5h14l4-5h26l2 5h18l3-6h42l3 5h15l3-6h180l4 4h15l2-6h40l5 5h16l4-7h25l6 6h12l3-6h32v-16h-32l-3-6h-12l-6 6h-25l-4-7h-16l-5 5h-40l-2-6h-15l-4 7h-180l-3-6h-15l-3 5h-42l-3-6h-18l-2 5h-26l-4-5h-14l-3 5h-32v10z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Left-spring" d="M1548 694v15h32l3 5h14l4-5h26l2 5h18l3-6h42l3 5h15l3-6h180l4 4h15l2-6h40l5 5h16l4-7h25l6 6h12l3-6h32v-16h-32l-3-6h-12l-6 6h-25l-4-7h-16l-5 5h-40l-2-6h-15l-4 7h-180l-3-6h-15l-3 5h-42l-3-6h-18l-2 5h-26l-4-5h-14l-3 5h-32v10z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Rear-right-LAD">
+        <g>
+          <path d="M1696 127.046c0-.263 9.224-9.046 9.5-9.046h19c10.77 0 9.5-1.21 9.5 9.046v46.908c0 10.255 1.27 9.046-9.5 9.046h-19c-.276 0-9.5-8.783-9.5-9.046v-46.908z" stroke="#000000" stroke-width="3" fill="#ffffff"/>
+        </g>
+        <g>
+          <path d="M1735 164.5a5.5 5.5 0 0 1 5.5-5.5h13a5.5 5.5 0 0 1 5.5 5.5v11a5.5 5.5 0 0 1-5.5 5.5h-13a5.5 5.5 0 0 1-5.5-5.5v-11z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        </g>
+      </g>
+      <g id="Rear-left-LAD">
+        <g>
+          <path d="M1696 652.046c0-1.38 7.667-9.38 9.5-9.046h19c5.247 0 9.5 4.05 9.5 9.046v46.908c0 4.996-4.253 9.046-9.5 9.046h-19c-.833-.333-9.833-7.667-9.5-9.046v-46.908z" stroke="#000000" stroke-width="3" fill="#ffffff"/>
+        </g>
+        <g>
+          <path d="M1734 652.5a5.5 5.5 0 0 1 5.5-5.5h13a5.5 5.5 0 0 1 5.5 5.5v11a5.5 5.5 0 0 1-5.5 5.5h-13a5.5 5.5 0 0 1-5.5-5.5v-11z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        </g>
+      </g>
+      <g id="Right-LAD">
+        <path d="M482 203l-11-2-1-21-50-1-1 24-10 1-1-8 29-52s9-10 18 3 12 23 12 23l15 33zm-59-65l-24 60-1 17v36h91l2-49-28-63 10-49-12 1-2 26-16 10-15-9-2-30-12 1 9 49z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <g>
+          <path d="M427 195.25a8.25 8.25 0 0 1 8.25-8.25h16.5a8.25 8.25 0 0 1 8.25 8.25v43.5a8.25 8.25 0 0 1-8.25 8.25h-16.5a8.25 8.25 0 0 1-8.25-8.25v-43.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        </g>
+        <path id="Ellipse" d="M435 225.5a8.5 8.5 0 1 1 17 0 8.5 8.5 0 0 1-17 0z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Left-LAD">
+        <path d="M482 624l-15 33s-3 10-12 23-18 3-18 3l-29-52 1-8 10 1 1 24 50-1 1-21 11-2zm-59 65l-9 49 12 1 2-30 15-9 16 10 2 26 12 1-10-49 28-63-2-49h-91v36l1 17 24 60z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <g>
+          <g>
+            <path d="M427 628.75a8.25 8.25 0 0 0 8.25 8.25h16.5a8.25 8.25 0 0 0 8.25-8.25v-43.5a8.25 8.25 0 0 0-8.25-8.25h-16.5a8.25 8.25 0 0 0-8.25 8.25v43.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+          </g>
+          <path id="Ellipse2" d="M435 598.5a8.5 8.5 0 1 0 17 0 8.5 8.5 0 0 0-17 0z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        </g>
+      </g>
+      <g id="Tread">
+        <path id="Line" opacity=".502" d="M258.5 36.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line2" opacity=".502" d="M258.5 56.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line3" opacity=".502" d="M258.5 76.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line4" opacity=".502" d="M587.5 36.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line5" opacity=".502" d="M587.5 56.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line6" opacity=".502" d="M587.5 76.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line7" opacity=".502" d="M258.5 750.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line8" opacity=".502" d="M258.5 770.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line9" opacity=".502" d="M258.5 790.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line10" opacity=".502" d="M587.5 750.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line11" opacity=".502" d="M587.5 770.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line12" opacity=".502" d="M587.5 790.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+      </g>
+    </g>
+    <g id="transmission" class="layer-hide layer-notrans inactive">
+      <path id="Rear-axle" d="M1636.229 396.037L1642 396v-13h38v15h9l1-13 11-1s67.582-14.456 95-83v-14l-2-228h42v224l14 2-10 14 2 54 26 6v52l18 10-2 26-16 22-24 14-2 68 42 4-2 16h-42l2 190h-38V537l-12-8v-16s-17.181-39.59-86-74c-8-4-15-2-15-2v-8h-11l1 11h-36v-14l-7.408.03" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Gearbox" d="M1235 435h-57v-9l-6-1v18l-10 5-18 16-17 5-106 4v18h-88l-9-10-113-1s-23 43-65 49c0 0-3.996-246.143-1-246 42 2 20.724 49.332 108 88 42.216 18.704 42 8 42 8h56v10l223 1v12h7v-9h54v42z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <rect x="719" y="138" width="81" height="73" stroke="#010101" stroke-width="4" fill="#ffffff"/>
+      <path id="Propshaft" d="M1236 399.778l72-.778 8 8h14l3-9 303.229-1.963.363 29.993L1334 427l-5-8h-13l-6 6h-74v-25.222z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Rear-right-tyre" d="M1623 33.75c0-12.012 9.738-21.75 21.75-21.75h350.5c12.012 0 21.75 9.738 21.75 21.75v43.5c0 12.012-9.738 21.75-21.75 21.75h-350.5c-12.012 0-21.75-9.738-21.75-21.75v-43.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Rear-left-tyre" d="M1626 793.25c0 12.012 9.738 21.75 21.75 21.75h350.5c12.012 0 21.75-9.738 21.75-21.75v-43.5c0-12.012-9.738-21.75-21.75-21.75h-350.5c-12.012 0-21.75 9.738-21.75 21.75v43.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Farings">
+        <path id="Line13" opacity=".502" d="M902.5 391.5v73" stroke="#111111" stroke-width="4" fill="none"/>
+        <path id="Line14" opacity=".502" d="M862.5 391.5v73" stroke="#111111" stroke-width="4" fill="none"/>
+        <path id="Line15" opacity=".502" d="M942.5 391.5v73" stroke="#111111" stroke-width="4" fill="none"/>
+      </g>
+      <g id="Gearstick">
+        <g>
+          <path d="M822 429c0-8.284 6.716-15 15-15h130c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15H837c-8.284 0-15-6.716-15-15z" stroke="#111111" stroke-width="4" fill="#ffffff"/>
+        </g>
+        <path id="Ellipse3" d="M932 429c0-8.284 7.163-15 16-15s16 6.716 16 15c0 8.284-7.163 15-16 15s-16-6.716-16-15z" stroke="#111111" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Tread2">
+        <path id="Line16" opacity=".502" d="M1624.5 36.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line17" opacity=".502" d="M1624.5 56.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line18" opacity=".502" d="M1624.5 76.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line19" opacity=".502" d="M1953.5 36.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line20" opacity=".502" d="M1953.5 56.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line21" opacity=".502" d="M1953.5 76.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line22" opacity=".502" d="M1624.5 750.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line23" opacity=".502" d="M1624.5 770.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line24" opacity=".502" d="M1624.5 790.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line25" opacity=".502" d="M1953.5 750.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line26" opacity=".502" d="M1953.5 770.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+        <path id="Line27" opacity=".502" d="M1953.5 790.5h63" stroke="#111111" stroke-width="2" fill="none"/>
+      </g>
+      <g id="Clutch-pedal">
+        <rect x="762" y="191" width="114" height="8" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <rect x="856" y="183" width="30" height="23" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <rect id="Clutch-slave" x="903" y="384" width="63" height="20" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Clutch-line" class="flow" d="M790 196l25 48-145 1 1 37 112 66h64v45h53" stroke="#ff6600" stroke-width="4" fill="none"/>
+      <path id="Clutch-master" d="M759 195c0-8.837 7.163-16 16-16s16 7.163 16 16-7.163 16-16 16-16-7.163-16-16zm-38-10h41v18h-41v-18z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+    </g>
+    <g id="engine" class="layer-hide layer-notrans inactive">
+      <path d="M740 279l4 252s-44-32-44-52-2-126-2-126 4-60 42-74z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g>
+        <path d="M384 363.5c0-10.175 3.325-13.5 13.5-13.5h287c10.175 0 13.5 3.325 13.5 13.5v115c0 10.175-3.325 13.5-13.5 13.5h-287c-10.175 0-13.5-3.325-13.5-13.5v-115z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g>
+        <path d="M409 400.75c0-7.46 5.29-12.75 12.75-12.75h243.5c7.46 0 12.75 5.29 12.75 12.75v41.5c0 7.46-5.29 12.75-12.75 12.75h-243.5c-7.46 0-12.75-5.29-12.75-12.75v-41.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g>
+        <path d="M463 397l19.546 9.413 4.827 21.15-13.526 16.961h-21.694l-13.526-16.961 4.827-21.15L463 397z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <path id="Ellipse4" d="M457 421.5c0-3.59 2.686-6.5 6-6.5s6 2.91 6 6.5-2.686 6.5-6 6.5-6-2.91-6-6.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Ellipse5" d="M554 367c0-9.389 10.745-17 24-17s24 7.611 24 17-10.745 17-24 17-24-7.611-24-17z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <rect x="368" y="384" width="16" height="81" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+    </g>
+    <g id="intake-and-exhaust" class="layer-hide layer-notrans inactive">
+      <path id="Manifold" d="M587.424 539.003C574.144 539 565 539 565 539l-13 3-12-2v-8l-21-7s-42-2-54-10-7-15-7-15v-11h20v11c0 3 28 5 28 5s35 5 42 7l48-14v-8h25s3 9 2 15-50 21-50 21l24.546 1.196" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Exhaust" d="M597.546 527.196L608 528h101c18 0 20 11 20 11s171.815-.378 409-.67V510h234v28.025l14-.025c44 2 56 51 98 51h346v-18h234v16h104v20s-98.5-1-104-.51V622h-234v-17.01l-344 .01c-57.742 0-58-59-114-52.93V581h-234v-28.705L732 553s-11 9-22 8-116.855-.331-120 0c-19 2-25.759-6.966-27-14-6-34-48-57-48-57h27s10 13 20 22 14 35 21 37 103 0 105.049.318c13.595 2.11 23.234-1.771 22.951-4.318-.384-3.455-10.239-4.907-24.183-5.874-1.315-.091-64.57-.116-99.393-.123" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+    </g>
+    <g id="cooling" class="layer-hide layer-notrans inactive">
+      <path id="Engine-to-cooler" class="flow rev" d="M196 332c8-192 358-122 334 18" stroke="#003399" stroke-width="8" fill="none"/>
+      <path id="Cooler-to-engine" class="flow" d="M192 502s0-152 4-174c31.912-175.515 410-115 386 25" stroke="#003399" stroke-width="8" fill="none"/>
+      <g id="Expansion">
+        <path d="M286 157s-2 66 38 58 30-64 4-72-42 14-42 14z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse6" d="M297 160.5c0-5.8 5.82-10.5 13-10.5s13 4.7 13 10.5-5.82 10.5-13 10.5-13-4.7-13-10.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <path id="Stat-to-rad" class="flow rev" d="M314 284c58 10-36 92 76 88" stroke="#003399" stroke-width="8" fill="none"/>
+      <path id="Rad-to-engine" class="flow" d="M296 574c88 20 4-116 118-108" stroke="#003399" stroke-width="8" fill="none"/>
+      <path id="Stat" d="M403.735 384c2.796 4.833 7.472 8 12.765 8 8.56 0 15.5-8.283 15.5-18.5s-6.94-18.5-15.5-18.5c-6.324 0-11.764 4.52-14.175 11H385v18h18.735z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Rad" d="M252 263v324c0 6.075 4.925 11 11 11h22c6.075 0 11-4.925 11-11V290h18v-18h-18v31c0-6.075-4.925-51-11-51h-22c-6.075 0-11 4.925-11 11z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Fan">
+        <rect x="238.845" y="339.361" width="11.25" height="15.75" stroke="#000000" stroke-width="3" fill="#ffff00"/>
+        <path d="M241.095 337.86S223 271 243.345 265.11c9.113-2.637-2.25 72.75-2.25 72.75z" stroke="#000000" stroke-width="3" fill="#ffff00"/>
+        <path d="M241.095 355.024S226 420 243.345 427.774c8.657 3.88-2.25-72.75-2.25-72.75z" stroke="#000000" stroke-width="3" fill="#ffff00"/>
+      </g>
+      <rect id="Cooler" x="185" y="317" width="22" height="194" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+    </g>
+    <text x="777.613" y="767.806" opacity=".2" fill="#fff" style="font-weight:bold;font-size:18px;font-family:Arial;text-align:left;color:#999999">
+      <tspan><![CDATA[© Adam Liptrot]]>
+</tspan>
+    </text>
+    <g id="brakes" class="layer-hide layer-notrans inactive">
+      <rect id="Right-disc" x="349" y="62" width="208" height="10" stroke="#111111" stroke-width="4" fill="#ffffff"/>
+      <rect id="Left-disc" x="349" y="754" width="208" height="10" stroke="#111111" stroke-width="4" fill="#ffffff"/>
+      <path id="Servo-to-left" class="flow" d="M623 194v86h23l1 317H547l1 78" stroke="#66cccc" stroke-width="4" fill="none"/>
+      <path id="Right-drum" d="M1847 81.75a2.75 2.75 0 0 1 2.75-2.75h7.5a2.75 2.75 0 0 1 2.75 2.75v5.5a2.75 2.75 0 0 1-2.75 2.75h-7.5a2.75 2.75 0 0 1-2.75-2.75v-5.5zM1734 69v-2.25c0-18.326 15.424-33.75 33.75-33.75h108.5c18.326 0 33.75 15.424 33.75 33.75V69h-176zm-6 2.5a2.5 2.5 0 0 1 2.5-2.5h182a2.5 2.5 0 0 1 2.5 2.5v5a2.5 2.5 0 0 1-2.5 2.5h-182a2.5 2.5 0 0 1-2.5-2.5v-5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Left-drum" d="M1847 745.25a2.75 2.75 0 0 0 2.75 2.75h7.5a2.75 2.75 0 0 0 2.75-2.75v-5.5a2.75 2.75 0 0 0-2.75-2.75h-7.5a2.75 2.75 0 0 0-2.75 2.75v5.5zM1734 758v2.25c0 18.326 15.424 33.75 33.75 33.75h108.5c18.326 0 33.75-15.424 33.75-33.75V758h-176zm-6-2.5a2.5 2.5 0 0 0 2.5 2.5h182a2.5 2.5 0 0 0 2.5-2.5v-5a2.5 2.5 0 0 0-2.5-2.5h-182a2.5 2.5 0 0 0-2.5 2.5v5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Rear-to-right" class="flow rev" d="M1854 90v11h-69l-.768 131.023" stroke="#66cccc" stroke-width="4" fill="none"/>
+      <path id="Servo-to-right" class="flow" d="M593 195v34l-64 1v-59l-1-18" stroke="#66cccc" stroke-width="4" fill="none"/>
+      <path id="Right-hose" class="flow rev" d="M540 122c10 3 51 48-10 27" stroke="#66cccc" stroke-width="8" fill="none"/>
+      <path id="Left-hose" class="flow rev" d="M530 706c42-2 76-44 20-29" stroke="#66cccc" stroke-width="8" fill="none"/>
+      <path id="Left-caliper" d="M492 767.5v-51c0-4.217 2.009-6.5 5.72-6.5h13.005L528 700l13 9-1.25 1h3.75a3.5 3.5 0 0 1 3.5 3.5v31a3.5 3.5 0 0 1-3.5 3.5h-7c-.17 0-.337-.012-.5-.035V767.5c0 4.217-2.009 6.5-5.72 6.5h-32.56c-3.711 0-5.72-2.283-5.72-6.5z" stroke="#111111" stroke-width="4" fill="#ffffff"/>
+      <path id="Right-caliper" d="M492 61.5v51c0 4.217 2.009 6.5 5.72 6.5h13.005L528 129l13-9-1.25-1h3.75a3.5 3.5 0 0 0 3.5-3.5v-31a3.5 3.5 0 0 0-3.5-3.5h-7c-.17 0-.337.012-.5.035V61.5c0-4.217-2.009-6.5-5.72-6.5h-32.56c-3.711 0-5.72 2.283-5.72 6.5z" stroke="#111111" stroke-width="4" fill="#ffffff"/>
+      <path id="Servo-to-rear" class="flow rev" d="M1851 736v-14h-67V614l10-19-12-21 2-346-91 15-361-5-16 97h-57l-41-21h-173l-25 16-254-1v-93H542l1-63" stroke="#66cccc" stroke-width="4" fill="none"/>
+      <g id="Brake-pedal">
+        <rect x="762" y="157" width="114" height="8" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <rect x="856" y="149" width="30" height="23" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <path id="Servo" d="M719 153h43v20h-43v-20zm-68 15.5a2.5 2.5 0 0 1 2.5-2.5h5a2.5 2.5 0 0 1 2.5 2.5v17a2.5 2.5 0 0 1-2.5 2.5h-5a2.5 2.5 0 0 1-2.5-2.5v-17zM545 170a7 7 0 0 1 7-7h92a7 7 0 0 1 7 7v14a7 7 0 0 1-7 7h-92a7 7 0 0 1-7-7v-14zm153 52h-26.75c-6.498 0-10.25-3.752-10.25-10.25v-72.5c0-6.498 3.752-10.25 10.25-10.25H698m2-3.58c0-2.441 2.127-4.42 4.75-4.42h9.5c2.623 0 4.75 1.979 4.75 4.42v98.16c0 2.441-2.127 4.42-4.75 4.42h-9.5c-2.623 0-4.75-1.979-4.75-4.42v-98.16z" stroke="#010101" stroke-width="4" fill="#ffffff"/>
+    </g>
+    <g id="fuel-and-air" class="layer-hide layer-notrans inactive">
+      <path id="Fuel-line" class="flow" d="M1877 205h-120v102l-953 2-145-87 1 396H454V511h107" stroke="#990000" stroke-width="3" fill="none"/>
+      <g id="Tank">
+        <g>
+          <path d="M1828 185c0-18.752 7.248-26 26-26h220c18.752 0 26 7.248 26 26v366c0 18.752-7.248 26-26 26h-220c-18.752 0-26-7.248-26-26V185z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        </g>
+        <path d="M1892 217h164.5a6.5 6.5 0 0 1 6.5 6.5v13a6.5 6.5 0 0 1-6.5 6.5H1892" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path opacity=".502" d="M1892 287h164.5a6.5 6.5 0 0 1 6.5 6.5v13a6.5 6.5 0 0 1-6.5 6.5H1892" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path opacity=".502" d="M1892 357h164.5a6.5 6.5 0 0 1 6.5 6.5v13a6.5 6.5 0 0 1-6.5 6.5H1892" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path opacity=".502" d="M1892 427h164.5a6.5 6.5 0 0 1 6.5 6.5v13a6.5 6.5 0 0 1-6.5 6.5H1892" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path opacity=".502" d="M1892 497h164.5a6.5 6.5 0 0 1 6.5 6.5v13a6.5 6.5 0 0 1-6.5 6.5H1892" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Pump">
+        <path d="M1806 196a7 7 0 0 1 7-7h48a7 7 0 0 1 7 7v14a7 7 0 0 1-7 7h-48a7 7 0 0 1-7-7v-14z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Filter">
+        <path d="M648 475.25c0-2.9 2.35-5.25 5.25-5.25h10.5c2.9 0 5.25 2.35 5.25 5.25v33.5c0 2.9-2.35 5.25-5.25 5.25h-10.5a5.25 5.25 0 0 1-5.25-5.25v-33.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Rear-carb">
+        <path d="M587 486c-23.999.558-25 18-25 18l.5 28.5s21.48 27.52 46.5 2.5v-26s-.5-23.5-22-23z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path d="M581.5 518.5S606 511 606 505" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse7" d="M575 489c0-4.97 4.7-9 10.5-9s10.5 4.03 10.5 9-4.7 9-10.5 9-10.5-4.03-10.5-9z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Front-carb">
+        <path d="M516 485c-23.999.558-25 18-25 18l.5 28.5s21.48 27.52 46.5 2.5v-26s-.5-23.5-22-23z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path d="M510.5 517.5S535 510 535 504" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse8" d="M504 488c0-4.97 4.7-9 10.5-9s10.5 4.03 10.5 9-4.7 9-10.5 9-10.5-4.03-10.5-9z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <path id="Front-can" d="M538 547c-4.159-24.954-60.98-33.02-86-8l-54-22-8 20 74 36 10 20h44l12-16h19v-22s-9 4-11-8z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Rear-can" d="M561 547c4.159-24.954 60.98-33.02 86-8l54-22 8 20-74 36-10 20h-44l-12-16h-20l1-22s9 4 11-8z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Accelerator-pedal">
+        <rect x="763" y="123" width="114" height="8" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <rect x="857" y="115" width="30" height="23" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <path id="Accelerator-cable" d="M761 126c-39.788-12.364-222.576 249.454-213 389" stroke="#cc6699" stroke-width="4" fill="none"/>
+    </g>
+    <g id="electrics" class="layer-hide layer-notrans inactive">
+      <path id="Right-headlight" d="M242 47.5a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5v101a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5v-101zm6-1.457a46.89 46.89 0 0 1 2-.043c24.3 0 44 28.804 44 52s-19.7 52-44 52c-.67 0-1.337-.014-2-.043" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Right-headlight-cover" opacity=".502" d="M240 46c-9 0-14 28.804-14 52s2.5 52.5 14 52" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Left-headlight-cover" opacity=".502" d="M240 674c-9 0-14 28.804-14 52s2.5 52.5 14 52" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Left-headlight" d="M242 675.5a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5v101a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5v-101zm6-1.457c.663-.029 1.33-.043 2-.043 24.3 0 44 28.804 44 52s-19.7 52-44 52c-.67 0-1.337-.014-2-.043" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <g id="Battery">
+        <rect x="1267.5" y="282.5" width="100" height="71" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse9" d="M1340 339.5a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse10" d="M1280 339.5a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Coil">
+        <g>
+          <path d="M540 284.5a7.5 7.5 0 0 1 7.5-7.5h15a7.5 7.5 0 0 1 7.5 7.5v40a7.5 7.5 0 0 1-7.5 7.5h-15a7.5 7.5 0 0 1-7.5-7.5v-40z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        </g>
+        <path id="Ellipse11" d="M540 282.5c0-3.038 6.716-5.5 15-5.5 8.284 0 15 2.462 15 5.5s-6.716 5.5-15 5.5c-8.284 0-15-2.462-15-5.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Dizzy">
+        <g>
+          <g>
+            <path d="M612 355.5a7.5 7.5 0 0 1 7.5-7.5h15a7.5 7.5 0 0 1 7.5 7.5v10a7.5 7.5 0 0 1-7.5 7.5h-15a7.5 7.5 0 0 1-7.5-7.5v-10z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+          </g>
+          <path id="Ellipse12" d="M612 353.5c0-3.038 6.716-5.5 15-5.5 8.284 0 15 2.462 15 5.5s-6.716 5.5-15 5.5c-8.284 0-15-2.462-15-5.5z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        </g>
+        <g>
+          <g>
+            <path d="M620 341.546c0-1.959 1.567-3.546 3.5-3.546h7c1.933 0 3.5 1.587 3.5 3.546v8.909c0 1.958-1.567 3.545-3.5 3.545h-7c-1.933 0-3.5-1.587-3.5-3.546v-8.909z" stroke="#000000" stroke-width="2" fill="#ffffff"/>
+          </g>
+          <path id="Ellipse13" d="M620 340.6c0-1.436 3.134-2.6 7-2.6s7 1.164 7 2.6c0 1.436-3.134 2.6-7 2.6s-7-1.164-7-2.6z" stroke="#000000" stroke-width="2" fill="#ffffff"/>
+        </g>
+      </g>
+      <g id="Spark-plugs">
+        <path d="M479 357.682c0-2.034 1.679-3.682 3.75-3.682h7.5c2.071 0 3.75 1.648 3.75 3.682v19.636c0 2.034-1.679 3.682-3.75 3.682h-7.5c-2.071 0-3.75-1.648-3.75-3.682v-19.636z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse14" d="M479 356.7c0-1.491 3.358-2.7 7.5-2.7 4.142 0 7.5 1.209 7.5 2.7s-3.358 2.7-7.5 2.7c-4.142 0-7.5-1.209-7.5-2.7z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path d="M528 357.682c0-2.034 1.679-3.682 3.75-3.682h7.5c2.071 0 3.75 1.648 3.75 3.682v19.636c0 2.034-1.679 3.682-3.75 3.682h-7.5c-2.071 0-3.75-1.648-3.75-3.682v-19.636z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse15" d="M528 356.7c0-1.491 3.358-2.7 7.5-2.7 4.142 0 7.5 1.209 7.5 2.7s-3.358 2.7-7.5 2.7c-4.142 0-7.5-1.209-7.5-2.7z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path d="M555 357.682c0-2.034 1.679-3.682 3.75-3.682h7.5c2.071 0 3.75 1.648 3.75 3.682v19.636c0 2.034-1.679 3.682-3.75 3.682h-7.5c-2.071 0-3.75-1.648-3.75-3.682v-19.636z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse16" d="M555 356.7c0-1.491 3.358-2.7 7.5-2.7 4.142 0 7.5 1.209 7.5 2.7s-3.358 2.7-7.5 2.7c-4.142 0-7.5-1.209-7.5-2.7z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path d="M595 357.682c0-2.034 1.679-3.682 3.75-3.682h7.5c2.071 0 3.75 1.648 3.75 3.682v19.636c0 2.034-1.679 3.682-3.75 3.682h-7.5c-2.071 0-3.75-1.648-3.75-3.682v-19.636z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path id="Ellipse17" d="M595 356.7c0-1.491 3.358-2.7 7.5-2.7 4.142 0 7.5 1.209 7.5 2.7s-3.358 2.7-7.5 2.7c-4.142 0-7.5-1.209-7.5-2.7z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Earth">
+        <path class="flow" d="M1358 338h50v-61" stroke="#00cc00" stroke-width="4" fill="none"/>
+        <path class="flow rev" d="M1392 276h32" stroke="#00cc00" stroke-width="4" fill="none"/>
+        <path class="flow rev" d="M1395 270h26" stroke="#00cc00" stroke-width="4" fill="none"/>
+        <path class="flow rev" d="M1400 263h16" stroke="#00cc00" stroke-width="4" fill="none"/>
+      </g>
+      <path id="Battery-to-coil" class="flow" d="M1279 342c-3.242.424-64-1-64-1l-24-15-135-1-38-30-271 2-45-30H556l-1 15" stroke="#00cc00" stroke-width="4" fill="none"/>
+      <path id="Right-headligh-power" class="flow rev" d="M297 99h42l1 169 224-1" stroke="#00cc00" stroke-width="4" fill="none"/>
+      <path id="Left-headlight-power" class="flow rev" d="M298 727l42-1 1-458" stroke="#00cc00" stroke-width="4" fill="none"/>
+      <rect id="Fuse-box" x="432" y="259" width="21" height="24" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      <path id="Power-to-boot" class="flow" d="M432 277h-24l1-22h290l101 63 214-2 115-105 582-1 157-40V52h171" stroke="#00cc00" stroke-width="4" fill="none"/>
+      <path id="Power-boot" class="flow" d="M1972 52l4 723 35 1" stroke="#00cc00" stroke-width="4" fill="none"/>
+      <g id="right-taillight">
+        <path d="M2009 12h28l10 11.333v35.819L2037 70h-28V12z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path d="M2037 12l10 11.333v35.819L2037 70V12z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="left-taillight">
+        <path d="M2009 752h28l10 11.333v35.819L2037 810h-28v-58z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+        <path d="M2037 752l10 11.333v35.819L2037 810v-58z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+      </g>
+      <g id="Coil-to-spark-power">
+        <path class="flow rev" d="M485 356c4.394 1.576 25.727-130.636 136-15" stroke="#00cc00" stroke-width="4" fill="none"/>
+        <path class="flow rev" d="M530 354c22.91 20.788-43.758-100.364 97-16" stroke="#00cc00" stroke-width="4" fill="none"/>
+        <path class="flow rev" d="M561 354c6.152-20.758 35.94-66.424 64-15l-69-104v40" stroke="#00cc00" stroke-width="4" fill="none"/>
+        <path class="flow rev" d="M599 352c13 21 76-81 28-14" stroke="#00cc00" stroke-width="4" fill="none"/>
+      </g>
+      <path id="alternator" d="M450 318h14v24h-14v-24zm-42-10h42v46h-42v-46z" stroke="#000000" stroke-width="4" fill="#ffffff"/>
+    </g>
+    <g id="night" transform="translate(-210,-80)">
+      <polygon id="Path-2" fill="url(#radialGradient-1)" points="450 124 13 -149 13 566 450 227"/>
+      <polygon id="Path-2" fill="url(#radialGradient-2)" points="450 755 13 485 13 1200 450 861"/>
+      <polygon id="Path-3" fill="url(#linearGradient-3)" points="2227 87 2225 143 2252 143 2324 154 2323 70"/>
+      <polygon id="Path-3" fill="url(#linearGradient-3)" points="2227 826 2226 882 2252 882 2325 894 2324 810"/>
+      <polygon id="Path-4" fill="url(#linearGradient-4)" points="2311 391 2312 463 2365 429"/>
+      <polygon id="Path-4" fill="url(#linearGradient-4)" transform="translate(2337.903475, 540.740569) scale(1, -1) translate(-2337.903475, -540.740569)" points="2311 505 2312 576 2364 543"/>
+      <polygon id="Path-5" fill="url(#linearGradient-5)" points="1147 213 1116 460 1115 490 1120 538 1190 561 1191 186"/>
+    </g>
+  </g>
+</svg>

@@ -10,9 +10,10 @@
     padding-bottom: 0.5em;
     line-height: 0.8;
 }
-.archive-map a {
+.archive-map__item {
     font-size: 1.3rem;
     color:var(--textOnDark);
+    background-color: transparent;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Source Sans';
@@ -21,189 +22,126 @@
     padding: 2px;
 }
 @supports (font-variation-settings: normal) {
-    .archive-map a {
+    .archive-map__item {
         font-family: 'Source Sans Variable';
         font-variation-settings: "wght" 400;
     }
 }
-.archive-map a::after{
+.archive-map__item:after{
     content: "";
     width: 60px;
     height: 1px;
-    background: var(--textOnDark);
+    background-color: var(--textOnDark);
     position: absolute;
     top: 50%;
     right: -70px;
 }
-.archive-map .active {
-    color: var(--textOnLight);
-    background: var(--incayellow)
-}
-.archive-map .active:before {
+.archive-map__item:before {
     content: "";
-    left: -0.1em;
-    right: -0.1em;
+    left: -0.2em;
+    right: -0.2em;
     position: absolute;
     top: 0;
     bottom: 0;
-    background: var(--incayellow);
+    background-color: transparent;
     z-index: -1;
     transform: skewX(-14deg);
 }
-.archive-map a.active::after {
-    background: var(--incayellow);
+.archive-map__item,
+.archive-map__item:after,
+.archive-map__item:before {
+    transition: background-color 0.15s ease;
 }
+.archive-map .active {
+    color: var(--textOnLight);
+    background-color: var(--incayellow)
+}
+.archive-map .active:before {
+    background-color: var(--incayellow);
+}
+.archive-map__item.active::after {
+    background-color: var(--incayellow);
+}
+.archive-map .hover {
+    color: var(--textOnLight);
+    background-color: var(--textOnDark)
+}
+.archive-map .hover:before {
+    background-color: var(--textOnDark);
+}
+.archive-map__item.hover::after {
+    background-color: var(--textOnDark);
+}
+
 .schematic__blueprint {
-    transform: rotate(90deg);
-    position: relative;
     z-index: 1;
     grid-column: 2 / -1;
-    width: 55vw;
-    min-width: 500px;
-    left: -80px;
-    transition: transform 0.5s ease-in-out;
+    align-self: center;
+    justify-self: start;
 }
 .schematic {
     padding: 6rem 0;
     display: flex;
+    width: 100%;
+}
+#schematic__host {
+    transform: rotate(90deg);
+    transition: transform 1s ease;
+    height: 28rem;
+    transform-origin: calc(50% + 60px) 0;
+    top: 50%;
+    position: relative;
 }
 @supports (display: grid) {
     .schematic {
         display: grid;
-        grid-template-columns: 1fr minmax(0,1fr);
-        overflow: hidden;
+        grid-template-columns: 1fr minmax(0,2fr);
     }
 }
-
-#schematic > g.inactive,
-#schematic > g.inactive [stroke] {
-    opacity: 0.8;
+@media screen and (min-width: 760px) {
+    #schematic__host {
+        height: 34rem;
+    }
 }
-
 @media screen and (min-width: 1000px) {
     .schematic__blueprint {
         float: right;
-        transform: rotate(66deg);
-        width: 80rem;
-        height: 60rem;
-        min-width: 0;
-        left: auto;
-        top: -30%;
+        width: 100rem;
         shape-outside: polygon(11.75% 7px, 56.3% 815px, 99.16% 805px, 100% 0px);
     }
     .schematic {
         display: block;
         direction: rtl;
         min-width: 50em;
-        overflow: visible;
         padding: 4rem 0;
     }
-
+    #schematic__host {
+        transform: rotate(61deg);
+        height: 50rem;
+        top: 0;
+        left: 12%;
+    }
+    .archive-map__item {
+        white-space: nowrap;
+    }
+    .fatfooter {
+        overflow: visible;
+    }
 }
 
 
-    #body {
-        fill: rgb(247, 198, 6);
-        transition: opacity 0.5s ease-in-out;
-    }
-        #bodyFill {
-            // adds layered bg to the body to ensure color is retained
-            fill: #fff;
-            opacity: 0.5;
-        }
-        #bodyBg {
-            // adds blue bg to part of schematic which pops above the footer
-            fill: #354550;
-            // adds sticker effect border
-            stroke: #fff;
-            stroke-width: 20px;
-        }
-    #electrics #right-taillight > path,
-    #electrics #left-taillight > path {
-        fill: rgb(190,72,6);
-    }
-    #electrics #right-taillight > path + path,
-    #electrics #left-taillight > path + path {
-        fill: rgb(162,66,12);
-    }
 
-    #bodywork-and-exterior *[stroke] {
-        opacity: 0.6;
-        stroke: rgba(0,0,0,0.5)
-    }
-    #bodywork-and-exterior ~ g *[stroke] {
-        opacity: 0.2;
-    }
-
-    #bodywork-and-exterior:hover {
-        z-index: 100;
-    }
-    #bodywork-and-exterior:hover ~ #interior {
-        z-index: 99;
-    }
-
-    #blueprint  > g,
-    #blueprint  > g *[stroke] {
-        opacity: 0.5;
-        stroke-width: 3px;
-        @include transition(opacity, 0.75s, ease);
-    }
-    #blueprint  > g.active.fade {
-        opacity: 0.2!important;
-    }
-    #schematic > g.inactive,
-    #schematic > g.inactive *[stroke] {
-        opacity: 0.2;
-    }
-
-    #blueprint  > g.active,
-    #blueprint  > g.active *,
-    #blueprint  > g.active.fade.hover,
-    #blueprint  > g.active.fade.hover *,
-    #blueprint  > g.hover,
-    #blueprint  > g.hover *,
-    #blueprint  > g:hover,
-    #blueprint  > g:hover * {
-        opacity: 1!important;
-    }
-
-    #schematic > g.active *[stroke] {
-        opacity: 1;
-    }
-    g.active path,
-    g.active rect,
-    g:hover path,
-    g:hover rect {
-        fill: var(--textOnDark);
-        cursor: pointer;
-    }
-    g.active [fill="none"],
-    g:hover [fill="none"] {
-        fill: none;
-    }
-    g.active path.solid,
-    g:hover path.solid {
-        fill: inherit;
-    }
-
-
-    g.active path.flow,
-    g:hover path.flow{
-        stroke:var(--textOnDark);
-        fill: none;
-        stroke-width:4;
-        stroke-dasharray:12, 12;
-        @include animation-duration(2s);
-        @include animation-name(flow);
-        @include animation-timing-function(linear);
-        @include animation-iteration-count(infinite);
-    }
-    g.active path.flow.rev,
-    g:hover path.flow.rev {
-        @include animation-direction(reverse);
-    }
-
-    @keyframes flow {
-        from {stroke-dashoffset: 96;}
-        to   {stroke-dashoffset: 0;}
-    }
+.theme--dark #blueprint > #night {
+    display: block;
+    animation-delay: 2s;
+    @include animation-duration(0.5s);
+    @include animation-name(lightitup);
+    @include animation-timing-function(linear);
+    @include animation-iteration-count(1);
+    animation-fill-mode: forwards;
+}
+@keyframes lightitup {
+    0% {opacity: 0;}
+    10% {opacity: 0.25;}
+    to   {opacity: 1;}
+}

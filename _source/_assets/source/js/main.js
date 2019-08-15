@@ -7,9 +7,7 @@ import lazyLoadThumbnails from "./app/lazyLoadThumbnails"
 
 window.addEventListener('DOMContentLoaded', () => {
   //  const moment = new Moments()
-    if(document.querySelector('#schematic')){
-        const schematic = new Schematic({el: '#schematic', nav: '.archive-map'});
-    }
+
 
     if(document.querySelector('.moment__thumb')){
         lazyLoadThumbnails('moment__thumb');
@@ -18,3 +16,24 @@ window.addEventListener('DOMContentLoaded', () => {
         lazyLoadThumbnails('hero__image');
     }
 }); // eslint-disable-line no-unused-vars, max-len
+
+
+
+window.onload=function() {
+    if(document.querySelector('#schematic__host')){
+        function runSchematic(entries, observer){
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    var schematic = new Schematic({el: el, nav: '.archive-map'});
+                    observer.unobserve(entry.target)
+                }
+            })
+        }
+        var el = document.querySelector('#schematic__host');
+        var observer = new IntersectionObserver(runSchematic, {
+            rootMargin: '0px',
+            threshold: 0
+        })
+        observer.observe(el);
+    }
+}

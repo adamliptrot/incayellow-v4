@@ -24,7 +24,7 @@ gulp.task('js', function (done) {
 });
 
 gulp.task('sass', function (done) {
-    gulp.src('_source/_assets/source/css/main.scss')
+    gulp.src('_source/_assets/source/css/*.scss')
     .pipe(sass({
         outputStyle: 'compressed'
     }).on('error', sass.logError))

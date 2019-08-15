@@ -1,0 +1,154 @@
+@import 'partials/mixins';
+@import 'partials/vars';
+@import 'partials/dark-mode';
+
+
+// path {
+//     stroke-width: 6px!important;
+// }
+
+#schematic > g.inactive,
+#schematic > g.inactive [stroke] {
+    opacity: 0.8;
+}
+
+
+
+    #body-wrap {
+        fill: var(--background);
+    }
+    #body {
+        fill: rgb(247, 198, 6);
+        transition: opacity 0.5s ease-in-out;
+    }
+        #bodyFill {
+            // adds layered bg to the body to ensure color is retained
+            fill: #fff;
+            opacity: 0.5;
+        }
+        #bodyBg {
+            // adds blue bg to part of schematic which pops above the footer
+            fill: #354550;
+            // adds sticker effect border
+            stroke: #fff;
+            stroke-width: 20px;
+        }
+
+    #electrics #right-taillight > path,
+    #electrics #left-taillight > path {
+        fill: rgb(190,72,6);
+    }
+    #electrics #right-taillight > path + path,
+    #electrics #left-taillight > path + path {
+        fill: rgb(162,66,12);
+    }
+
+    #bodywork-and-exterior *[stroke] {
+        opacity: 0.6;
+        stroke: rgba(0,0,0,0.5)
+    }
+    #bodywork-and-exterior ~ g *[stroke] {
+        opacity: 0.2;
+    }
+
+    #bodywork-and-exterior:hover {
+        z-index: 100;
+    }
+    #bodywork-and-exterior:hover ~ #interior {
+        z-index: 99;
+    }
+
+    #blueprint  > g,
+    #blueprint  > g *[stroke] {
+        opacity: 0.5;
+        stroke-width: 3px;
+        transition: opacity 0.75s ease, fill 0.75s ease;
+    }
+
+    #schematic > g.inactive,
+    #schematic > g.inactive *[stroke] {
+        opacity: 0.2;
+    }
+
+    #blueprint  > g.active,
+    #blueprint  > g.active *,
+    #blueprint  > g.active.fade.hover,
+    #blueprint  > g.active.fade.hover *,
+    #blueprint  > g.hover,
+    #blueprint  > g.hover *,
+    #blueprint  > g:hover,
+    #blueprint  > g:hover * {
+        opacity: 1!important;
+    }
+    #blueprint  > g.fade {
+        opacity: 0.75!important;
+    }
+
+    #schematic > g.active *[stroke] {
+        opacity: 1;
+    }
+    g.active path,
+    g.active rect,
+    g:hover path,
+    g:hover rect {
+        fill: var(--textOnDark);
+        cursor: pointer;
+    }
+    g.active [fill="none"],
+    g:hover [fill="none"] {
+        fill: none;
+    }
+    g.active path.solid,
+    g:hover path.solid {
+        fill: inherit;
+    }
+
+    #blueprint > g.layer-notrans {
+        transition: none;
+    }
+    #blueprint > g.layer-show {
+        opacity: 0.75;
+    }
+    #blueprint > g.layer-hide {
+        opacity: 0;
+    }
+
+    #blueprint > #night {
+        display: none;
+        opacity: 0;
+        z-index: 101;
+    }
+    .theme--dark #blueprint > #night {
+        display: block;
+        animation-delay: 2s;
+        @include animation-duration(0.5s);
+        @include animation-name(lightitup);
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(1);
+        animation-fill-mode: forwards;
+    }
+    @keyframes lightitup {
+        0% {opacity: 0;}
+        10% {opacity: 0.25;}
+        to   {opacity: 1;}
+    }
+
+
+    #blueprint > g.active path.flow {
+        stroke:var(--textOnDark);
+        fill: none;
+        stroke-width:4;
+        stroke-dasharray:12, 12;
+        @include animation-duration(2s);
+        @include animation-name(flow);
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(infinite);
+    }
+    #blueprint > g.active path.flow.rev  {
+        @include animation-direction(reverse);
+    }
+
+    @keyframes flow {
+        from {stroke-dashoffset: 96;}
+        to   {stroke-dashoffset: 0;}
+    }

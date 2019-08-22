@@ -6,8 +6,6 @@ class Schematic {
         this.arrayComponents = [];
         this.nav = options.nav;
 
-
-
         //set opacity etc ready for fade in
        this.reset(this.animate);
        this.assignEvents();
@@ -21,13 +19,11 @@ class Schematic {
     }
     findPageTags(){
         var _this = this;
-        let pageTags = document.querySelector('body').getAttribute('data-tags')
+        let pageTags = document.querySelectorAll('.tags__tag');
         if(!pageTags) return;
-        pageTags = pageTags.split(",")
         pageTags.forEach(function(tag){
             if(tag){
-                tag = tag.split(" ").join("-")
-                //console.log(tag)
+                tag = tag.innerText.split(" ").join("-")
                 _this.activeTag(tag)
             }
         })
@@ -91,13 +87,19 @@ class Schematic {
     }
     reset(callback){
         var _this = this;
-        //_this.el.querySelector('g path').style.fill = "transparent";
-        //_this.el.classList.remove('layer-notrans');
-        //_this.el.classList.remove('layer-hide');
-        // hide the body
-//		[].slice.call(_this.el.querySelectorAll('#bodywork-and-exterior path')).forEach(function(el,i){
-//			el.style.stroke = "none";
-//		});
+        // reset nav
+        [].slice.call(queryAll(_this.nav + ' a')).forEach(function(n, i){
+            n.classList.remove('active');
+            n.classList.add('inactive');
+        });
+
+        // reset active components
+        var activeComp = _this.el.querySelectorAll('#blueprint > g.active');
+        if(activeComp.length > 0){
+            activeComp.forEach(function(c){
+                c.setAttribute('class','inactive');
+            });
+        }
         // line-draw each path
 		[].slice.call(_this.el.querySelectorAll('#blueprint > g')).forEach(function(el,i){
             // el.classList.add('layer-notrans');
@@ -227,7 +229,7 @@ class Schematic {
                 c.classList.remove('fade');
 			});
 		} else {
-			_this.el.querySelector('#blueprint > g.active').setAttribute('class','active');
+			_this.el.querySelector('#blueprint > g.active').setAttribute('class','inactive');
 		}
     }
     assignEvents(){
@@ -271,4 +273,29 @@ class Schematic {
     }
 }
 
-export { Schematic as default };
+var schematicEl = document.querySelector('#schematic__host');
+const initialiseSchematic = function(){
+    if(schematicEl){
+        function runSchematic(entries, observer){
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    var schematic = new Schematic({el: schematicEl, nav: '.archive-map'});
+                    observer.unobserve(entry.target)
+                }
+            })
+        }
+
+        var observer = new IntersectionObserver(runSchematic, {
+            rootMargin: '0px',
+            threshold: 0
+        })
+        observer.observe(schematicEl);
+    }
+}
+const reInitialiseSchematic = function(){
+    if(schematicEl){
+        var schematic = new Schematic({el: schematicEl, nav: '.archive-map'});
+    }
+}
+
+export { initialiseSchematic, reInitialiseSchematic };

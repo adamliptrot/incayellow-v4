@@ -18,14 +18,14 @@ article {
     article p {
         text-indent: 2rem;
     }
-    article .inner > p:first-of-type {
+    article .content > p:first-of-type {
         font-size: 140%;
         text-indent: 0;
         line-height: 1.4em;
         font-weight: 250;
         font-variation-settings: "wght" 275;
     }
-    article .inner > p:first-of-type:first-letter {
+    article .content > p:first-of-type:first-letter {
         font-size: 1.4em;
     }
 

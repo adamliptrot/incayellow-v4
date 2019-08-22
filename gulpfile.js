@@ -18,7 +18,7 @@ gulp.task('js', function (done) {
         .pipe(source('app.js')) // Converts To Vinyl Stream
         .pipe(buffer()) // Converts Vinyl Stream To Vinyl Buffer
         // Gulp Plugins Here!
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('_source/assets/js'))
         done();
 });

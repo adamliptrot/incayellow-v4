@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-
+const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate } = require("./_source/_assets/source/js/app/filters");
 
 module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginRss);
@@ -23,6 +23,18 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
+    eleventyConfig.addNunjucksFilter("heroTemplate", function(images){
+        return heroTemplate(images);
+    })
+
+    eleventyConfig.addNunjucksFilter("imageList", function(images){
+        return imageList(images);
+    })
+
+    eleventyConfig.addNunjucksFilter("tagTemplate", function(tags){
+        return tagTemplate(tags);
+    })
+
     eleventyConfig.addNunjucksFilter("sortAZ", function(arr) {
         return arr.sort(function (a, b) {
             if (a < b) return -1;
@@ -37,25 +49,13 @@ module.exports = (eleventyConfig) => {
         })
     });
 
-    function allMonthNames(format){
-        var monthNames;
-        if(format == 'long'){
-            monthNames = ["January", "February", "March","April", "May", "June", "July","August", "September", "October","November", "December"];
-        }else{
-            monthNames = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul","Aug", "Sept", "Oct","Nov", "Dec"];
-        }
-        return monthNames;
-    }
+
 
     function escapeRegExp(str) {
         return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
     }
 
-    function parseDate(stringDate){
-        var theDate = new Date(stringDate);
-        var theDateFormatted = theDate.getDate() + " " + allMonthNames('short')[theDate.getMonth()] + " " + theDate.getFullYear();
-        return theDateFormatted;
-    }
+
 
     function getTheMonth(date) {
         var month = date.getMonth() + 1;

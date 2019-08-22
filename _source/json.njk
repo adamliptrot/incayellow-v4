@@ -1,0 +1,36 @@
+---
+pagination:
+    data: collections.posts
+    size: 1
+    alias: post
+permalink: /posts/{{ post.data.slug }}/index.json
+---
+{% set currentItemIndex = 0 %}
+{% for item in collections.posts  %}{% if item.url == post.url %}{% set currentItemIndex = loop.index0 %}{% endif %}{% endfor %}
+{% set nextItemIndex = currentItemIndex - 1  %}
+{% if nextItemIndex >= 0 %}
+    {% set nextItem = collections.posts[nextItemIndex] %}
+{% endif %}
+
+{% set prevItemIndex = currentItemIndex + 1  %}
+{% if prevItemIndex < collections.posts.length %}
+    {% set prevItem = collections.posts[prevItemIndex] %}
+{% endif %}
+
+{{ {
+    title: post.data.title,
+    slug: post.data.slug,
+    date: post.data.date,
+    archives: post.data.archives,
+    tags: post.data.tags,
+    images: post.data.images,
+    prevPost: {
+        title: nextItem.data.title,
+        url: nextItem.url
+    },
+    nextPost: {
+        title: prevItem.data.title,
+        url: prevItem.url
+    },
+    content: post.templateContent
+} | dump | safe }}

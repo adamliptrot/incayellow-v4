@@ -9,7 +9,7 @@
 }
 @media screen and (min-width: 1000px) {
     .fatfooter {
-        margin-top: 30rem;
+        top: 30rem;
     }
 }
 .fatfooter a {
@@ -46,34 +46,66 @@
     }
     @media screen and (min-width: 1200px) {
         .backstory {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+
             display: grid;
             grid-gap: 4rem;
             grid-template-columns: 2fr 1fr 1fr;
 
         }
         .backstory h2 {
+            flex: 1 100%;
+            order: 1;
+
             grid-column: 2 / -1;
             grid-row: 1;
             align-self: end;
+
         }
         .backstory__photo {
+            flex: 1 0 0;
+            order: 3;
+
             grid-row: 1;
             grid-column: 1;
             position: relative;
+            text-align: center;
         }
+
         .backstory__photo img {
-            position: absolute;
-            top: -80px;
-            left: -30px;
             transform: rotate(5deg);
+            width: 80%;
+            text-align: center;
         }
+        @supports(display:grid){
+            .backstory__photo img {
+                width: 100%;
+                position: absolute;
+                top: -80px;
+                left: -30px;
+
+            }
+        }
+
+
         .backstory__one {
+            flex: 1 0 0;
+            order: 1;
+
             grid-row: 2;
             grid-column: 2;
+
         }
+
         .backstory__two {
+            flex: 1 0 0;
+            order: 3;
+
             grid-row: 2;
             grid-column: 3;
+
         }
 
     }

@@ -8,9 +8,8 @@ export default function loadPages() {
     const contentThreshold = 1000;
 
     window.addEventListener('popstate', function(event) {
-        console.log('pop', window.location.pathname);
         loadContent(window.location.pathname);
-      });
+    });
 
 
     hookLinks();

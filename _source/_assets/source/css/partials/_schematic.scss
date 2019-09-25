@@ -1,5 +1,8 @@
 
 .archive-map {
+    flex: 1 0 30%;
+    order: 1;
+
     text-align: right;
     grid-column: 1 / 2;
     grid-row: 1;
@@ -73,23 +76,28 @@
     background-color: var(--textOnDark);
 }
 
-.schematic__blueprint {
-    z-index: 1;
-    grid-column: 2 / -1;
-    align-self: center;
-    justify-self: start;
-}
 .schematic {
     padding: 6rem 0;
     display: flex;
     width: 100%;
 }
+.schematic__blueprint {
+    flex: 1 0 0;
+    order: 2;
+
+    z-index: 1;
+    grid-column: 2 / -1;
+    align-self: center;
+    justify-self: start;
+}
+
 #schematic__host {
     transform: rotate(90deg);
     transition: transform 1s ease;
     height: 28rem;
-    transform-origin: calc(50% + 60px) 0;
-    top: 50%;
+    left: -10rem;
+    //transform-origin: calc(50% + 60px) 0;
+    //top: 50%;
     position: relative;
 }
 @supports (display: grid) {
@@ -118,7 +126,9 @@
     #schematic__host {
         transform: rotate(61deg);
         height: 50rem;
-        top: 0;
+        //top: 0;
+        transform-origin: calc(50% + 60px) 0;
+        //top: 50%;
         left: 12%;
     }
     .archive-map__item {

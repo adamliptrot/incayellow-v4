@@ -3,6 +3,16 @@ article {
     font-weight: 300;
     font-variation-settings: "wght" 350;
 }
+article:before,
+article:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+article:after {
+    clear: both;
+}
+
     article .head {
         margin-bottom: 2em;
     }

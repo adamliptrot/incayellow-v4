@@ -48,6 +48,7 @@
         .backstory {
             display: flex;
             flex-wrap: wrap;
+            flex-direction: row;
             width: 100%;
 
             display: grid;
@@ -65,7 +66,7 @@
 
         }
         .backstory__photo {
-            flex: 1 0 0px;
+            flex: 1 0 33%;
             order: 3;
 
             grid-row: 1;
@@ -91,7 +92,7 @@
 
 
         .backstory__one {
-            flex: 1 0 0px;
+            flex: 1 0 33%;
             order: 1;
 
             grid-row: 2;
@@ -100,7 +101,7 @@
         }
 
         .backstory__two {
-            flex: 1 0 0px;
+            flex: 1 0 33%;
             order: 3;
 
             grid-row: 2;

@@ -94,6 +94,7 @@ article:after {
             background: var(--background);
             // transition: all 0.5s ease-in-out;
             padding: 4rem 4rem 0 4rem;
+            position: relative;
             z-index: 2;
         }
     }

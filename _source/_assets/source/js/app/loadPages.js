@@ -35,10 +35,28 @@ export default function loadPages() {
                 // date
                 query('.head time').innerHTML = parseDate(data.date);
                 // prev / next links
-                query('[rel="Previous"]').setAttribute('href',data.prevPost.url);
-                query('[rel="Previous"] .further-reading__title').innerHTML = data.prevPost.title;
-                query('[rel="Next"]').setAttribute('href',data.nextPost.url);
-                query('[rel="Next"] .further-reading__title').innerHTML = data.nextPost.title;
+                if(data.prevPost.title != undefined){
+                    if(query('[rel="Previous"]')){
+                        query('[rel="Previous"]').setAttribute('href',data.prevPost.url);
+                        query('[rel="Previous"] .further-reading__title').innerHTML = data.prevPost.title;
+                    } else {
+                        // add previous link
+                        query('.further-reading--post ul').insertAdjacentHTML('afterbegin', '<li class="further-reading__prev"><a title="read previous post" href="' + data.prevPost.url + '" rel="Previous"><span aria-hidden="true">&larr;&nbsp;</span><span class="further-reading__title">' + data.prevPost.title + '</span></a></li>')
+                    }
+                } else {
+                    query('.further-reading__prev').remove();
+                }
+                if(data.nextPost.title != undefined){
+                    if(query('[rel="Next"]')){
+                        query('[rel="Next"]').setAttribute('href',data.nextPost.url);
+                        query('[rel="Next"] .further-reading__title').innerHTML = data.nextPost.title;
+                    } else {
+                        // add next link
+                        query('.further-reading--post ul').insertAdjacentHTML('beforeend', '<li class="further-reading__next"><a title="read next post" href="' + data.nextPost.url + '" rel="Next"><span class="further-reading__title">' + data.nextPost.title + '</span><span aria-hidden="true">&nbsp;&rarr;</span></a></li>')
+                    }
+                } else {
+                    query('.further-reading__next').remove();
+                }
                 // main image
                 query('.hero__imagewrap').innerHTML = heroTemplate(data.images);
                 // other images

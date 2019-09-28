@@ -23,6 +23,11 @@
     min-height: 50vh;
     margin: 0 2rem;
 }
+/* WinIE only \*/
+.latest__post {
+    height:1px;
+}
+/* end hack */
     .latest__post:first-child {
         margin-left: 0;
     }

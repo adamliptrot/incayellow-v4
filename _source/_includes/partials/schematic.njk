@@ -4,10 +4,10 @@
     </div>
     <nav class="archive-map" aria-label="Categories">
         <ul role="list">
-            <li><a class="archive-map__item" href="/archives">all</a></li>
+            <li><a class="archive-map__item" href="/archives"><span aria-hidden="true">all</span><span class="hide">see all posts</span></a></li>
 
         {% for tagItem in collections.tagList | sortAZ %}
-            <li><a data-system="{{ tagItem | slug }}" class="archive-map__item inactive " href="/archives/{{ tagItem | slug }}">{{ tagItem }}</a></li>
+            <li><a data-system="{{ tagItem | slug }}" class="archive-map__item inactive " href="/archives/{{ tagItem | slug }}"><span aria-hidden="true">{{ tagItem }}</span><span class="hide">see all {{ tagItem }} posts</span></a></li>
         {% endfor %}
 
 

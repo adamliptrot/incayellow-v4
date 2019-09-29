@@ -65,7 +65,12 @@ export default function loadPages() {
                 // tags
                 query('.tags ul').innerHTML = tagTemplate(data.tags)
                 // reset scroll position
-                window.scrollTo(0, 0); // need to manage focus
+                window.scrollTo(0, 0);
+                // need to manage focus
+                document.querySelectorAll('h1')[0].setAttribute('tabindex',"-1");
+                setTimeout(function(){
+                    document.querySelectorAll('h1')[0].focus();
+                }, 500)
                 // reattach event listeners
                 hookLinks();
                 // schematic

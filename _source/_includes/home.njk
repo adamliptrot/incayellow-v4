@@ -14,14 +14,14 @@
         <ul class="latest__posts" role="list">
         {% for item in collections.latestPosts %}
             {% set imgSize = "d" %}
-            {% if loop.index0 == 1 %}
+            {% if loop.index0 == 0 %}
                 {% set imgSize = "c" %}
             {% endif %}
-            <li class="moment latest__post latest__post--{{loop.index0}}">
+            <li class="latest__post latest__post--{{loop.index0}}">
 
                 <style>
                     .latest__post--{{loop.index0}} a {
-                        background-image: url(https://farm9.static.flickr.com/{{ item.data.images[0].server }}/{{ item.data.images[0].id }}_{{ item.data.images[0].secret }}_d.jpg);
+                        background-image: url(https://farm9.static.flickr.com/{{ item.data.images[0].server }}/{{ item.data.images[0].id }}_{{ item.data.images[0].secret }}_{{ imgSize }}.jpg);
                     }
                 </style>
                 <a href="{{ item.url }}">

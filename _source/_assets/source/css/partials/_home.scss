@@ -62,6 +62,13 @@
     z-index: 4;
     position: relative;
 }
+.latest__post a:focus {
+    outline: none;
+}
+.latest__post a:hover .latest__post-title,
+.latest__post a:focus .latest__post-title {
+    background: var(--incayellow);
+}
 .latest__post:first-child .latest__post-title {
     font-size: 3.6rem;
 }

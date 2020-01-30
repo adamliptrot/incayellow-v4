@@ -73,6 +73,10 @@
         background: rgba(0,0,0,0.8);
         font-size: 1.4rem;
     }
+    .further-reading a:focus {
+        color: var(--focusFg);
+        background-color: var(--focusBg);
+    }
 
 @media screen and (min-width: 800px){
     .further-reading--post {

@@ -7,6 +7,9 @@
       --text: #f0f2f3;
       --footerBg: #15232D;
       --lineHeight: 1.8;
+
+      --focusBg: #fff;
+      --focusFg: #333;
    }
    article {
       word-spacing: .05em;
@@ -24,6 +27,8 @@
    --text: #f0f2f3;
    --footerBg: #15232D;
    --lineHeight: 1.8;
+   --focusBg: #fff;
+   --focusFg: #333;
 }
 .theme--dark article {
    word-spacing: .05em;
@@ -83,9 +88,21 @@
    transform: translate(-1.1em, 0);
    transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
 }
+.toggle__checkbox:focus ~ .toggle__track .toggle__slider {
+   background-color: var(--incayellow)
+}
+.toggle__checkbox:focus ~ .toggle__track{
+   background-color: var(--focusBg)
+}
 .toggle--on .toggle__track {
    background-color: var(--incayellow);
 }
 .toggle--on .toggle__slider {
    transform: translate(0, 0);
+}
+.toggle--on .toggle__checkbox:focus ~ .toggle__track .toggle__slider {
+   background-color: var(--focusFg)
+}
+.toggle--on .toggle__checkbox:focus ~ .toggle__track{
+   background-color: var(--focusBg)
 }

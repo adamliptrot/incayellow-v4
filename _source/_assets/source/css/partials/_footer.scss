@@ -39,6 +39,10 @@
     .backstory p:first-child {
         margin-top: 0;
     }
+    .backstory a:focus {
+        color: var(--textOnLight);
+        background-color: var(--incayellow);
+    }
 
     .backstory__photo img {
         width: 100%;

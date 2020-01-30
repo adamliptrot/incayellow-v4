@@ -91,11 +91,16 @@ a {
 }
 .intro a,
 article p a {
-    background: var(--incayellow);
     color: var(--textOnLight);
     padding: 0 0.15em;
 }
-
+.intro a:focus,
+.intro a:hover,
+article p a:focus,
+article p a:hover {
+    background: var(--incayellow);
+    outline: none;
+}
 
 .wrap {
     max-width: 2000px;

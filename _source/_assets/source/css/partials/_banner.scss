@@ -54,6 +54,22 @@
     #logo__box {
         fill: var(--incayellow)
     }
+    .banner__ident:focus,
+    .banner__ident:hover {
+        outline: none;
+    }
+    .banner__ident:focus #logo__inca,
+    .banner__ident:hover #logo__inca {
+        fill: var(--focusBg);
+    }
+    .banner__ident:focus #logo__yellow,
+    .banner__ident:hover #logo__yellow {
+        fill: var(--focusFg);
+    }
+    .banner__ident:focus #logo__box,
+    .banner__ident:hover #logo__box {
+        fill: var(--focusBg);
+    }
     .primary-nav {
         padding: 2rem 0;
     }
@@ -67,15 +83,10 @@
             padding: 0.5rem 1rem;
             color: var(--text);
             text-decoration: none;
-        }
-        .primary-nav [aria‐current="page"] {
-            background-color: var(--incayellow);
-            color: var(--textOnLight);
             position: relative;
-            padding: 0.5rem 0;
             margin: 0 1rem;
         }
-        .primary-nav [aria‐current="page"]:before {
+        .primary-nav a:before {
             content: "";
             display: block;
             position: absolute;
@@ -83,9 +94,25 @@
             left: -10%;
             width: 120%;
             height: 100%;
-            background: var(--incayellow);
+            background: transparent;
             z-index: -1;
             transform: skewX(-14deg);
+        }
+        .primary-nav [aria‐current="page"] {
+            background-color: var(--incayellow);
+            color: var(--textOnLight);
+            padding: 0.5rem 0;
+        }
+        .primary-nav [aria‐current="page"]:before {
+            background: var(--incayellow);
+        }
+        .primary-nav.primary-nav a:focus {
+            color: var(--focusFg);
+            background: var(--focusBg);
+            outline: none;
+        }
+        .primary-nav.primary-nav a:focus:before {
+            background: var(--focusBg);
         }
         @media screen and (min-width: 600px) {
             [role="banner"] {

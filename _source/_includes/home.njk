@@ -13,6 +13,10 @@
         <h2 class="hide">Latest posts</h2>
         <ul class="latest__posts" role="list">
         {% for item in collections.latestPosts %}
+            {% set imgSize = "d" %}
+            {% if loop.index0 == 1 %}
+                {% set imgSize = "c" %}
+            {% endif %}
             <li class="moment latest__post latest__post--{{loop.index0}}">
 
                 <style>

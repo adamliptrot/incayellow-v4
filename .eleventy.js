@@ -17,7 +17,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addCollection("latestPosts", (collection) => {
         return collection.getFilteredByGlob("_source/posts/**/*.md").sort((a, b) => {
             return a.date - b.date;
-        }).reverse().slice(0,4);
+        }).reverse().slice(0,5);
     });
 
 

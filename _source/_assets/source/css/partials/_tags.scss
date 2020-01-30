@@ -35,6 +35,11 @@
     position: relative;
     font-size: 70%;
 }
+.tags a:focus {
+    color: var(--focusFg);
+    background-color: var(--focusBg);
+    outline: none;
+}
 @media screen and (min-width: 500px){
     .tags li {
         margin: 0 2em 1em 0;
@@ -50,5 +55,8 @@
         background: var(--incayellow);
         z-index: -1;
         transform: skewX(-14deg);
+    }
+    .tags a:focus:before {
+        background-color: var(--focusBg);
     }
 }

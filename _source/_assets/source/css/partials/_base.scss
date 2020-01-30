@@ -91,7 +91,7 @@ a {
 }
 .intro a,
 article p a {
-    color: var(--textOnLight);
+    color: var(--text);
     padding: 0 0.15em;
 }
 .intro a:focus,
@@ -99,6 +99,7 @@ article p a {
 article p a:focus,
 article p a:hover {
     background: var(--incayellow);
+    color: var(--constDarkText);
     outline: none;
 }
 

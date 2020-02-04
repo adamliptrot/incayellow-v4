@@ -48,7 +48,7 @@
                 {% if nextItemIndex >= 0 %}
                     {% set nextItem = collections.posts[nextItemIndex] %}
                     <li class="further-reading__prev">
-                        <a title="read previous post" href="{{ nextItem.url  }}" rel="Previous"><span aria-hidden="true">&larr;&nbsp;</span><span class="further-reading__title">{{ nextItem.data.title }}</span></a>
+                        <a href="{{ nextItem.url  }}" rel="Previous"><span aria-hidden="true">&larr;&nbsp;</span><span class="further-reading__title">{{ nextItem.data.title }}</span></a>
                     </li>
                 {% endif %}
 
@@ -56,7 +56,7 @@
                 {% if prevItemIndex < collections.posts.length %}
                     {% set prevItem = collections.posts[prevItemIndex] %}
                     <li class="further-reading__next">
-                        <a title="read next post" href="{{ prevItem.url  }}" rel="Next"><span class="further-reading__title">{{ prevItem.data.title }}</span><span aria-hidden="true">&nbsp;&rarr;</span></a>
+                        <a href="{{ prevItem.url  }}" rel="Next"><span class="further-reading__title">{{ prevItem.data.title }}</span><span aria-hidden="true">&nbsp;&rarr;</span></a>
                     </li>
                 {% endif %}
                 </ul>

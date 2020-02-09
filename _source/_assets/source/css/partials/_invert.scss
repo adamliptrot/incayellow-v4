@@ -1,0 +1,14 @@
+@media (inverted-colors: inverted) {
+    // un-invert images
+    img {
+        filter: invert(1);
+    }
+    // un-invert background images on homepage
+    .latest__post a {
+        filter: invert(1);
+    }
+    // and flip the contained text back to inverted
+    .latest__post a span {
+        filter: invert(1);
+    }
+}

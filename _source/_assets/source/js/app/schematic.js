@@ -10,6 +10,7 @@ class Schematic {
        this.reset(this.animate);
        this.assignEvents();
         this.findPageTags();
+        this.findArchiveTags();
 
         // set initial dark mode
         if(document.querySelector('body').classList.contains('theme--dark')){
@@ -27,6 +28,17 @@ class Schematic {
                 _this.activeTag(tag)
             }
         })
+    }
+
+    findArchiveTags(){
+        var _this = this;
+        let archiveTag = document.querySelector('body').getAttribute("data-tags");
+        console.log(archiveTag)
+        if(!archiveTag) return;
+        if(archiveTag){
+            archiveTag = archiveTag.split(" ").join("-")
+            _this.activeTag(archiveTag)
+        }
     }
 
     activeTag(tagName){

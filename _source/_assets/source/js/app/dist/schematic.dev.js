@@ -54,7 +54,6 @@ function () {
       var _this = this;
 
       var archiveTag = document.querySelector('body').getAttribute("data-tags");
-      console.log(archiveTag);
       if (!archiveTag) return;
 
       if (archiveTag) {

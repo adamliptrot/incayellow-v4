@@ -33,7 +33,6 @@ class Schematic {
     findArchiveTags(){
         var _this = this;
         let archiveTag = document.querySelector('body').getAttribute("data-tags");
-        console.log(archiveTag)
         if(!archiveTag) return;
         if(archiveTag){
             archiveTag = archiveTag.split(" ").join("-")

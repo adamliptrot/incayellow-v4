@@ -35,7 +35,7 @@
             <div class="hero">
                 <div class="hero__outer">
                     <div class="hero__imagewrap">
-                        {{ images | heroTemplate | safe }}
+                        {{ images | heroTemplate(content.length > threshold) | safe }}
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ exports.tagTemplate = function(tags){
     return ret;
 }
 
-exports.heroTemplate = function(images){
+exports.heroTemplate = function(images, thresholdExceeded){
     var ret = "";
     if ((images[0].media) && (images[0].media == "video")){
         ret = `<video src="https://live.staticflickr.com/video/${ images[0].id }/${images[0].secret }/appletv.mp4" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
@@ -32,7 +32,7 @@ exports.heroTemplate = function(images){
                 https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_z.jpg 640w,
                 https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_c.jpg 800w,
                 https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_b.jpg 1024w"
-                sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"
+                ${ thresholdExceeded? 'sizes="(max-width: 2000px) 100%"' : 'sizes="(max-width: 999px) 100%, (max-width: 1999px) 33vw"' }
                 data-orient="landscape" src="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_b.jpg" alt="" />
             `
     }

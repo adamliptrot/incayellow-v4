@@ -55,5 +55,5 @@ gulp.task('watch', function () {
   gulp.watch('_source/_includes/**/*', gulp.series('default'));
   gulp.watch('_source/posts/**/*', gulp.series('default'));
 });
-gulp.task('default', gulp.series('js', 'lib', 'sass', 'images', 'videos', 'fonts', 'eleventy', 'clean:postbuild'));
+gulp.task('default', gulp.series('js', 'lib', 'sass', 'images', 'fonts', 'eleventy', 'clean:postbuild'));
 gulp.task('build', gulp.series('default', 'watch'));

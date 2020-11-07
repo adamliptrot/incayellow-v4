@@ -23,7 +23,11 @@ exports.tagTemplate = function(tags){
 exports.heroTemplate = function(images, thresholdExceeded){
     var ret = "";
     if ((images[0].media) && (images[0].media == "video")){
-        ret = `<video src="https://live.staticflickr.com/video/${ images[0].id }/${images[0].secret }/appletv.mp4" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
+        //ret = `<video src="https://live.staticflickr.com/video/${ images[0].id }/${images[0].secret }/appletv.mp4" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
+        //ret = `<video src="/assets/videos/${images[0].url}" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
+        ret = `
+        <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/${ images[0].url }?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+            `
     } else {
         ret = `
             <img aria-hidden="true" class="placeholder" src="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_m.jpg" alt="" />
@@ -41,7 +45,6 @@ exports.heroTemplate = function(images, thresholdExceeded){
 
 exports.imageList = function(images, thresholdExceeded){
     var ret = "";
-
     images.forEach(function(image, currentItemIndex){
         var videoImage = ""
         if(image.media == "video"){

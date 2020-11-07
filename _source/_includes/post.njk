@@ -1,11 +1,8 @@
 {% include "partials/header.njk" %}
 {% set bodyClass = "post" %}
 {% set threshold = 1000 %}
-{% if content.length < threshold %}
+{% if content.length < threshold and ((images[0].media) and (images[0].media != "video")) %}
     {% set bodyClass = "post shortcopy" %}
-{% endif %}
-{% if (images[0].media) and (images[0].media == "video") %}
-    {% set bodyClass = "post" %}
 {% endif %}
 <body class="{{ bodyClass }}">
     {% include "partials/menu.njk" %}

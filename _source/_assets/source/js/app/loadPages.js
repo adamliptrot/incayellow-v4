@@ -23,7 +23,7 @@ export default function loadPages() {
             .then(data => {
                 // body class
                 query('body').classList.remove('shortcopy');
-                if(data.content.length < contentThreshold){
+                if(data.content.length < contentThreshold && ((data.images[0].media) && (data.images[0].media != "video"))){
                     query('body').classList.add('shortcopy');
                 }
                 // page title

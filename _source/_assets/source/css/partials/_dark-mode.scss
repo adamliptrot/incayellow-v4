@@ -48,19 +48,23 @@
    }
 }
 .toggle {
-   row-gap: 0.5rem;
+
    margin-left: 2rem;
    margin-right: 1rem;
 }
+.toggle label {
+   display: table;
+}
 .toggle__copy {
    text-transform: uppercase;
-   font-size: 0.9rem;
+   font-size: 1.1rem;
    order: 1;
    display: table-footer-group; // grid fallback
 }
 @supports (display: grid) {
-   .toggle {
+   .toggle label {
       display: grid; // unset
+      grid-gap: 0.4rem;
    }
    .toggle__copy {
       display: inline; // unset
@@ -74,7 +78,7 @@
    border-radius: 0.7em;
    background-color: var(--background);
    position: relative;
-   transition: background-color 0.4s ease-in-out;
+   transition: background-color 0.2s ease-in-out;
    border: 2px solid var(--footerBg);
 }
 .toggle__slider {
@@ -88,10 +92,10 @@
    transform: translate(-1.1em, 0);
    transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
 }
-.toggle__checkbox:focus ~ .toggle__track .toggle__slider {
+.toggle__checkbox:focus ~ label .toggle__track .toggle__slider {
    background-color: var(--incayellow)
 }
-.toggle__checkbox:focus ~ .toggle__track{
+.toggle__checkbox:focus ~ label .toggle__track{
    background-color: var(--focusBg)
 }
 .toggle--on .toggle__track {
@@ -100,9 +104,9 @@
 .toggle--on .toggle__slider {
    transform: translate(0, 0);
 }
-.toggle--on .toggle__checkbox:focus ~ .toggle__track .toggle__slider {
+.toggle--on .toggle__checkbox:focus ~ label .toggle__track .toggle__slider {
    background-color: var(--focusFg)
 }
-.toggle--on .toggle__checkbox:focus ~ .toggle__track{
+.toggle--on .toggle__checkbox:focus ~ label .toggle__track{
    background-color: var(--focusBg)
 }

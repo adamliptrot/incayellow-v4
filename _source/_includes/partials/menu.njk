@@ -18,6 +18,7 @@
                 <li><a href="/archives/"{% if page.url == "/archives/" %} aria‐current="page"{% endif %}>Archive</a></li>
                 <li>
                     <div class="toggle">
+                        <input type="checkbox" id="darkMode" class="hide toggle__checkbox" />
                         <label for="darkMode">
                         <span class="toggle__copy">Dark mode</span>
 
@@ -25,7 +26,6 @@
                             <span class="toggle__slider"></span>
                         </span>
                         </label>
-                        <input type="checkbox" id="darkMode" class="hide toggle__checkbox" />
                     </div>
                 </li>
             </ul>

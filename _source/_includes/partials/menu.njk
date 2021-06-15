@@ -17,13 +17,16 @@
                 <li><a href="/" {% if page.url == "/" %} aria‐current="page"{% endif %}>Home</a></li>
                 <li><a href="/archives/"{% if page.url == "/archives/" %} aria‐current="page"{% endif %}>Archive</a></li>
                 <li>
-                    <label class="toggle">
+                    <div class="toggle">
+                        <label for="darkMode">
                         <span class="toggle__copy">Dark mode</span>
-                        <input type="checkbox" class="hide toggle__checkbox" />
+
                         <span class="toggle__track">
                             <span class="toggle__slider"></span>
                         </span>
-                    </label>
+                        </label>
+                        <input type="checkbox" id="darkMode" class="hide toggle__checkbox" />
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -49,14 +52,12 @@ function setMode(mode){
             document.querySelector('#schematic__host').getSVGDocument().querySelector('svg').classList.add("theme--dark")
         }
         toggleEl.classList.add('toggle--on')
-        toggleCk.setAttribute('checked','checked')
     } else {
         bodyEl.classList.remove("theme--dark")
         if(document.querySelector('#schematic__host')){
             document.querySelector('#schematic__host').getSVGDocument().querySelector('svg').classList.remove("theme--dark")
         }
         toggleEl.classList.remove('toggle--on')
-        toggleCk.removeAttribute('checked')
     }
     //console.log('Set mode to ' + mode)
     localStorage.setItem('iy__darkMode', mode)
@@ -76,10 +77,9 @@ function checkMode(){
 }
 
 
-const modeButton = document.querySelector('.toggle');
-modeButton.addEventListener('click', function(e){
+const modeButton = document.querySelector('#darkMode');
+modeButton.addEventListener('change', function(e){
     //console.log('Page level changed')
-    e.preventDefault();
     if(darkMode == "dark"){
         darkMode = ""
     } else {

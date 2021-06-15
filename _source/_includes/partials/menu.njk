@@ -41,6 +41,7 @@ checkMode()
 function setMode(mode){
     const bodyEl = document.querySelector('body')
     const toggleEl = document.querySelector('.toggle')
+    const toggleCk = toggleEl.querySelector('input[type="checkbox"]')
 
     if(mode == "dark"){
         bodyEl.classList.add("theme--dark")
@@ -48,12 +49,14 @@ function setMode(mode){
             document.querySelector('#schematic__host').getSVGDocument().querySelector('svg').classList.add("theme--dark")
         }
         toggleEl.classList.add('toggle--on')
+        toggleCk.setAttribute('checked','checked')
     } else {
         bodyEl.classList.remove("theme--dark")
         if(document.querySelector('#schematic__host')){
             document.querySelector('#schematic__host').getSVGDocument().querySelector('svg').classList.remove("theme--dark")
         }
         toggleEl.classList.remove('toggle--on')
+        toggleCk.removeAttribute('checked')
     }
     //console.log('Set mode to ' + mode)
     localStorage.setItem('iy__darkMode', mode)

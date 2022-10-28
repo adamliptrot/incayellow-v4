@@ -3,7 +3,7 @@ title : "Moors"
 slug : "moors"
 date : 2022-07-09T10:05:00.000Z
 archives : ["2022", "2022/07"]
-categories : ["driving"]
+tags : ["driving"]
 images:
     -
         caption : ""

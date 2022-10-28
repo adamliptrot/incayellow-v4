@@ -3,7 +3,7 @@ title : "Black Sheep Brewery"
 slug : "black-sheep-brewery"
 date : 2022-08-27T09:32:00.000Z
 archives : ["2022", "2022/08"]
-categories : ["driving"]
+tags : ["driving"]
 images :
     -
         caption : "Parked up at the brewery"

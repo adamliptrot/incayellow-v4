@@ -253,21 +253,33 @@ class Schematic {
         // });
 		var _this = this;
 		[].slice.call(queryAll(this.nav + ' a')).forEach(function(el,i){
-			el.addEventListener('mousemove, focus',function(ev){
+			el.addEventListener('mousemove',function(ev){
 				_this.highlightComponent(el.getAttribute('data-system'));
 			});
-			el.addEventListener('mouseout, blur',function(ev){
+            el.addEventListener('focus',function(ev){
+				_this.highlightComponent(el.getAttribute('data-system'));
+			});
+			el.addEventListener('mouseout',function(ev){
+				_this.resetComponents();
+			});
+            el.addEventListener('blur',function(ev){
 				_this.resetComponents();
 			});
 		}, this);
 
 		[].slice.call(_this.el.querySelectorAll('#blueprint > g')).forEach(function(el,i){
-			el.addEventListener('mousemove, focus',function(ev){
+			el.addEventListener('mousemove',function(ev){
+				_this.highlightComponent(el.getAttribute('id'));
+			});
+            el.addEventListener('focus',function(ev){
 				_this.highlightComponent(el.getAttribute('id'));
 			});
 		}, this);
 
-		_this.el.addEventListener('mouseout, blur',function(ev){
+		_this.el.addEventListener('mouseout',function(ev){
+			_this.resetComponents();
+		});
+        _this.el.addEventListener('blur',function(ev){
 			_this.resetComponents();
 		});
 

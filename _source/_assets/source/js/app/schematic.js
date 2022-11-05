@@ -253,21 +253,21 @@ class Schematic {
         // });
 		var _this = this;
 		[].slice.call(queryAll(this.nav + ' a')).forEach(function(el,i){
-			el.addEventListener('mousemove',function(ev){
+			el.addEventListener('mousemove, focus',function(ev){
 				_this.highlightComponent(el.getAttribute('data-system'));
 			});
-			el.addEventListener('mouseout',function(ev){
+			el.addEventListener('mouseout, blur',function(ev){
 				_this.resetComponents();
 			});
 		}, this);
 
 		[].slice.call(_this.el.querySelectorAll('#blueprint > g')).forEach(function(el,i){
-			el.addEventListener('mousemove',function(ev){
+			el.addEventListener('mousemove, focus',function(ev){
 				_this.highlightComponent(el.getAttribute('id'));
 			});
 		}, this);
 
-		_this.el.addEventListener('mouseout',function(ev){
+		_this.el.addEventListener('mouseout, blur',function(ev){
 			_this.resetComponents();
 		});
 

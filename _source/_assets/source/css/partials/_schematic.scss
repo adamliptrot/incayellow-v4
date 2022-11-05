@@ -9,6 +9,10 @@
     position: relative;
     z-index: 2;
 }
+.archive-map ul {
+    padding: 0;
+    margin: 0;
+}
 .archive-map li {
     padding-bottom: 0.5em;
     line-height: 0.8;
@@ -69,7 +73,8 @@
 .archive-map__item:hover,
 .archive-map__item:focus {
     color: var(--textOnLight);
-    background-color: var(--textOnDark)
+    background-color: var(--textOnDark);
+    outline: none;
 }
 .archive-map .hover:before,
 .archive-map__item:hover:before,
@@ -80,6 +85,23 @@
 .archive-map__item:hover:after,
 .archive-map__item:focus:after {
     background-color: var(--textOnDark);
+}
+
+.home .archive-map .hover,
+.home .archive-map__item:hover,
+.home .archive-map__item:focus {
+    color: var(--focusFg);
+    background-color: var(--focusBg)
+}
+.home .archive-map .hover:before,
+.home .archive-map__item:hover:before,
+.home .archive-map__item:focus:before {
+    background-color: var(--focusBg);
+}
+.home .archive-map__item.hover::after,
+.home .archive-map__item:hover:after,
+.home .archive-map__item:focus:after {
+    background-color: var(--focusBg);
 }
 
 .schematic {
@@ -130,7 +152,7 @@
         padding: 4rem 0;
     }
     #schematic__host {
-        transform: rotate(61deg);
+        transform: rotate(62deg);
         height: 50rem;
         //top: 0;
         transform-origin: calc(50% + 60px) 0;

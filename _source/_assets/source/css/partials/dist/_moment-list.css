@@ -1,0 +1,182 @@
+.moments__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4rem 0;
+  position: relative;
+}
+
+@supports (display: grid) {
+  .moments__list {
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
+  }
+}
+.monthArchive__post {
+  display: inline-block;
+  width: 180px;
+  width: calc(50% - (2 * var(--gridFallbackMargin)) - 5px);
+  height: 180px;
+  margin: 0 1em 1em 0;
+  margin: var(--gridFallbackMargin);
+}
+
+@media screen and (min-width: 800px) {
+  .monthArchive__post {
+    width: calc(25% - (4 * var(--gridFallbackMargin)) - 2px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .monthArchive__post {
+    width: calc(16.6666% - (6 * var(--gridFallbackMargin)) - 2px);
+  }
+}
+@media screen and (min-width: 2000px) {
+  .monthArchive__post {
+    width: calc(12.5% - (8 * var(--gridFallbackMargin)) - 2px);
+  }
+}
+@supports (display: grid) {
+  .monthArchive__post {
+    width: auto;
+  }
+}
+.moments__list > .spacer {
+  width: 100%;
+  display: block;
+  height: 0;
+  position: relative;
+  background: #000;
+  z-index: 1;
+  top: -1px;
+  margin: 0 var(--gridFallbackMargin);
+  will-change: height;
+  transition: height 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@supports (display: grid) {
+  .moments__list > .spacer {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    margin: 0;
+  }
+}
+.moments__list > .spacer--active {
+  background: #000;
+}
+
+.moments__list > .spacer--leaving {
+  height: 0;
+}
+
+.moments__list > .spacer--notrans {
+  transition: none;
+}
+
+.moment__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.moment__figure {
+  height: 100%;
+}
+
+.moment a {
+  display: block;
+  position: relative;
+  height: 100%;
+  background: #193449;
+  overflow: hidden;
+}
+
+.moment a:before {
+  content: "";
+  background: var(--incayellow);
+  opacity: 0.8;
+  z-index: 2;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  transition: transform 0.15s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  transform: skewX(-14deg) translate(-120%);
+}
+
+.moment a:hover:before,
+.moment a:focus:before {
+  transform: skewX(-14deg) translate(-40%);
+}
+
+.moment__thumb {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  position: absolute;
+  transition: all 0.35s ease;
+}
+
+.no-js .moment__thumb {
+  opacity: 1;
+}
+
+.moment--movie .moment__thumb {
+  object-fit: contain;
+}
+
+.moment__thumb--loaded {
+  opacity: 1;
+}
+
+.moment__caption {
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  margin: 0.5em;
+  padding: 0;
+  pointer-events: none;
+  line-height: initial;
+}
+
+.moment__caption span {
+  background: var(--background);
+  color: var(--text);
+  box-shadow: 5px 0px 0px 2px var(--background), -5px 0px 0px 2px var(--background);
+}
+
+.moment__caption--nine {
+  transform: rotate(4deg);
+}
+
+.moment__caption--eight {
+  transform: rotate(2deg);
+}
+
+.moment__caption--seven {
+  transform: rotate(-2deg);
+}
+
+.moment__caption--six {
+  transform: rotate(3deg);
+}
+
+.moment__caption--five {
+  transform: rotate(-3deg);
+}
+
+.moment__caption--four {
+  transform: rotate(-4deg);
+}
+
+.moment__caption--three {
+  transform: none;
+}

@@ -1,0 +1,152 @@
+@charset "UTF-8";
+[role=banner] {
+  padding-top: 2rem;
+}
+
+.banner__inner {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  .banner__inner {
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: calc(2000px + 4rem)) {
+  .banner__inner {
+    padding: 0;
+  }
+}
+.banner__inner:after {
+  content: "";
+  background: linear-gradient(to right, var(--background) 0%, var(--backgroundVeryDark) 35%, var(--backgroundVeryDark) 65%, var(--background) 100%);
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 2.5rem;
+  right: 2.5rem;
+}
+
+.banner__logo {
+  display: grid;
+  justify-content: center;
+}
+
+.banner__logo-inner {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+#logo__inca {
+  fill: var(--logo);
+}
+
+#logo__yellow {
+  fill: #0b1016;
+}
+
+#logo__box {
+  fill: var(--incayellow);
+}
+
+.banner__ident:focus,
+.banner__ident:hover {
+  outline: none;
+}
+
+.banner__ident:focus #logo__inca,
+.banner__ident:hover #logo__inca {
+  fill: var(--focusBg);
+}
+
+.banner__ident:focus #logo__yellow,
+.banner__ident:hover #logo__yellow {
+  fill: var(--focusFg);
+}
+
+.banner__ident:focus #logo__box,
+.banner__ident:hover #logo__box {
+  fill: var(--focusBg);
+}
+
+.primary-nav {
+  padding: 2rem 0;
+  z-index: 3;
+}
+
+.primary-nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-nav a {
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  margin: 0 1rem;
+}
+
+.primary-nav a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  transform: skewX(-14deg);
+}
+
+.primary-nav [aria‐current=page] {
+  background-color: var(--incayellow);
+  color: var(--textOnLight);
+  padding: 0.5rem 0;
+}
+
+.primary-nav [aria‐current=page]:before {
+  background: var(--incayellow);
+}
+
+.primary-nav.primary-nav a:focus,
+.primary-nav.primary-nav a:hover {
+  color: var(--focusFg);
+  background: var(--focusBg);
+  outline: none;
+}
+
+.primary-nav.primary-nav a:focus:before,
+.primary-nav.primary-nav a:hover:before {
+  background: var(--focusBg);
+}
+
+@media screen and (min-width: 600px) {
+  [role=banner] {
+    padding-top: 1rem;
+  }
+
+  .banner__inner {
+    display: flex;
+  }
+
+  .banner__logo {
+    padding: 0.5em 0;
+    margin-right: auto;
+    width: 20rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .shortcopy .banner__inner:after {
+    display: none;
+  }
+}

@@ -9,31 +9,32 @@
 
     <main class="wrap wrap--latest">
 
-        <h1 class="intro">The story of <a href="{{ collections.posts[0].url }}">getting a B back on the road</a> and the ongoing work to <a href="/archives/">keep it there</a>.</h1>
-        <h2 class="hide">Latest posts</h2>
-        <ul class="latest__posts" role="list">
+        <h1 class="intro"><a href="{{ collections.posts[0].url }}">Getting a B back on the road</a> and the ongoing work to <a href="/archives/">keep it there</a>.</h1>
+
+        {% include 'partials/schematic.njk' %}
+
+        <div class="latest">
+        <h2>Latest posts</h2>
+        <ul class="moments__list" role="list">
         {% for item in collections.latestPosts %}
             {% set imgSize = "d" %}
             {% if loop.index0 == 0 %}
                 {% set imgSize = "c" %}
             {% endif %}
-            <li class="latest__post latest__post--{{loop.index0}}">
+            <li class="monthArchive__post latest__post--{{loop.index0}}">
 
-                <style>
-                    .latest__post--{{loop.index0}} a {
-                        background-image: url(https://farm9.static.flickr.com/{{ item.data.images[0].server }}/{{ item.data.images[0].id }}_{{ item.data.images[0].secret }}_{{ imgSize }}.jpg);
-                    }
-                </style>
-                <a href="{{ item.url }}">
-                    <span class="latest__post-title">
-                        {{ item.data.title }}
-                    </span>
-                </a>
+                <div class="moment moment--photo">
+                    <a href="{{ item.url }}">
+                        <img loading="lazy" class="moment__thumb moment__thumb--loaded" src="https://farm9.static.flickr.com/{{ item.data.images[0].server }}/{{ item.data.images[0].id }}_{{ item.data.images[0].secret }}_{{ imgSize }}.jpg" alt="">
+                        <span class="moment__caption moment__caption--nine"><span>{{ item.data.title }}</span></span>
+                    </a>
+                </div>
             </li>
         {% endfor %}
         </ul>
+        </div>
     </main>
 
 
-
+{% set pageType = "home" %}
 {% include "partials/footer.njk" %}

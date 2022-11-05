@@ -1,8 +1,9 @@
     <footer class="fatfooter">
       <div class="fatfooter__inner">
         <div class="fatfooter__wrap">
-
+          {% if pageType != "home" %}
           {% include 'partials/schematic.njk' %}
+          {% endif %}
           <div class="backstory">
             <h2>How we got here</h2>
             <div class="backstory__one">

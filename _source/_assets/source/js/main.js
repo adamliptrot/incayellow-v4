@@ -25,3 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 window.onload=function() {
     initialiseSchematic();
 }
+//resize, needs debouncing
+addEventListener('resize', function(){
+    initialiseSchematic();
+});

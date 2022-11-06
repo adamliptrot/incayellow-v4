@@ -1,5 +1,5 @@
 <?xml-stylesheet type="text/css" href="/assets/css/schematic-svg.css" ?>
-<svg class="hide" focusable="false" aria-hidden="true" id="schematic" viewBox="0 0 2490 1262" style="background-color:#ffffff00" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" x="0" y="0" width="100%" height="100%">
+<svg class="hide" focusable="false" aria-hidden="true" id="schematic" viewBox="0 0 2490 1262" style="background-color:#ffffff00" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" x="0" y="0" width="2490px" height="1262px">
   <defs>
     <radialGradient cx="96.552%" cy="39.07%" fx="96.552%" fy="39.07%" r="93.672%" gradientTransform="translate(0.965520,0.390697),scale(1.000000,0.944469),rotate(178.647166),scale(1.000000,0.925105),translate(-0.965520,-0.390697)" id="radialGradient-1">
       <stop stop-color="#FBDB78" stop-opacity=".691" offset="0%"/>

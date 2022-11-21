@@ -6,29 +6,33 @@ archives : ["2020", "2020/03"]
 tags : ["electrics"]
 images:
     -
-        caption : ""
+        caption : "Ready for a run"
         id : "49763560673"
         secret : "5860b94eb4"
         server : "65535"
         media : "photo"
+        alt : "The B on the rolling road, front wheels checked and rear on rollers."
     -
-        caption : ""
+        caption : "Between sessions"
         id : "49763560963"
         secret : "c664e7709b"
         server : "65535"
         media : "photo"
+        alt : "View at the front of the B showing the cooling fan ducting with diagnostic kit in the background."
     -
         caption : "Results sheet"
         id : "49764094866"
         secret : "dd6cc8f818"
         server : "65535"
         media : "photo"
+        alt : "Printout of the runs showing max of 85.9 horsepower at the engine, 67.9 at the wheels, all at around 4600 RPM. Max torque of 104 at 2700 RPM."
     -
         caption : "New ballast resistor"
         id : "49764096196"
         secret : "2263e6f6b7"
         server : "65535"
         media : "photo"
+        alt : "White ballast resistor wired in next to the coil."
 ---
 
 With the intermittent but persistent engine miss still causing issues, most recently while in the middle of the North Yorkshire Moors, I thought a rolling road session would be the best way to get the issue to appear and administer a fix.

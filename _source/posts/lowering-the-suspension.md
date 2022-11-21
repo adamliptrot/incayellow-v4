@@ -12,42 +12,49 @@ images:
         secret : "2b75f14faa"
         server : "65535"
         media : "photo"
+        alt : "Comparison side-on shots of the B before and after the modification with red lines indicating the tyree top and centre positions. In the after shot the B is noticeably lower and the tyre tops now sit very close to the wheel arch top."
     -
         caption : "Lowering block fitted"
         id : "50576504467"
         secret : "61f030742d"
         server : "65535"
         media : "photo"
+        alt : "A silver block shown sitting between the rear leaf spring and axle."
     -
         caption : "Lowering block ready for u-bolts"
         id : "50320678501"
         secret : "c1304fe621"
         server : "65535"
         media : "photo"
+        alt : "The lowering block in place on the leaf spriing before having the u-bolts fitted."
     -
         caption : "New and old front ARB"
         id : "50299913042"
         secret : "0ac4e60c50"
         server : "65535"
         media : "photo"
+        alt : "Two anti-roll bars side-by-side. The new one is thicker than the old one."
     -
         caption : "New and old springs"
         id : "50299072053"
         secret : "a1027b40f7"
         server : "65535"
         media : "photo"
+        alt : "Two front springs shown side-by-side, the newer one is shorter by a coil."
     -
         caption : "Spring height difference"
         id : "50299909917"
         secret : "8b905506f1"
         server : "65535"
         media : "photo"
+        alt : "Tape measure showing the 1.5 inch difference in length between the new and old coil springs."
     -
         caption : "Kit ready for fitting"
         id : "50299754806"
         secret : "54811d31bb"
         server : "65535"
         media : "photo"
+        alt : "Parts laid out ready for fitting."
 ---
 
 I've been thinking of lowering the B for a while now. Mainly because at certain times it can look a little high on its springs being a later model with the raised suspension. However is was keen to cut down on the body roll around corners and hoped this would also help this.

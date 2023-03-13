@@ -17,7 +17,7 @@ exports.tagTemplate = function (tags) {
 
   if (tags.length > 0) {
     tags.forEach(function (tag, i) {
-      ret = ret + "<li><a href=\"/archives/".concat(slugify(tag), "\" data-tag=\"").concat(tag, "\"><span class=\"hide\">see more posts related to </span><span class=\"tags__tag\">").concat(tag, "</span></a></li>");
+      ret = ret + "<li><a href=\"/archives/".concat(slugify(tag), "\" data-tag=\"").concat(tag, "\"><span class=\"tags__tag\">").concat(tag, "</span></a></li>");
     });
   }
 

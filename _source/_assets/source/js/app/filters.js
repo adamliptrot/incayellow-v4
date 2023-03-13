@@ -14,7 +14,7 @@ exports.tagTemplate = function(tags){
     var ret = '';
     if(tags.length > 0){
         tags.forEach(function(tag, i){
-            ret = ret + `<li><a href="/archives/${ slugify(tag) }" data-tag="${ tag }"><span class="hide">see more posts related to </span><span class="tags__tag">${ tag }</span></a></li>`
+            ret = ret + `<li><a href="/archives/${ slugify(tag) }" data-tag="${ tag }"><span class="tags__tag">${ tag }</span></a></li>`
         });
     }
     return ret;

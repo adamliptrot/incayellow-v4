@@ -344,6 +344,8 @@ var initialiseSchematic = function initialiseSchematic() {
       });
     };
 
+    document.querySelector(".schematic__blueprint").setAttribute("style", "zoom:1;");
+    document.querySelector(".wrap").setAttribute("style", "zoom:1;");
     var observer = new IntersectionObserver(runSchematic, {
       rootMargin: '0px',
       threshold: 0

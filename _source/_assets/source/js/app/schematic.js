@@ -299,6 +299,9 @@ class Schematic {
 var schematicEl = document.querySelector('#schematic__host');
 const initialiseSchematic = function(){
     if(schematicEl){
+        document.querySelector(".schematic__blueprint").setAttribute("style", "zoom:1;");
+        document.querySelector(".wrap").setAttribute("style", "zoom:1;");
+
         function runSchematic(entries, observer){
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {

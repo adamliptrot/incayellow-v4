@@ -10,7 +10,7 @@ var buffer = require('vinyl-buffer');
 
 var babelify = require('babelify');
 
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 
 var uglify = require('gulp-uglify');
 

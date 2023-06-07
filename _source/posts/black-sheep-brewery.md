@@ -28,4 +28,4 @@ images :
         alt : "View from one of the upper walkways under the rafters of the old part of the brewery, large copper and wood equipment below."
 ---
 
-A trip down to Masham and the Black Sheep Brewery for a tour, followed by lunch and a walk into the village for a coffee at Johnny Baghdad's - which I can recommend all of. There is also a lovely stretch of road from the A1 to Masham which is perfect for the B if you can hit it when there is no traffic.
+A trip down to Masham and the Black Sheep Brewery for a tour followed by lunch and a walk into the village for a coffee at Johnny Baghdad's - which I can recommend all of. There is also a lovely stretch of road from the A1 to Masham which is perfect for the B if you can hit it when there is no traffic.

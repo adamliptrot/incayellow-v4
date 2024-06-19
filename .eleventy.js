@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate } = require("./_source/_assets/source/js/app/filters");
+const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate } = require("./_source/assets/js/app/filters");
 
 module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginRss);

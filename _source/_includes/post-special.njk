@@ -1,9 +1,6 @@
 {% include "partials/header.njk" %}
-{% set bodyClass = "post" %}
-{% set threshold = 1000 %}
-{% if content.length < threshold and ((images[0].media) and (images[0].media != "video")) %}
-    {% set bodyClass = "post shortcopy" %}
-{% endif %}
+{% set bodyClass = "post post-special" %}
+
 <body class="{{ bodyClass }}">
     {% include "partials/menu.njk" %}
     <main>
@@ -15,13 +12,9 @@
                         <time class="post-date" datetime="{{ date | getYear }}-{{ date | getMonth }}-{{ date | getDay }}">{{ date | parseDate }}</time>
                     </div>
                     <div class="content">
-                    {{ content | placeholders(images) | safe }}
-                    {# {{ content | safe }} #}
-
+                    {{ content | safe }}
                     </div>
-                    <div class="photos">
-                        {{ images | imageList(content.length > threshold) | safe }}
-                    </div>
+                    
                     <footer class="tags">
                         <h2>categories</h2>
                         <ul role="list">
@@ -34,7 +27,7 @@
             <div class="hero">
                 <div class="hero__outer">
                     <div class="hero__imagewrap">
-                        {{ images | heroTemplate(content.length > threshold) | safe }}
+                        {# {{ images | heroTemplate(content.length > threshold) | safe }} #}
                     </div>
                 </div>
             </div>

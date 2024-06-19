@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate } = require("./_source/_assets/source/js/app/filters");
+const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate, mediaDisplay } = require("./_source/_assets/source/js/app/filters");
 
 module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginRss);
@@ -29,6 +29,10 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addNunjucksFilter("imageList", function(images){
         return imageList(images);
+    })
+
+    eleventyConfig.addNunjucksFilter("mediaDisplay", function(images){
+        return mediaDisplay(images);
     })
 
     eleventyConfig.addNunjucksFilter("tagTemplate", function(tags){
@@ -241,6 +245,15 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addNunjucksFilter('limit', function (arr, limit) {
         if (!_.isArray(arr)) { return []; } // remove this line if you don't want the lodash/underscore dependency
         return arr.slice(0, limit);
+    });
+
+    eleventyConfig.addNunjucksFilter('placeholders', function(content, imgs){
+        var newContent = content;
+        imgs.forEach(function(image){
+            // let re = new RegExp('\/\/PH+' + image.marker + '}\b', "g");
+            newContent = newContent.replace(`//PH${image.marker}`, mediaDisplay(image))
+        });
+        return newContent;
     });
 
     eleventyConfig.addNunjucksFilter('firstPara', function (context) {

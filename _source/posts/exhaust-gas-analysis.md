@@ -1,7 +1,7 @@
 ---
 title : "Exhaust gas analysis"
 slug : "exhaust-gas-analysis"
-date : 2024-04-14T17:00:00.000Z
+date : 2024-04-14T18:00:00.000Z
 archives : ["2024", "2024/04"]
 tags : ["fuel and air"]
 images :

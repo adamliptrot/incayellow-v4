@@ -68,33 +68,30 @@ exports.mediaDisplay = function(image){
 
 }
 
+exports.placeholders = function(content, imgs){
+    var newContent = content;
+    imgs.forEach(function(image){
+        // let re = new RegExp('\/\/PH+' + image.marker + '}\b', "g");
+        newContent = newContent.replace(`//PH${image.marker}`, mediaDisplay(image))
+    });
+    return newContent;
+}
+
 exports.imageList = function(images, thresholdExceeded){
     var ret = "";
+    var imgCount = 0;
     images.forEach(function(image, currentItemIndex){
-        var videoImage = ""
-        if(image.media == "video"){
-            videoImage = `data-video="${ image.secret },${ image.id }"`
-        }
+        if(!image.marker){
+            if (imgCount % 2 == 0){
+                ret = ret + `<div class="photoinsert">`
+            }
 
-        if (currentItemIndex % 2 == 0){
-            ret = ret + `<div class="photoinsert">`
-        }
-        ret = ret + `
-                <figure>
-                    <a href="https://flickr.com/photos/adamliptrot/${ image.id }">
-                        <img loading="lazy" data-source="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }"
-                                    srcset="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_m.jpg 500w,
-                                    https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_z.jpg 640w,
-                                    https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_c.jpg 800w,
-                                    https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_b.jpg 1024w"
-                                    ${ thresholdExceeded? 'sizes="(max-width: 2000px) 100%"' : 'sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"' }
-                                    ${ videoImage }
-                                    data-orient="landscape" src="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_b.jpg" alt="${ image.alt? image.alt : '' }" />
-                    </a>
-                    <figcaption>${ image.caption }</figcaption>
-                </figure>`
-        if ((currentItemIndex % 2 != 0) || (currentItemIndex == images.length - 1)){
-            ret = ret + `</div>`
+            ret = ret + mediaDisplay(image);
+
+            if ((imgCount % 2 != 0) || (imgCount == images.length - 1)){
+                ret = ret + `</div>`
+            }
+            imgCount ++;
         }
 
     });

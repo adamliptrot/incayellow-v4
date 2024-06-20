@@ -30,19 +30,35 @@ exports.heroTemplate = function (images, thresholdExceeded) {
   }
   return ret;
 };
+exports.mediaDisplay = function (image) {
+  var videoImage = "";
+  if (image.media == "video") {
+    videoImage = "data-video=\"".concat(image.secret, ",").concat(image.id, "\"");
+  }
+  var ret = "\n            <figure>\n                <a href=\"https://flickr.com/photos/adamliptrot/".concat(image.id, "\">\n                    <img loading=\"lazy\" data-source=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "\"\n                                srcset=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_m.jpg 500w,\n                                https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_z.jpg 640w,\n                                https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_c.jpg 800w,\n                                https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg 1024w\"\n                                'sizes=\"(max-width: 799px) 100%, (min-width: 800px) 440px\"' \n                                ").concat(videoImage, "\n                                data-orient=\"landscape\" src=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg\" alt=\"").concat(image.alt ? image.alt : '', "\" />\n                </a>\n                <figcaption>").concat(image.caption, "</figcaption>\n            </figure>");
+  return ret;
+};
+exports.placeholders = function (content, imgs) {
+  var newContent = content;
+  imgs.forEach(function (image) {
+    // let re = new RegExp('\/\/PH+' + image.marker + '}\b', "g");
+    newContent = newContent.replace("//PH".concat(image.marker), mediaDisplay(image));
+  });
+  return newContent;
+};
 exports.imageList = function (images, thresholdExceeded) {
   var ret = "";
+  var imgCount = 0;
   images.forEach(function (image, currentItemIndex) {
-    var videoImage = "";
-    if (image.media == "video") {
-      videoImage = "data-video=\"".concat(image.secret, ",").concat(image.id, "\"");
-    }
-    if (currentItemIndex % 2 == 0) {
-      ret = ret + "<div class=\"photoinsert\">";
-    }
-    ret = ret + "\n                <figure>\n                    <a href=\"https://flickr.com/photos/adamliptrot/".concat(image.id, "\">\n                        <img loading=\"lazy\" data-source=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "\"\n                                    srcset=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_m.jpg 500w,\n                                    https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_z.jpg 640w,\n                                    https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_c.jpg 800w,\n                                    https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg 1024w\"\n                                    ").concat(thresholdExceeded ? 'sizes="(max-width: 2000px) 100%"' : 'sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"', "\n                                    ").concat(videoImage, "\n                                    data-orient=\"landscape\" src=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg\" alt=\"").concat(image.alt ? image.alt : '', "\" />\n                    </a>\n                    <figcaption>").concat(image.caption, "</figcaption>\n                </figure>");
-    if (currentItemIndex % 2 != 0 || currentItemIndex == images.length - 1) {
-      ret = ret + "</div>";
+    if (!image.marker) {
+      if (imgCount % 2 == 0) {
+        ret = ret + "<div class=\"photoinsert\">";
+      }
+      ret = ret + mediaDisplay(image);
+      if (imgCount % 2 != 0 || imgCount == images.length - 1) {
+        ret = ret + "</div>";
+      }
+      imgCount++;
     }
   });
   return ret;
@@ -154,7 +170,7 @@ function loadPages() {
       // page title
       document.title = data.title;
       // main content
-      container.innerHTML = data.content;
+      container.innerHTML = (0, _filters.placeholders)(data.content, data.images);
       // header
       (0, _polyfills.query)('h1').innerHTML = data.title;
       // date

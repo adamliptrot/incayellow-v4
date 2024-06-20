@@ -1,5 +1,5 @@
 import {query, queryAll, siblings, upTo} from './polyfills.js';
-import {parseDate, heroTemplate, imageList, tagTemplate} from './filters.js';
+import {parseDate, heroTemplate, imageList, tagTemplate, placeholders, mediaDisplay} from './filters.js';
 import lazyLoadThumbnails from "./lazyLoadThumbnails"
 import {reInitialiseSchematic} from "./schematic"
 
@@ -10,7 +10,6 @@ export default function loadPages() {
     window.addEventListener('popstate', function(event) {
         loadContent(window.location.pathname);
     });
-
 
     hookLinks();
 
@@ -29,7 +28,7 @@ export default function loadPages() {
                 // page title
                 document.title = data.title;
                 // main content
-                container.innerHTML = data.content;
+                container.innerHTML = placeholders(data.content, data.images);
                 // header
                 query('h1').innerHTML = data.title;
                 // date

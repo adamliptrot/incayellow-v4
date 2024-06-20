@@ -13,6 +13,7 @@ images :
        server : "65535"
        media : "photo"
        alt : "The gas tester sat on the front wing. A large analogue dial shows the reading from lean to rich."
+       marker : "01"
 
    -
        caption : "The remote pump means the main box can be located comfortably"
@@ -21,15 +22,24 @@ images :
        server : "65535"
        media : "photo"
        alt : "The gas tester sat on the front wing powered by a spare battery on the ground. Wires lead to the rear of the car where the pump is located."
+       marker : "02"
 ---
 
 I'd decided that although the B was MOT exempt now it had historic status, I wanted to get it MOT'd each year to be sure there were no issues I had missed. £40 to have a second set of eyes - and a proper look underneath on the ramps - seems like good value.
 
 One of the things which I have always been conscious of is the emissions, so I thought some pre-testing might be worthwhile. I got hold of a Hawk Carburettor Fuel Air Tester which would help me get the carbon monoxide levels in the area of 3% at idle speed (which is the book spec).
 
+<div class="photoinsert">
+ //PH01
+</div>
+
 You need to let the tester calibrate for around 8 minutes and also need to give the car a good run to get the exhaust up to temperature (the instructions say just running it on the driveway is not enough). So after doing this I hooked it up and was pretty surprised when the CO registered at 6.5% - very high and so very rich!
 
 The Hawk has a remote pump which sits by the exhaust and accepts the feed tube from it. Long wires from that to the main box mean you can keep an eye on the numbers as you make adjustments.
+
+<div class="photoinsert">
+ //PH02
+</div>
 
 I adjusted the carbs, checked again and repeated until I'd managed to get it down to sitting between 3.5% and 4%.
 

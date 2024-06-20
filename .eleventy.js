@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate, mediaDisplay } = require("./_source/assets/js/app/filters");
+const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate, mediaDisplay, placeholders } = require("./_source/assets/js/app/filters");
 
 module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginRss);
@@ -31,9 +31,13 @@ module.exports = (eleventyConfig) => {
         return imageList(images);
     })
 
-    eleventyConfig.addNunjucksFilter("mediaDisplay", function(images){
-        return mediaDisplay(images);
+    eleventyConfig.addNunjucksFilter("mediaDisplay", function(image){
+        return mediaDisplay(image);
     })
+
+    eleventyConfig.addNunjucksFilter('placeholders', function(content, imgs){        
+        return placeholders(content, imgs);
+    });
 
     eleventyConfig.addNunjucksFilter("tagTemplate", function(tags){
         return tagTemplate(tags);
@@ -247,14 +251,7 @@ module.exports = (eleventyConfig) => {
         return arr.slice(0, limit);
     });
 
-    eleventyConfig.addNunjucksFilter('placeholders', function(content, imgs){
-        var newContent = content;
-        imgs.forEach(function(image){
-            // let re = new RegExp('\/\/PH+' + image.marker + '}\b', "g");
-            newContent = newContent.replace(`//PH${image.marker}`, mediaDisplay(image))
-        });
-        return newContent;
-    });
+
 
     eleventyConfig.addNunjucksFilter('firstPara', function (context) {
         if(!context){return}

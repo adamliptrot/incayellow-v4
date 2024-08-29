@@ -5,17 +5,17 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginRss);
 
     eleventyConfig.addCollection("posts", (collection) => {
-		return collection.getFilteredByGlob("_source/posts/**/*.md").sort((a, b) => {
+		return collection.getFilteredByGlob(["_source/posts/**/*.md", "_source/posts/**/*.njk"]).sort((a, b) => {
             return a.date - b.date;
         })
     });
     eleventyConfig.addCollection("postsRev", (collection) => {
-		return collection.getFilteredByGlob("_source/posts/**/*.md").sort((a, b) => {
+		return collection.getFilteredByGlob(["_source/posts/**/*.md", "_source/posts/**/*.njk"]).sort((a, b) => {
             return b.date - a.date;
         })
     });
     eleventyConfig.addCollection("latestPosts", (collection) => {
-        return collection.getFilteredByGlob("_source/posts/**/*.md").sort((a, b) => {
+        return collection.getFilteredByGlob(["_source/posts/**/*.md", "_source/posts/**/*.njk"]).sort((a, b) => {
             return a.date - b.date;
         }).reverse().slice(0,5);
     });
@@ -31,8 +31,8 @@ module.exports = (eleventyConfig) => {
         return imageList(images);
     })
 
-    eleventyConfig.addNunjucksFilter("mediaDisplay", function(image){
-        return mediaDisplay(image);
+    eleventyConfig.addNunjucksFilter("mediaDisplay", function(image, passthrough){
+        return mediaDisplay(image, passthrough);
     })
 
     eleventyConfig.addNunjucksFilter('placeholders', function(content, imgs){        

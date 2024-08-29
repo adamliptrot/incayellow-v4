@@ -324,4 +324,62 @@ const reInitialiseSchematic = function(){
     }
 }
 
-export { initialiseSchematic, reInitialiseSchematic };
+class SchematicSide {
+    constructor(options){
+        this.el = options.el;
+        console.log(this.el);
+        this.assignEvents();
+    }
+    
+    assignEvents(){
+        var _this = this;
+        var sch = this.el;
+        [].slice.call(sch.querySelectorAll('.schematic-side__blueprint .schematic__number')).forEach(function(point, i){    
+            // point.addEventListener('focus', function(){_this.relay(point)});
+            point.addEventListener('click', function(){_this.relay(point)});
+
+            // close the popup when focus moves to a new point
+            point.addEventListener('focus', function(){_this.unrelay()});
+           // point.addEventListener('blur', function(){_this.unrelay()});
+        });
+        
+        [].slice.call(sch.querySelectorAll('.schematic-side__map .schematic__number')).forEach(function(point, i){   
+            // expand click listener to the image
+            var fig = upTo(point, 'figure');
+            if(fig){
+                fig.addEventListener('click', function(){_this.relay(point)});
+            }            
+            point.addEventListener('click', function(){_this.relay(point)});
+            // point.addEventListener('blur', function(){_this.unrelay()});
+        });
+    }
+    
+    unrelay(){
+        var _this = this.el;
+        console.log('unrelay ' + _this);
+        [].slice.call(_this.querySelectorAll('.schematic-focus')).forEach(function(n){
+            n.classList.remove('schematic-focus');
+            console.log('rem from ' + n)
+        });
+    }
+    
+    relay(point){
+        var _this = this;
+        _this.unrelay();
+        setTimeout(function(){
+            var dataImgID = point.getAttribute("data-img");
+            var img = document.querySelector('#' + dataImgID);
+            if(img){
+                img.classList.add("schematic-focus");
+            }
+        },50);
+    }
+}
+
+const initialiseSchematicSide = function(){
+    [].slice.call(queryAll('.schematic-side')).forEach(function(s){
+        new SchematicSide({el: s});
+    });
+}
+
+export { initialiseSchematic, reInitialiseSchematic, initialiseSchematicSide };

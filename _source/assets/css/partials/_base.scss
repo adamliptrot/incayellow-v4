@@ -90,14 +90,14 @@ a {
     font-variation-settings: "wght" 400;
 }
 .intro a,
-article p a {
+.inner a {
     color: var(--text);
     padding: 0 0.15em;
 }
 .intro a:focus,
 .intro a:hover,
-article p a:focus,
-article p a:hover {
+.inner a:focus,
+.inner a:hover {
     background: var(--incayellow);
     color: var(--constDarkText);
     outline: none;

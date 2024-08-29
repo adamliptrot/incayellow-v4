@@ -51,14 +51,6 @@ images :
        alt : "The B parked in woodland"
        marker : "04"
 
-   -
-       caption : "On the border crossing"
-       id : "53784419597"
-       secret : "d16f42de7a"
-       server : "65535"
-       media : "photo"
-       alt : "The B face-on with the road and the border crossing stone behind. The stone is inscribed with the word Scotland"
-       marker : "06"
 ---
 
 With a fresh MOT under its belt and it running really well, it was decided that an upcoming trip to Scotland would be a good run for the B.
@@ -72,13 +64,13 @@ This would be the longest trip since before Covid. In reality the previous long 
 Our destination was Perthshire, around 200 miles and 4 hours from home, taking a route through Northumberland and Kielder forest, taking in lots of countryside on the way up and avoiding motorways. We ended up doing about 250 miles during our weekend away, so in all completed around 650 miles on the trip. As we found on the Belgian trip, the B can swallow a fair bit of luggage making trips like this no problem at all.
 
 <div class="photoinsert">
- //PH03 //PH04
+ //PH03 
 </div>
 
 The drive up was uneventful. I had been a little concerned about the border crossing as the route we took climbs steeply and drops just as steeply with the border sitting right at the top, but in the end this proved no issue for the B at all. In fact on the way home the steeply twisting hairpins up to the top on the route south was one of the most enjoyable parts! We did hit some heavy traffic around Edinburgh and had to sit in queues for about 20 minutes. This would have caused me a lot of concern in the past with the car getting especially hot, but again, since I [changed out the water pump](/posts/water-pump-swap/) the engine has been kept much cooler and it ended up hardly troubling the fan despite warm weather.
 
 <div class="photoinsert">
- //PH05 //PH06
+ //PH04 //PH05
 </div>
 
 The recent [exhaust emission fiddling](/posts/exhaust-gas-analysis/) seemed to have worked wonders on the fuel consumption also. Before I'd made the adjustments I was getting obviously poor mileage as I was not doing the same number of miles from a tank as I used to - maybe 200 miles instead of 250 or so. However now we were getting about 300 miles and some quick calculations at each petrol station fill up gave figures of 33 mpg while in Scotland and 38 mpg on the run home. The B also ticked over a milestone on this trip, tipping over the 90k miles.

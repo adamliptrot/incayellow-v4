@@ -43,28 +43,8 @@ exports.heroTemplate = function(images, thresholdExceeded){
     return ret;
 }
 
-exports.mediaDisplay = function(image){
-    var videoImage = ""
-    if(image.media == "video"){
-        videoImage = `data-video="${ image.secret },${ image.id }"`
-    }
-
-    var ret = `
-            <figure>
-                <a href="https://flickr.com/photos/adamliptrot/${ image.id }">
-                    <img loading="lazy" data-source="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }"
-                                srcset="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_m.jpg 500w,
-                                https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_z.jpg 640w,
-                                https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_c.jpg 800w,
-                                https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_b.jpg 1024w"
-                                'sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"' 
-                                ${ videoImage }
-                                data-orient="landscape" src="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_b.jpg" alt="${ image.alt? image.alt : '' }" />
-                </a>
-                <figcaption>${ image.caption }</figcaption>
-            </figure>`
-    
-    return ret;
+exports.mediaDisplay = function(image, passthrough){
+    return mediaDisplay(image, passthrough);
 
 }
 
@@ -106,4 +86,26 @@ var allMonthNames = function(format){
         monthNames = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul","Aug", "Sept", "Oct","Nov", "Dec"];
     }
     return monthNames;
+}
+
+var mediaDisplay = function(image, passthrough = ""){
+    var videoImage = ""
+    if(image.media == "video"){
+        videoImage = `data-video="${ image.secret },${ image.id }"`
+    }
+
+    var ret = `
+            <figure>                
+                <img loading="lazy" data-source="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }"
+                            srcset="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_m.jpg 500w,
+                            https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_z.jpg 640w,
+                            https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_c.jpg 800w,
+                            https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_b.jpg 1024w"
+                            'sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"' 
+                            ${ videoImage }
+                            data-orient="${ image.orient || "landscape" }" src="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_b.jpg" alt="${ image.alt? image.alt : '' }" />                
+                <figcaption>${ image.caption } <a href="https://flickr.com/photos/adamliptrot/${ image.id }">View photo</a> ${passthrough}</figcaption>
+            </figure>`
+    
+    return ret;
 }

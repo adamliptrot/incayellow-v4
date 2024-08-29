@@ -37,23 +37,21 @@
     }
 
 
-    .photoinsert figure a {
-        display: block;
-        overflow: hidden;
-
-    }
+    // .photoinsert figure a {
+    //     display: inline-block;
+    // }
     @supports (display: grid) {
-        .photoinsert figure a {
+        .photoinsert figure img {
             display: grid;
             align-content: center;
             justify-content: stretch;
             border: 1px solid rgb(65, 65, 65);
         }
     }
-    .photoinsert figure a:focus,
-    .photoinsert figure a:hover {
-        outline: 3px solid var(--focusBg);
-    }
+    // .photoinsert figure a:focus,
+    // .photoinsert figure a:hover {
+    //     outline: 3px solid var(--focusBg);
+    // }
     .photoinsert img {
         width: 100%;
         object-fit: cover;

@@ -11,7 +11,7 @@
       --focusBg: #fff;
       --focusFg: #333;
    }
-   article {
+   .inner {
       word-spacing: .05em;
    }
    // img {
@@ -30,7 +30,7 @@
    --focusBg: #fff;
    --focusFg: #333;
 }
-.theme--dark article {
+.theme--dark .inner {
    word-spacing: .05em;
 }
 

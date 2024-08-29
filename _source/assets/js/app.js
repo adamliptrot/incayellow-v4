@@ -30,13 +30,8 @@ exports.heroTemplate = function (images, thresholdExceeded) {
   }
   return ret;
 };
-exports.mediaDisplay = function (image) {
-  var videoImage = "";
-  if (image.media == "video") {
-    videoImage = "data-video=\"".concat(image.secret, ",").concat(image.id, "\"");
-  }
-  var ret = "\n            <figure>\n                <a href=\"https://flickr.com/photos/adamliptrot/".concat(image.id, "\">\n                    <img loading=\"lazy\" data-source=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "\"\n                                srcset=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_m.jpg 500w,\n                                https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_z.jpg 640w,\n                                https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_c.jpg 800w,\n                                https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg 1024w\"\n                                'sizes=\"(max-width: 799px) 100%, (min-width: 800px) 440px\"' \n                                ").concat(videoImage, "\n                                data-orient=\"landscape\" src=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg\" alt=\"").concat(image.alt ? image.alt : '', "\" />\n                </a>\n                <figcaption>").concat(image.caption, "</figcaption>\n            </figure>");
-  return ret;
+exports.mediaDisplay = function (image, passthrough) {
+  return mediaDisplay(image, passthrough);
 };
 exports.placeholders = function (content, imgs) {
   var newContent = content;
@@ -71,6 +66,15 @@ var allMonthNames = function allMonthNames(format) {
     monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
   }
   return monthNames;
+};
+var mediaDisplay = function mediaDisplay(image) {
+  var passthrough = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  var videoImage = "";
+  if (image.media == "video") {
+    videoImage = "data-video=\"".concat(image.secret, ",").concat(image.id, "\"");
+  }
+  var ret = "\n            <figure>                \n                <img loading=\"lazy\" data-source=\"https://farm9.static.flickr.com/".concat(image.server, "/").concat(image.id, "_").concat(image.secret, "\"\n                            srcset=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_m.jpg 500w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_z.jpg 640w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_c.jpg 800w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg 1024w\"\n                            'sizes=\"(max-width: 799px) 100%, (min-width: 800px) 440px\"' \n                            ").concat(videoImage, "\n                            data-orient=\"").concat(image.orient || "landscape", "\" src=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg\" alt=\"").concat(image.alt ? image.alt : '', "\" />                \n                <figcaption>").concat(image.caption, " <a href=\"https://flickr.com/photos/adamliptrot/").concat(image.id, "\">View photo</a> ").concat(passthrough, "</figcaption>\n            </figure>");
+  return ret;
 };
 
 },{"../lib/slugify":6}],2:[function(require,module,exports){
@@ -170,6 +174,7 @@ function loadPages() {
       // page title
       document.title = data.title;
       // main content
+      console.log(data.content);
       container.innerHTML = (0, _filters.placeholders)(data.content, data.images);
       // header
       (0, _polyfills.query)('h1').innerHTML = data.title;
@@ -216,6 +221,7 @@ function loadPages() {
       hookLinks();
       // schematic
       (0, _schematic.reInitialiseSchematic)();
+      (0, _schematic.initialiseSchematicSide)();
     });
   }
   function hookLinks() {
@@ -296,7 +302,7 @@ function upTo(el, tagName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.reInitialiseSchematic = exports.initialiseSchematic = void 0;
+exports.initialiseSchematicSide = exports.reInitialiseSchematic = exports.initialiseSchematic = void 0;
 var _polyfills = require("./polyfills.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -628,6 +634,78 @@ var reInitialiseSchematic = function reInitialiseSchematic() {
   }
 };
 exports.reInitialiseSchematic = reInitialiseSchematic;
+var SchematicSide = /*#__PURE__*/function () {
+  function SchematicSide(options) {
+    _classCallCheck(this, SchematicSide);
+    this.el = options.el;
+    console.log(this.el);
+    this.assignEvents();
+  }
+  _createClass(SchematicSide, [{
+    key: "assignEvents",
+    value: function assignEvents() {
+      var _this = this;
+      var sch = this.el;
+      [].slice.call(sch.querySelectorAll('.schematic-side__blueprint .schematic__number')).forEach(function (point, i) {
+        // point.addEventListener('focus', function(){_this.relay(point)});
+        point.addEventListener('click', function () {
+          _this.relay(point);
+        });
+
+        // close the popup when focus moves to a new point
+        point.addEventListener('focus', function () {
+          _this.unrelay();
+        });
+        // point.addEventListener('blur', function(){_this.unrelay()});
+      });
+      [].slice.call(sch.querySelectorAll('.schematic-side__map .schematic__number')).forEach(function (point, i) {
+        // expand click listener to the image
+        var fig = (0, _polyfills.upTo)(point, 'figure');
+        if (fig) {
+          fig.addEventListener('click', function () {
+            _this.relay(point);
+          });
+        }
+        point.addEventListener('click', function () {
+          _this.relay(point);
+        });
+        // point.addEventListener('blur', function(){_this.unrelay()});
+      });
+    }
+  }, {
+    key: "unrelay",
+    value: function unrelay() {
+      var _this = this.el;
+      console.log('unrelay ' + _this);
+      [].slice.call(_this.querySelectorAll('.schematic-focus')).forEach(function (n) {
+        n.classList.remove('schematic-focus');
+        console.log('rem from ' + n);
+      });
+    }
+  }, {
+    key: "relay",
+    value: function relay(point) {
+      var _this = this;
+      _this.unrelay();
+      setTimeout(function () {
+        var dataImgID = point.getAttribute("data-img");
+        var img = document.querySelector('#' + dataImgID);
+        if (img) {
+          img.classList.add("schematic-focus");
+        }
+      }, 50);
+    }
+  }]);
+  return SchematicSide;
+}();
+var initialiseSchematicSide = function initialiseSchematicSide() {
+  [].slice.call((0, _polyfills.queryAll)('.schematic-side')).forEach(function (s) {
+    new SchematicSide({
+      el: s
+    });
+  });
+};
+exports.initialiseSchematicSide = initialiseSchematicSide;
 
 },{"./polyfills.js":4}],6:[function(require,module,exports){
 "use strict";
@@ -813,6 +891,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 window.onload = function () {
   (0, _schematic.initialiseSchematic)();
+  (0, _schematic.initialiseSchematicSide)();
 };
 //resize, needs debouncing
 addEventListener('resize', function () {

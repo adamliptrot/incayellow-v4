@@ -1,5 +1,5 @@
 //import Moments from "./app/moments"
-import {initialiseSchematic} from "./app/schematic"
+import {initialiseSchematic, initialiseSchematicSide} from "./app/schematic"
 import lazyLoadThumbnails from "./app/lazyLoadThumbnails"
 import loadPages from "./app/loadPages"
 
@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.onload=function() {
     initialiseSchematic();
+    initialiseSchematicSide();
 }
 //resize, needs debouncing
 addEventListener('resize', function(){

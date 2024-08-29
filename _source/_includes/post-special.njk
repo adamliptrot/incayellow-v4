@@ -1,6 +1,9 @@
 {% include "partials/header.njk" %}
 {% set bodyClass = "post post-special" %}
-
+{% set threshold = 1000 %}
+{% if content.length < threshold and ((images[0].media) and (images[0].media != "video")) %}
+    {% set bodyClass = "post post-special shortcopy" %}
+{% endif %}
 <body class="{{ bodyClass }}">
     {% include "partials/menu.njk" %}
     <main>
@@ -11,26 +14,40 @@
                         <h1>{{ title }}</h1>
                         <time class="post-date" datetime="{{ date | getYear }}-{{ date | getMonth }}-{{ date | getDay }}">{{ date | parseDate }}</time>
                     </div>
-                    <div class="content">
+                </div>
+                
+                {% if images %}
+                    {{ content | placeholders(images) | safe }}
+                {% else %}
                     {{ content | safe }}
+                {% endif %}
+            
+                {% if images %}
+                <div class="inner">
+                    <div class="photos">
+                        {{ images | imageList(content.length > threshold) | safe }}
                     </div>
-                    
-                    <footer class="tags">
+                </div>
+                {% endif %}
+                <div class="inner">
+                    <footer class="tags">                        
                         <h2>categories</h2>
                         <ul role="list">
                             {{ tags | tagTemplate | safe }}
                         </ul>
                     </footer>
                 </div>
+                
             </article>
-
+            {% if hero != false %}
             <div class="hero">
                 <div class="hero__outer">
                     <div class="hero__imagewrap">
-                        {# {{ images | heroTemplate(content.length > threshold) | safe }} #}
+                        {{ images | heroTemplate(content.length > threshold) | safe }}
                     </div>
                 </div>
-            </div>
+            </div>            
+            {% endif %}
 
             <nav class="further-reading further-reading--post" aria-label="Read previous or next post">
                 {% set currentItemIndex = 0 %}

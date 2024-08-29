@@ -1,7 +1,7 @@
 import {query, queryAll, siblings, upTo} from './polyfills.js';
 import {parseDate, heroTemplate, imageList, tagTemplate, placeholders, mediaDisplay} from './filters.js';
 import lazyLoadThumbnails from "./lazyLoadThumbnails"
-import {reInitialiseSchematic} from "./schematic"
+import {reInitialiseSchematic, initialiseSchematicSide} from "./schematic"
 
 export default function loadPages() {
 
@@ -28,6 +28,7 @@ export default function loadPages() {
                 // page title
                 document.title = data.title;
                 // main content
+                console.log(data.content)
                 container.innerHTML = placeholders(data.content, data.images);
                 // header
                 query('h1').innerHTML = data.title;
@@ -74,6 +75,7 @@ export default function loadPages() {
                 hookLinks();
                 // schematic
                 reInitialiseSchematic();
+                initialiseSchematicSide();
             });
     }
     function hookLinks() {

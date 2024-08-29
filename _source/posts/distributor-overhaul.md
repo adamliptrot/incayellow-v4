@@ -13,6 +13,7 @@ images :
        server : "65535"
        media : "photo"
        alt : "A very clean dizzy, apparently the body was silver under all that dirt, and the vaccuum unit has been plated in a gold colour"
+       marker: "03"
 
    -
        caption : "The distributor before it was sent off"
@@ -21,6 +22,7 @@ images :
        server : "65535"
        media : "photo"
        alt : " A rather grubby looking dizzy, everything being a shade of grey"
+       marker: "02"
 
    -
        caption : "The location of the date code on the side of the distributor"
@@ -29,6 +31,7 @@ images :
        server : "65535"
        media : "photo"
        alt : "Numbers engraved on the side of the distributor body"
+       marker: "01"
 
    -
        caption : "The curve chart "
@@ -37,13 +40,24 @@ images :
        server : "65535"
        media : "photo"
        alt : "A line chart with two lines marking degrees and advance"
+       marker: "04"
 ---
 
-I've been running a new distributor in the B for a while but am keen to get the original one back in. You can what year it s from the engraving on the side; mine says 2379 which is the 23rd week of 1979.
+I've been running a new distributor in the B for a while but am keen to get the original one back in. You can tell what year it's from by the engraving on the side; mine says "2379" which is the 23rd week of 1979.
+
+<div class="photoinsert">
+//PH01
+</div>
 
 To make sure it was running as well as possible with no slop in the springs, I had been thinking of sending it off to the [Distributor Doctor](https://www.distributordoctor.com/) for a while for a complete run through including new springs and seals, full calibration as well as a good clean. This service also includes a curve graph which can help with timing the engine.
 
+<div class="photoinsert">
+//PH04
+</div>
+
 I'm glad I took photos of the distibutor before I sent it off as when it came back the difference was stark and I had to double-check the year code to make sure it was the same one.
 
-
+<div class="photoinsert">
+//PH02 //PH03
+</div>
 

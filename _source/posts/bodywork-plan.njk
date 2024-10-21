@@ -6,14 +6,6 @@ archives : ["2024", "2024/06"]
 tags : ["bodywork and exterior"]
 layout: "post-special.njk"
 hero : false
-images:
-   -
-       caption : ""
-       id : "53816634430"
-       secret : "a682072aa9"
-       server : "65535"
-       media : "photo"
-       alt : ""
 
 schematicPassenger :
 
@@ -549,9 +541,9 @@ article object {
     }
 }
 @supports (anchor-name: --myAnchor) {
-    .schematic-side:has(li.schematic-focus) object {
+    {# .schematic-side:has(li.schematic-focus) object {
         opacity: 0.75;
-    }
+    } #}
 
     .schematic-side__blueprint__inner object {
         transition: opacity 0.25s linear;

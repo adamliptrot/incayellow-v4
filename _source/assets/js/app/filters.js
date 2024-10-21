@@ -29,7 +29,12 @@ exports.heroTemplate = function(images, thresholdExceeded){
         <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/${ images[0].url }?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
             `
     } else {
-        ret = `
+        if (images.length == 1 && images[0].caption && images[0].caption > ""){
+            ret = ret + `<figure><div class="hero__imagewrap--inner">`;
+        } else {
+            ret = ret + `<div class="hero__imagewrap--inner">`;
+        }
+        ret = ret + `
             <img aria-hidden="true" class="placeholder" src="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_m.jpg" alt="" />
             <img class="hero__image" data-source="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }"
                 srcset="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_m.jpg 500w,
@@ -37,8 +42,12 @@ exports.heroTemplate = function(images, thresholdExceeded){
                 https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_c.jpg 800w,
                 https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_b.jpg 1024w"
                 ${ thresholdExceeded? 'sizes="(max-width: 2000px) 100%"' : 'sizes="(max-width: 999px) 100%, (max-width: 1999px) 33vw"' }
-                data-orient="landscape" src="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_b.jpg" alt="" />
-            `
+                data-orient="landscape" src="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_b.jpg" alt="${ images.length == 1 && images[0].alt? images[0].alt : '' }" />`
+        if (images.length == 1 && images[0].caption && images[0].caption > ""){
+            ret = ret + `</div><figcaption>${ images[0].caption } <a href="https://flickr.com/photos/adamliptrot/${ images[0].id }">View photo</a></figcaption></figure>`;
+        } else {
+            ret = ret + `</div>`;
+        }
     }
     return ret;
 }
@@ -104,7 +113,7 @@ var mediaDisplay = function(image, passthrough = ""){
                             'sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"' 
                             ${ videoImage }
                             data-orient="${ image.orient || "landscape" }" src="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_b.jpg" alt="${ image.alt? image.alt : '' }" />                
-                <figcaption>${ image.caption } <a href="https://flickr.com/photos/adamliptrot/${ image.id }">View photo</a> ${passthrough}</figcaption>
+                <figcaption>${passthrough} ${ image.caption } <a href="https://flickr.com/photos/adamliptrot/${ image.id }">View photo</a></figcaption>
             </figure>`
     
     return ret;

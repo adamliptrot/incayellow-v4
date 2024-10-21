@@ -26,7 +26,17 @@ exports.heroTemplate = function (images, thresholdExceeded) {
     //ret = `<video src="/assets/videos/${images[0].url}" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
     ret = "\n        <div style=\"padding:75% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/".concat(images[0].url, "?title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>\n            ");
   } else {
-    ret = "\n            <img aria-hidden=\"true\" class=\"placeholder\" src=\"https://farm9.static.flickr.com/".concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_m.jpg\" alt=\"\" />\n            <img class=\"hero__image\" data-source=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "\"\n                srcset=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_m.jpg 500w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_z.jpg 640w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_c.jpg 800w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_b.jpg 1024w\"\n                ").concat(thresholdExceeded ? 'sizes="(max-width: 2000px) 100%"' : 'sizes="(max-width: 999px) 100%, (max-width: 1999px) 33vw"', "\n                data-orient=\"landscape\" src=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_b.jpg\" alt=\"\" />\n            ");
+    if (images.length == 1 && images[0].caption && images[0].caption > "") {
+      ret = ret + "<figure><div class=\"hero__imagewrap--inner\">";
+    } else {
+      ret = ret + "<div class=\"hero__imagewrap--inner\">";
+    }
+    ret = ret + "\n            <img aria-hidden=\"true\" class=\"placeholder\" src=\"https://farm9.static.flickr.com/".concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_m.jpg\" alt=\"\" />\n            <img class=\"hero__image\" data-source=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "\"\n                srcset=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_m.jpg 500w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_z.jpg 640w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_c.jpg 800w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_b.jpg 1024w\"\n                ").concat(thresholdExceeded ? 'sizes="(max-width: 2000px) 100%"' : 'sizes="(max-width: 999px) 100%, (max-width: 1999px) 33vw"', "\n                data-orient=\"landscape\" src=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_b.jpg\" alt=\"").concat(images.length == 1 && images[0].alt ? images[0].alt : '', "\" />");
+    if (images.length == 1 && images[0].caption && images[0].caption > "") {
+      ret = ret + "</div><figcaption>".concat(images[0].caption, " <a href=\"https://flickr.com/photos/adamliptrot/").concat(images[0].id, "\">View photo</a></figcaption></figure>");
+    } else {
+      ret = ret + "</div>";
+    }
   }
   return ret;
 };
@@ -73,7 +83,7 @@ var mediaDisplay = function mediaDisplay(image) {
   if (image.media == "video") {
     videoImage = "data-video=\"".concat(image.secret, ",").concat(image.id, "\"");
   }
-  var ret = "\n            <figure>                \n                <img loading=\"lazy\" data-source=\"https://farm9.static.flickr.com/".concat(image.server, "/").concat(image.id, "_").concat(image.secret, "\"\n                            srcset=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_m.jpg 500w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_z.jpg 640w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_c.jpg 800w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg 1024w\"\n                            'sizes=\"(max-width: 799px) 100%, (min-width: 800px) 440px\"' \n                            ").concat(videoImage, "\n                            data-orient=\"").concat(image.orient || "landscape", "\" src=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg\" alt=\"").concat(image.alt ? image.alt : '', "\" />                \n                <figcaption>").concat(image.caption, " <a href=\"https://flickr.com/photos/adamliptrot/").concat(image.id, "\">View photo</a> ").concat(passthrough, "</figcaption>\n            </figure>");
+  var ret = "\n            <figure>                \n                <img loading=\"lazy\" data-source=\"https://farm9.static.flickr.com/".concat(image.server, "/").concat(image.id, "_").concat(image.secret, "\"\n                            srcset=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_m.jpg 500w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_z.jpg 640w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_c.jpg 800w,\n                            https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg 1024w\"\n                            'sizes=\"(max-width: 799px) 100%, (min-width: 800px) 440px\"' \n                            ").concat(videoImage, "\n                            data-orient=\"").concat(image.orient || "landscape", "\" src=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg\" alt=\"").concat(image.alt ? image.alt : '', "\" />                \n                <figcaption>").concat(passthrough, " ").concat(image.caption, " <a href=\"https://flickr.com/photos/adamliptrot/").concat(image.id, "\">View photo</a></figcaption>\n            </figure>");
   return ret;
 };
 
@@ -638,7 +648,7 @@ var SchematicSide = /*#__PURE__*/function () {
   function SchematicSide(options) {
     _classCallCheck(this, SchematicSide);
     this.el = options.el;
-    console.log(this.el);
+    //console.log(this.el);
     this.assignEvents();
   }
   _createClass(SchematicSide, [{
@@ -646,40 +656,45 @@ var SchematicSide = /*#__PURE__*/function () {
     value: function assignEvents() {
       var _this = this;
       var sch = this.el;
+      var supportsAnchor = CSS.supports('anchor-name: --myAnchor');
+
+      // schematic numbering
+      //====================
       [].slice.call(sch.querySelectorAll('.schematic-side__blueprint .schematic__number')).forEach(function (point, i) {
-        // point.addEventListener('focus', function(){_this.relay(point)});
+        // open popup for this point
+        //==================================
         point.addEventListener('click', function () {
           _this.relay(point);
         });
 
-        // close the popup when focus moves to a new point
+        // close any open popups when focus moves to a new point
+        //==================================
         point.addEventListener('focus', function () {
           _this.unrelay();
         });
-        // point.addEventListener('blur', function(){_this.unrelay()});
       });
+
+      // schematic photo numbers
+      //========================
       [].slice.call(sch.querySelectorAll('.schematic-side__map .schematic__number')).forEach(function (point, i) {
-        // expand click listener to the image
-        var fig = (0, _polyfills.upTo)(point, 'figure');
-        if (fig) {
-          fig.addEventListener('click', function () {
-            _this.relay(point);
-          });
-        }
+        //     // expand click listener to the image
+        //     var fig = upTo(point, 'figure');
+        //     if(fig){
+        //         fig.addEventListener('click', function(){_this.relay(point)});
+        //     }            
         point.addEventListener('click', function () {
           _this.relay(point);
         });
-        // point.addEventListener('blur', function(){_this.unrelay()});
       });
     }
   }, {
     key: "unrelay",
     value: function unrelay() {
       var _this = this.el;
-      console.log('unrelay ' + _this);
+      //console.log('unrelay ' + _this);
       [].slice.call(_this.querySelectorAll('.schematic-focus')).forEach(function (n) {
         n.classList.remove('schematic-focus');
-        console.log('rem from ' + n);
+        //console.log('rem from ' + n)
       });
     }
   }, {

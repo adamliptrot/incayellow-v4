@@ -327,39 +327,51 @@ const reInitialiseSchematic = function(){
 class SchematicSide {
     constructor(options){
         this.el = options.el;
-        console.log(this.el);
+        //console.log(this.el);
         this.assignEvents();
+        
     }
     
     assignEvents(){
         var _this = this;
         var sch = this.el;
+        var supportsAnchor = CSS.supports('anchor-name: --myAnchor');
+
+
+        // schematic numbering
+        //====================
         [].slice.call(sch.querySelectorAll('.schematic-side__blueprint .schematic__number')).forEach(function(point, i){    
-            // point.addEventListener('focus', function(){_this.relay(point)});
+            
+            // open popup for this point
+            //==================================
             point.addEventListener('click', function(){_this.relay(point)});
 
-            // close the popup when focus moves to a new point
+            // close any open popups when focus moves to a new point
+            //==================================
             point.addEventListener('focus', function(){_this.unrelay()});
-           // point.addEventListener('blur', function(){_this.unrelay()});
+
         });
         
+
+        // schematic photo numbers
+        //========================
         [].slice.call(sch.querySelectorAll('.schematic-side__map .schematic__number')).forEach(function(point, i){   
-            // expand click listener to the image
-            var fig = upTo(point, 'figure');
-            if(fig){
-                fig.addEventListener('click', function(){_this.relay(point)});
-            }            
+        //     // expand click listener to the image
+        //     var fig = upTo(point, 'figure');
+        //     if(fig){
+        //         fig.addEventListener('click', function(){_this.relay(point)});
+        //     }            
             point.addEventListener('click', function(){_this.relay(point)});
-            // point.addEventListener('blur', function(){_this.unrelay()});
+            
         });
     }
     
     unrelay(){
         var _this = this.el;
-        console.log('unrelay ' + _this);
+        //console.log('unrelay ' + _this);
         [].slice.call(_this.querySelectorAll('.schematic-focus')).forEach(function(n){
             n.classList.remove('schematic-focus');
-            console.log('rem from ' + n)
+            //console.log('rem from ' + n)
         });
     }
     

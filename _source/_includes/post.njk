@@ -1,7 +1,7 @@
 {% include "partials/header.njk" %}
 {% set bodyClass = "post" %}
 {% set threshold = 1000 %}
-{% if content.length < threshold and ((images[0].media) and (images[0].media != "video")) %}
+{% if (content.length < threshold and ((images[0].media) and (images[0].media != "video"))) or images.length == 1 %}
     {% set bodyClass = "post shortcopy" %}
 {% endif %}
 <body class="{{ bodyClass }}">
@@ -19,9 +19,11 @@
                     {# {{ content | safe }} #}
 
                     </div>
+                    {% if images.length > 1 %}
                     <div class="photos">
                         {{ images | imageList(content.length > threshold) | safe }}
                     </div>
+                    {% endif %}
                     <footer class="tags">
                         <h2>categories</h2>
                         <ul role="list">

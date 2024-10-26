@@ -38,6 +38,31 @@
     <meta property="article:author" content="{{ authorUrl }}">
     <meta property="article:published_time" content="{{ date | getYear }}-{{ date | getMonth }}-{{ date | getDay }}T09:00:00Z">
 
+    
+    
+    {% set currentItemIndex = 0 %}
+    {% for item in collections.posts  %}
+        {% if item.url == page.url %}{% set currentItemIndex = loop.index0 %}{% endif %}
+    {% endfor %}
+    {% set nextItemIndex = currentItemIndex - 1  %}
+    {% if nextItemIndex >= 0 %}
+        {% set nextItem = collections.posts[nextItemIndex] %}
+        <link rel="prefetch" href="{{ nextItem.url  }}" as="document" />    
+        {% for img in nextItem.data.images %}
+        <link rel="prefetch" href="https://farm9.static.flickr.com/{{ img.server }}/{{ img.id }}_{{ img.secret }}_b.jpg" as="image">
+        {% endfor %}                
+    {% endif %}
+
+    {% set prevItemIndex = currentItemIndex + 1  %}
+    {% if prevItemIndex < collections.posts.length %}
+        {% set prevItem = collections.posts[prevItemIndex] %}
+        <link rel="prefetch" href="{{ prevItem.url  }}" as="document" />
+        {% for img in prevItem.data.images %}
+        <link rel="prefetch" href="https://farm9.static.flickr.com/{{ img.server }}/{{ img.id }}_{{ img.secret }}_b.jpg" as="image">
+        {% endfor %}
+
+    {% endif %}
+
     <script type="application/ld+json">
         {
             "@context":"http://schema.org",

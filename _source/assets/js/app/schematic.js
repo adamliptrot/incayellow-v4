@@ -351,6 +351,12 @@ class SchematicSide {
             point.addEventListener('focus', function(){_this.unrelay()});
 
         });
+
+        document.querySelector('body').addEventListener('keyup', function(event){
+            if (event.key == "Escape") {
+                _this.unrelay();
+            }
+        });
         
 
         // schematic photo numbers

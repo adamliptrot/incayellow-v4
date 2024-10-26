@@ -1,7 +1,7 @@
 {% include "partials/header.njk" %}
 {% set bodyClass = "post" %}
 {% set threshold = 1000 %}
-{% if (content.length < threshold and ((images[0].media) and (images[0].media != "video"))) or images.length == 1 %}
+{% if ((content.length < threshold and ((images[0].media) and (images[0].media != "video")))) or images.length == 1 %}
     {% set bodyClass = "post shortcopy" %}
 {% endif %}
 <body class="{{ bodyClass }}">
@@ -19,11 +19,13 @@
                     {# {{ content | safe }} #}
 
                     </div>
-                    {% if images.length > 1 %}
+                    
                     <div class="photos">
+                        {% if images.length > 1 %}
                         {{ images | imageList(content.length > threshold) | safe }}
+                        {% endif %}
                     </div>
-                    {% endif %}
+                    
                     <footer class="tags">
                         <h2>categories</h2>
                         <ul role="list">
@@ -49,7 +51,7 @@
                 {% if nextItemIndex >= 0 %}
                     {% set nextItem = collections.posts[nextItemIndex] %}
                     <li class="further-reading__prev">
-                        <a href="{{ nextItem.url  }}" rel="Previous"><span aria-hidden="true">&larr;&nbsp;</span><span class="further-reading__title">{{ nextItem.data.title }}</span></a>
+                        <a href="{{ nextItem.url  }}" rel="Previous" data-title="read previous post"><span aria-hidden="true">&larr;&nbsp;</span><span class="further-reading__title">{{ nextItem.data.title }}</span></a>
                     </li>
                 {% endif %}
 
@@ -57,7 +59,7 @@
                 {% if prevItemIndex < collections.posts.length %}
                     {% set prevItem = collections.posts[prevItemIndex] %}
                     <li class="further-reading__next">
-                        <a href="{{ prevItem.url  }}" rel="Next"><span class="further-reading__title">{{ prevItem.data.title }}</span><span aria-hidden="true">&nbsp;&rarr;</span></a>
+                        <a href="{{ prevItem.url  }}" rel="Next" data-title="read next post"><span class="further-reading__title">{{ prevItem.data.title }}</span><span aria-hidden="true">&nbsp;&rarr;</span></a>
                     </li>
                 {% endif %}
                 </ul>

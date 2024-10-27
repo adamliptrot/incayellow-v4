@@ -446,6 +446,8 @@ var SchematicSide = /*#__PURE__*/function () {
     _classCallCheck(this, SchematicSide);
     this.el = options.el;
     //console.log(this.el);
+    this.supportsAnchor = CSS.supports('anchor-name: --myAnchor');
+    this.anchorMediaQuery = window.matchMedia('(min-width: 1000px)');
     this.assignEvents();
   }
   _createClass(SchematicSide, [{
@@ -453,7 +455,6 @@ var SchematicSide = /*#__PURE__*/function () {
     value: function assignEvents() {
       var _this = this;
       var sch = this.el;
-      var supportsAnchor = CSS.supports('anchor-name: --myAnchor');
 
       // schematic numbering
       //====================
@@ -504,11 +505,18 @@ var SchematicSide = /*#__PURE__*/function () {
     value: function relay(point) {
       var _this = this;
       _this.unrelay();
+      // allow time for unrelay to work
       setTimeout(function () {
         var dataImgID = point.getAttribute("data-img");
-        var img = document.querySelector('#' + dataImgID);
-        if (img) {
-          img.classList.add("schematic-focus");
+        var img = document.querySelectorAll('#' + dataImgID);
+        if (_this.supportsAnchor && _this.anchorMediaQuery.matches) {
+          // show image popup
+          if (img) {
+            img[0].classList.add("schematic-focus");
+          }
+        } else {
+          // jump focus to image grid
+          img[2].focus();
         }
       }, 50);
     }

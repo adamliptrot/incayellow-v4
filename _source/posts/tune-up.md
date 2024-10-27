@@ -6,11 +6,12 @@ archives : ["2017", "2017/08"]
 tags : ["electrics","engine","fuel and air"]
 images:
     -
-        caption : ""
+        caption : "Outside Alf's ready for the day's session."
         id : "23706920328"
         secret : "dce8eb00bc"
         server : "4455"
         media : "photo"
+        alt :   "The B parked up outside a group of single storey industrial units. The unit it is immediately in front of has the roller shutter down on the main vehicle entry. Above the door is a sign for Stockton Tuning and Service Centre."
 ---
 
 With the B having issues occasionally and having replaced a bunch of parts I wanted to ensure that at least the basics of timing and carbs were set correctly. Luckily I managed to find Alf who is a local old-school mechanic engineer running a local tuning shop and is a dab hand with carburettors.

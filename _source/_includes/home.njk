@@ -25,7 +25,11 @@
 
                 <div class="moment moment--photo">
                     <a href="{{ item.url }}">
+                        {% if item.data.images.length > 0 %}
                         <img loading="lazy" class="moment__thumb moment__thumb--loaded" src="https://farm9.static.flickr.com/{{ item.data.images[0].server }}/{{ item.data.images[0].id }}_{{ item.data.images[0].secret }}_{{ imgSize }}.jpg" alt="">
+                        {% else %}
+                        <img loading="lazy" class="moment__thumb moment__thumb--loaded" src="/assets/images/default.png" alt="" style="transform: rotate(45deg) scale(2.8);">
+                        {% endif %}
                         <span class="moment__caption moment__caption--nine"><span>{{ item.data.title }}</span></span>
                     </a>
                 </div>

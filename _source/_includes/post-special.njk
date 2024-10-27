@@ -1,8 +1,8 @@
 {% include "partials/header.njk" %}
-{% set bodyClass = "post" %}
+{% set bodyClass = "post post-special" %}
 {% set threshold = 1000 %}
-{% if ((content.length < threshold and ((images[0].media) and (images[0].media != "video")))) or images.length == 1 %}
-    {% set bodyClass = "post shortcopy" %}
+{% if content.length < threshold and ((images[0].media) and (images[0].media != "video")) %}
+    {% set bodyClass = "post post-special shortcopy" %}
 {% endif %}
 <body class="{{ bodyClass }}">
     {% include "partials/menu.njk" %}
@@ -14,34 +14,40 @@
                         <h1>{{ title }}</h1>
                         <time class="post-date" datetime="{{ date | getYear }}-{{ date | getMonth }}-{{ date | getDay }}">{{ date | parseDate }}</time>
                     </div>
-                    <div class="content">
+                </div>
+                
+                {% if images %}
                     {{ content | placeholders(images) | safe }}
-                    {# {{ content | safe }} #}
-
-                    </div>
-                    
+                {% else %}
+                    {{ content | safe }}
+                {% endif %}
+            
+                {% if images %}
+                <div class="inner">
                     <div class="photos">
-                        {% if images.length > 1 %}
                         {{ images | imageList(content.length > threshold) | safe }}
-                        {% endif %}
                     </div>
-                    
-                    <footer class="tags">
+                </div>
+                {% endif %}
+                <div class="inner">
+                    <footer class="tags">                        
                         <h2>categories</h2>
                         <ul role="list">
                             {{ tags | tagTemplate | safe }}
                         </ul>
                     </footer>
                 </div>
+                
             </article>
-
+            {% if hero != false %}
             <div class="hero">
                 <div class="hero__outer">
                     <div class="hero__imagewrap">
                         {{ images | heroTemplate(content.length > threshold) | safe }}
                     </div>
                 </div>
-            </div>
+            </div>            
+            {% endif %}
 
             <nav class="further-reading further-reading--post" aria-label="Read previous or next post">
                 {% set currentItemIndex = 0 %}
@@ -51,7 +57,7 @@
                 {% if nextItemIndex >= 0 %}
                     {% set nextItem = collections.posts[nextItemIndex] %}
                     <li class="further-reading__prev">
-                        <a href="{{ nextItem.url  }}" rel="Previous" data-title="read previous post"><span aria-hidden="true">&larr;&nbsp;</span><span class="further-reading__title">{{ nextItem.data.title }}</span></a>
+                        <a href="{{ nextItem.url  }}" rel="Previous"><span aria-hidden="true">&larr;&nbsp;</span><span class="further-reading__title">{{ nextItem.data.title }}</span></a>
                     </li>
                 {% endif %}
 
@@ -59,7 +65,7 @@
                 {% if prevItemIndex < collections.posts.length %}
                     {% set prevItem = collections.posts[prevItemIndex] %}
                     <li class="further-reading__next">
-                        <a href="{{ prevItem.url  }}" rel="Next" data-title="read next post"><span class="further-reading__title">{{ prevItem.data.title }}</span><span aria-hidden="true">&nbsp;&rarr;</span></a>
+                        <a href="{{ prevItem.url  }}" rel="Next"><span class="further-reading__title">{{ prevItem.data.title }}</span><span aria-hidden="true">&nbsp;&rarr;</span></a>
                     </li>
                 {% endif %}
                 </ul>

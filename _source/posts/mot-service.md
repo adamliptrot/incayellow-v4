@@ -6,7 +6,8 @@ archives : ["2015", "2015/04"]
 tags : ["brakes","transmission","general"]
 images:
     -
-        caption : ""
+        caption : "Spark plugs"
+        alt : "Two spark plugs showing slightly different electrode colour, one light brown one darker."
         id : "16095003068"
         secret : "158729d5f6"
         server : "7528"

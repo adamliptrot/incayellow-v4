@@ -1,8 +1,12 @@
 {% macro moment(post, size, captionClass, showPreview, currentItemIndex) %}
     <div class="moment moment--photo">
 
-            <a href="{{ post.url | url }}">
-                <img loading="lazy" class="moment__thumb" src="https://farm9.static.flickr.com/{{ post.data.images[0].server }}/{{ post.data.images[0].id }}_{{ post.data.images[0].secret }}_{{ size }}.jpg" alt="" />
+            <a href="{{ post.url | url }}">                
+                {% if post.data.images.length > 0 %}
+                    <img loading="lazy" class="moment__thumb" src="https://farm9.static.flickr.com/{{ post.data.images[0].server }}/{{ post.data.images[0].id }}_{{ post.data.images[0].secret }}_{{ size }}.jpg" alt="" />
+                {% else %}
+                    <img loading="lazy" class="moment__thumb" src="/assets/images/default.png" alt="" style="transform: rotate(45deg) scale(2.8);">
+                {% endif %}
                 <span class="moment__caption {{captionClass}}"><span>{{ post.data.title }}</span></span>
             </a>
 

@@ -1,22 +1,22 @@
-article {
+.inner {
     line-height: var(--lineHeight);
     font-weight: 300;
     font-variation-settings: "wght" 350;
 }
-article:before,
-article:after {
+.inner:before,
+.inner:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
-article:after {
+.inner:after {
     clear: both;
 }
 
-    article .head {
+.inner .head {
         margin-bottom: 2em;
     }
-    article h1 {
+    .inner h1 {
         font-size: 5rem;
         font-weight: 400;
         font-variation-settings: "wght" 350;
@@ -25,21 +25,21 @@ article:after {
         margin-bottom: 0.25em;
         line-height: 1;
     }
-    article p {
+    .inner p {
         text-indent: 2rem;
     }
-    article .content > p:first-of-type {
+    .inner .content > p:first-of-type {
         font-size: 140%;
         text-indent: 0;
         line-height: 1.4em;
         font-weight: 250;
         font-variation-settings: "wght" 275;
     }
-    article .content > p:first-of-type:first-letter {
+    .inner .content > p:first-of-type:first-letter {
         font-size: 1.4em;
     }
 
-    article .post-date {
+    .inner .post-date {
         font-size: 2rem;
         line-height: 1.1;
         font-weight: 400;
@@ -47,18 +47,18 @@ article:after {
     }
 
 @media screen and (min-width: 600px){
-    article .head {
+    .inner .head {
         display: flex; // grid fallback
     }
     @supports (display: grid) {
-        article .head {
+        .inner .head {
             display: grid;
             grid-template-columns: 1fr 3em;
             align-items: self-start;
             grid-column-gap: 2rem;
         }
     }
-    article .post-date {
+    .inner .post-date {
         display: flex;
         position: relative;
         text-align: center;
@@ -72,7 +72,7 @@ article:after {
 
 }
 @media screen and (min-width: 1000px){
-    article {
+    .inner {
         // START grid fallback
         width: 50%;
         float: right;
@@ -81,19 +81,26 @@ article:after {
         padding-right: 4rem;
     }
     @supports (display: grid) {
-        article {
+        .inner {
             grid-column: 2 / -1;
             grid-row: span 3;
             width: auto; // unset
             float: none; // unset
             padding-left: 0; // unset
         }
+        // .post-special .inner {
+        //     grid-column: 1; 
+        //     padding-left: 0;           
+        // }
         .shortcopy article {
+            display: contents;
+        }
+        .shortcopy .inner {
             grid-row-start: 2;
-            margin-top: -22rem;
+            // margin-top: -22rem;
             background: var(--background);
             // transition: all 0.5s ease-in-out;
-            padding: 4rem 4rem 0 4rem;
+            padding: 2rem 4rem 0 4rem;
             position: relative;
             z-index: 2;
         }
@@ -101,8 +108,8 @@ article:after {
 }
 
 @media screen and (min-width: calc(2000px + 4rem)){
-    article,
-    .shortcopy article {
+    .inner,
+    .shortcopy .inner {
         padding-right: 0;
-    }
+    }    
 }

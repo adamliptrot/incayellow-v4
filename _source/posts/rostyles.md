@@ -14,7 +14,7 @@ comments:
         date : 2014-07-31T23:00:00Z
         author : "Adam"
         op : true
-        comment : "Hi Paul, it was around Â£200 and was done in a day. The shop removed and put the tyres back on afterwards. They would have balanced them too but didn't have the necessary adapter to balance them on the nuts."
+        comment : "Hi Paul, it was around £200 and was done in a day. The shop removed and put the tyres back on afterwards. They would have balanced them too but didn't have the necessary adapter to balance them on the nuts."
     -
         date : 2014-09-23T23:00:00Z
         author : "Lasse"
@@ -24,7 +24,8 @@ comments:
         By the way, I like this web site!"
 images:
     -
-        caption : ""
+        caption : "The Rostyles in their new paint."
+        alt : "The newly painted Rostyle on the front passenger side wheel back on the car. The wheel is a slightly gunmetal silver, rather than a bright silver."
         id : "14529055756"
         secret : "0a8ccb5b1e"
         server : "3876"
@@ -34,4 +35,8 @@ images:
 The rostyles have been looking a bit sorry for themselves. While the spray-can job I did a few years back was fine, I omitted to treat the rust I couldn't remove (duh!), so now that has come back to bite me.
 
 
-Rather than buy a stack of cans and spend a few days stripping and spraying each wheel I decided to get them done properly. So I sought out a local company which would take the wheels, give them a blast to clear off the old paint and rust, then powdercoat them. Romax in Stockton did this in a day, and I think even they were surprised how well they came out! I chose to get them done in silver, so I could paint in the black myself, but for now I'm happy with just having the plain wheels and think I'll live with them like this for a while.
+Rather than buy a stack of cans and spend a few days stripping and spraying each wheel I decided to get them done properly. So I sought out a local company which would take the wheels, give them a blast to clear off the old paint and rust, then powdercoat them. Romax in Stockton did this in a day, and I think even they were surprised how well they came out!
+
+It cost £200 and the shop removed the tyres and put them back afterwards. They would have balanced them too but didn't have the necessary adapter to balance them on the nuts. 
+
+I chose to get them done in silver, so I could paint in the black myself, but for now I'm happy with just having the plain wheels and think I'll live with them like this for a while.

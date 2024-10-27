@@ -1,65 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
-var slugify = require('../lib/slugify');
-exports.parseDate = function (stringDate) {
-  var theDate = new Date(stringDate);
-  var theDateFormatted = theDate.getDate() + " " + allMonthNames('short')[theDate.getMonth()] + " " + theDate.getFullYear();
-  return theDateFormatted;
-};
-exports.allMonthNames = function (format) {
-  return allMonthNames(format);
-};
-exports.tagTemplate = function (tags) {
-  var ret = '';
-  if (tags.length > 0) {
-    tags.forEach(function (tag, i) {
-      ret = ret + "<li><a href=\"/archives/".concat(slugify(tag), "\" data-tag=\"").concat(tag, "\"><span class=\"tags__tag\">").concat(tag, "</span></a></li>");
-    });
-  }
-  return ret;
-};
-exports.heroTemplate = function (images, thresholdExceeded) {
-  var ret = "";
-  if (images[0].media && images[0].media == "video") {
-    //ret = `<video src="https://live.staticflickr.com/video/${ images[0].id }/${images[0].secret }/appletv.mp4" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
-    //ret = `<video src="/assets/videos/${images[0].url}" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
-    ret = "\n        <div style=\"padding:75% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/".concat(images[0].url, "?title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>\n            ");
-  } else {
-    ret = "\n            <img aria-hidden=\"true\" class=\"placeholder\" src=\"https://farm9.static.flickr.com/".concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_m.jpg\" alt=\"\" />\n            <img class=\"hero__image\" data-source=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "\"\n                srcset=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_m.jpg 500w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_z.jpg 640w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_c.jpg 800w,\n                https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_b.jpg 1024w\"\n                ").concat(thresholdExceeded ? 'sizes="(max-width: 2000px) 100%"' : 'sizes="(max-width: 999px) 100%, (max-width: 1999px) 33vw"', "\n                data-orient=\"landscape\" src=\"https://farm9.static.flickr.com/").concat(images[0].server, "/").concat(images[0].id, "_").concat(images[0].secret, "_b.jpg\" alt=\"\" />\n            ");
-  }
-  return ret;
-};
-exports.imageList = function (images, thresholdExceeded) {
-  var ret = "";
-  images.forEach(function (image, currentItemIndex) {
-    var videoImage = "";
-    if (image.media == "video") {
-      videoImage = "data-video=\"".concat(image.secret, ",").concat(image.id, "\"");
-    }
-    if (currentItemIndex % 2 == 0) {
-      ret = ret + "<div class=\"photoinsert\">";
-    }
-    ret = ret + "\n                <figure>\n                    <a href=\"https://flickr.com/photos/adamliptrot/".concat(image.id, "\">\n                        <img loading=\"lazy\" data-source=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "\"\n                                    srcset=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_m.jpg 500w,\n                                    https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_z.jpg 640w,\n                                    https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_c.jpg 800w,\n                                    https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg 1024w\"\n                                    ").concat(thresholdExceeded ? 'sizes="(max-width: 2000px) 100%"' : 'sizes="(max-width: 799px) 100%, (min-width: 800px) 440px"', "\n                                    ").concat(videoImage, "\n                                    data-orient=\"landscape\" src=\"https://farm9.static.flickr.com/").concat(image.server, "/").concat(image.id, "_").concat(image.secret, "_b.jpg\" alt=\"").concat(image.alt ? image.alt : '', "\" />\n                    </a>\n                    <figcaption>").concat(image.caption, "</figcaption>\n                </figure>");
-    if (currentItemIndex % 2 != 0 || currentItemIndex == images.length - 1) {
-      ret = ret + "</div>";
-    }
-  });
-  return ret;
-};
-var allMonthNames = function allMonthNames(format) {
-  var monthNames;
-  if (format == 'long') {
-    monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  } else {
-    monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
-  }
-  return monthNames;
-};
-
-},{"../lib/slugify":6}],2:[function(require,module,exports){
-"use strict";
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -120,119 +61,7 @@ function lazyLoadThumbnails(selector) {
   // })
 }
 
-},{}],3:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = loadPages;
-var _polyfills = require("./polyfills.js");
-var _filters = require("./filters.js");
-var _lazyLoadThumbnails = _interopRequireDefault(require("./lazyLoadThumbnails"));
-var _schematic = require("./schematic");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function loadPages() {
-  var contentThreshold = 1000;
-  window.addEventListener('popstate', function (event) {
-    loadContent(window.location.pathname);
-  });
-  hookLinks();
-  function loadContent(pathname) {
-    var article = (0, _polyfills.query)('.post');
-    var container = (0, _polyfills.query)('.post .content');
-    fetch(pathname + 'index.json').then(function (res) {
-      return res.json();
-    })
-    // .then(res => new Promise(resolve => setTimeout(() => resolve(res), 5000)))
-    .then(function (data) {
-      // body class
-      (0, _polyfills.query)('body').classList.remove('shortcopy');
-      if (data.content.length < contentThreshold && data.images[0].media && data.images[0].media != "video") {
-        (0, _polyfills.query)('body').classList.add('shortcopy');
-      }
-      // page title
-      document.title = data.title;
-      // main content
-      container.innerHTML = data.content;
-      // header
-      (0, _polyfills.query)('h1').innerHTML = data.title;
-      // date
-      (0, _polyfills.query)('.head time').innerHTML = (0, _filters.parseDate)(data.date);
-      // prev / next links
-      if (data.prevPost.title != undefined) {
-        if ((0, _polyfills.query)('[rel="Previous"]')) {
-          (0, _polyfills.query)('[rel="Previous"]').setAttribute('href', data.prevPost.url);
-          (0, _polyfills.query)('[rel="Previous"] .further-reading__title').innerHTML = data.prevPost.title;
-        } else {
-          // add previous link
-          (0, _polyfills.query)('.further-reading--post ul').insertAdjacentHTML('afterbegin', '<li class="further-reading__prev"><a title="read previous post" href="' + data.prevPost.url + '" rel="Previous"><span aria-hidden="true">&larr;&nbsp;</span><span class="further-reading__title">' + data.prevPost.title + '</span></a></li>');
-        }
-      } else {
-        (0, _polyfills.query)('.further-reading__prev').remove();
-      }
-      if (data.nextPost.title != undefined) {
-        if ((0, _polyfills.query)('[rel="Next"]')) {
-          (0, _polyfills.query)('[rel="Next"]').setAttribute('href', data.nextPost.url);
-          (0, _polyfills.query)('[rel="Next"] .further-reading__title').innerHTML = data.nextPost.title;
-        } else {
-          // add next link
-          (0, _polyfills.query)('.further-reading--post ul').insertAdjacentHTML('beforeend', '<li class="further-reading__next"><a title="read next post" href="' + data.nextPost.url + '" rel="Next"><span class="further-reading__title">' + data.nextPost.title + '</span><span aria-hidden="true">&nbsp;&rarr;</span></a></li>');
-        }
-      } else {
-        (0, _polyfills.query)('.further-reading__next').remove();
-      }
-      // main image
-      (0, _polyfills.query)('.hero__imagewrap').innerHTML = (0, _filters.heroTemplate)(data.images);
-      // other images
-      (0, _polyfills.query)('.photos').innerHTML = (0, _filters.imageList)(data.images, data.content.length > contentThreshold);
-      (0, _lazyLoadThumbnails.default)('hero__image');
-      // tags
-      (0, _polyfills.query)('.tags ul').innerHTML = (0, _filters.tagTemplate)(data.tags);
-      // reset scroll position
-      window.scrollTo(0, 0);
-      // need to manage focus
-      document.querySelectorAll('h1')[0].setAttribute('tabindex', "-1");
-      setTimeout(function () {
-        document.querySelectorAll('h1')[0].focus();
-      }, 500);
-      // reattach event listeners
-      hookLinks();
-      // schematic
-      (0, _schematic.reInitialiseSchematic)();
-    });
-  }
-  function hookLinks() {
-    (0, _polyfills.queryAll)('.content a, .further-reading--post a').forEach(function (link) {
-      if (link.origin !== window.location.origin) {
-        return;
-      }
-      if (link.dataset.hooked) {
-        return;
-      }
-      link.dataset.hooked = true;
-      link.addEventListener('click', function (event) {
-        if (event.ctrlKey || event.metaKey || event.shiftKey) {
-          return; // let the browser deal with the click natively
-        }
-        event.preventDefault();
-        var pathname = link.pathname;
-        if (!pathname.endsWith('/')) {
-          pathname += '/';
-        }
-
-        // don't follow links that are loaded
-        if (pathname === window.location.pathname) {
-          return;
-        }
-        window.history.pushState(null, null, pathname);
-        loadContent(pathname);
-      }, false);
-    });
-  }
-}
-
-},{"./filters.js":1,"./lazyLoadThumbnails":2,"./polyfills.js":4,"./schematic":5}],4:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -274,13 +103,13 @@ function upTo(el, tagName) {
   return null;
 }
 
-},{}],5:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.reInitialiseSchematic = exports.initialiseSchematic = void 0;
+exports.initialiseSchematicSide = exports.reInitialiseSchematic = exports.initialiseSchematic = void 0;
 var _polyfills = require("./polyfills.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -612,61 +441,106 @@ var reInitialiseSchematic = function reInitialiseSchematic() {
   }
 };
 exports.reInitialiseSchematic = reInitialiseSchematic;
-
-},{"./polyfills.js":4}],6:[function(require,module,exports){
-"use strict";
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-;
-(function (name, root, factory) {
-  if ((typeof exports === "undefined" ? "undefined" : _typeof(exports)) === 'object') {
-    module.exports = factory();
-    module.exports['default'] = factory();
+var SchematicSide = /*#__PURE__*/function () {
+  function SchematicSide(options) {
+    _classCallCheck(this, SchematicSide);
+    this.el = options.el;
+    //console.log(this.el);
+    this.supportsAnchor = CSS.supports('anchor-name: --myAnchor');
+    this.anchorMediaQuery = window.matchMedia('(min-width: 1000px)');
+    this.assignEvents();
   }
-  /* istanbul ignore next */else if (typeof define === 'function' && define.amd) {
-    define(factory);
-  } else {
-    root[name] = factory();
-  }
-})('slugify', void 0, function () {
-  /* eslint-disable */
-  var charMap = JSON.parse('{"$":"dollar","%":"percent","&":"and","<":"less",">":"greater","|":"or","¢":"cent","£":"pound","¤":"currency","¥":"yen","©":"(c)","ª":"a","®":"(r)","º":"o","À":"A","Á":"A","Â":"A","Ã":"A","Ä":"A","Å":"A","Æ":"AE","Ç":"C","È":"E","É":"E","Ê":"E","Ë":"E","Ì":"I","Í":"I","Î":"I","Ï":"I","Ð":"D","Ñ":"N","Ò":"O","Ó":"O","Ô":"O","Õ":"O","Ö":"O","Ø":"O","Ù":"U","Ú":"U","Û":"U","Ü":"U","Ý":"Y","Þ":"TH","ß":"ss","à":"a","á":"a","â":"a","ã":"a","ä":"a","å":"a","æ":"ae","ç":"c","è":"e","é":"e","ê":"e","ë":"e","ì":"i","í":"i","î":"i","ï":"i","ð":"d","ñ":"n","ò":"o","ó":"o","ô":"o","õ":"o","ö":"o","ø":"o","ù":"u","ú":"u","û":"u","ü":"u","ý":"y","þ":"th","ÿ":"y","Ā":"A","ā":"a","Ă":"A","ă":"a","Ą":"A","ą":"a","Ć":"C","ć":"c","Č":"C","č":"c","Ď":"D","ď":"d","Đ":"DJ","đ":"dj","Ē":"E","ē":"e","Ė":"E","ė":"e","Ę":"e","ę":"e","Ě":"E","ě":"e","Ğ":"G","ğ":"g","Ģ":"G","ģ":"g","Ĩ":"I","ĩ":"i","Ī":"i","ī":"i","Į":"I","į":"i","İ":"I","ı":"i","Ķ":"k","ķ":"k","Ļ":"L","ļ":"l","Ľ":"L","ľ":"l","Ł":"L","ł":"l","Ń":"N","ń":"n","Ņ":"N","ņ":"n","Ň":"N","ň":"n","Ő":"O","ő":"o","Œ":"OE","œ":"oe","Ŕ":"R","ŕ":"r","Ř":"R","ř":"r","Ś":"S","ś":"s","Ş":"S","ş":"s","Š":"S","š":"s","Ţ":"T","ţ":"t","Ť":"T","ť":"t","Ũ":"U","ũ":"u","Ū":"u","ū":"u","Ů":"U","ů":"u","Ű":"U","ű":"u","Ų":"U","ų":"u","Ź":"Z","ź":"z","Ż":"Z","ż":"z","Ž":"Z","ž":"z","ƒ":"f","Ơ":"O","ơ":"o","Ư":"U","ư":"u","ǈ":"LJ","ǉ":"lj","ǋ":"NJ","ǌ":"nj","Ș":"S","ș":"s","Ț":"T","ț":"t","˚":"o","Ά":"A","Έ":"E","Ή":"H","Ί":"I","Ό":"O","Ύ":"Y","Ώ":"W","ΐ":"i","Α":"A","Β":"B","Γ":"G","Δ":"D","Ε":"E","Ζ":"Z","Η":"H","Θ":"8","Ι":"I","Κ":"K","Λ":"L","Μ":"M","Ν":"N","Ξ":"3","Ο":"O","Π":"P","Ρ":"R","Σ":"S","Τ":"T","Υ":"Y","Φ":"F","Χ":"X","Ψ":"PS","Ω":"W","Ϊ":"I","Ϋ":"Y","ά":"a","έ":"e","ή":"h","ί":"i","ΰ":"y","α":"a","β":"b","γ":"g","δ":"d","ε":"e","ζ":"z","η":"h","θ":"8","ι":"i","κ":"k","λ":"l","μ":"m","ν":"n","ξ":"3","ο":"o","π":"p","ρ":"r","ς":"s","σ":"s","τ":"t","υ":"y","φ":"f","χ":"x","ψ":"ps","ω":"w","ϊ":"i","ϋ":"y","ό":"o","ύ":"y","ώ":"w","Ё":"Yo","Ђ":"DJ","Є":"Ye","І":"I","Ї":"Yi","Ј":"J","Љ":"LJ","Њ":"NJ","Ћ":"C","Џ":"DZ","А":"A","Б":"B","В":"V","Г":"G","Д":"D","Е":"E","Ж":"Zh","З":"Z","И":"I","Й":"J","К":"K","Л":"L","М":"M","Н":"N","О":"O","П":"P","Р":"R","С":"S","Т":"T","У":"U","Ф":"F","Х":"H","Ц":"C","Ч":"Ch","Ш":"Sh","Щ":"Sh","Ъ":"U","Ы":"Y","Ь":"","Э":"E","Ю":"Yu","Я":"Ya","а":"a","б":"b","в":"v","г":"g","д":"d","е":"e","ж":"zh","з":"z","и":"i","й":"j","к":"k","л":"l","м":"m","н":"n","о":"o","п":"p","р":"r","с":"s","т":"t","у":"u","ф":"f","х":"h","ц":"c","ч":"ch","ш":"sh","щ":"sh","ъ":"u","ы":"y","ь":"","э":"e","ю":"yu","я":"ya","ё":"yo","ђ":"dj","є":"ye","і":"i","ї":"yi","ј":"j","љ":"lj","њ":"nj","ћ":"c","џ":"dz","Ґ":"G","ґ":"g","฿":"baht","ა":"a","ბ":"b","გ":"g","დ":"d","ე":"e","ვ":"v","ზ":"z","თ":"t","ი":"i","კ":"k","ლ":"l","მ":"m","ნ":"n","ო":"o","პ":"p","ჟ":"zh","რ":"r","ს":"s","ტ":"t","უ":"u","ფ":"f","ქ":"k","ღ":"gh","ყ":"q","შ":"sh","ჩ":"ch","ც":"ts","ძ":"dz","წ":"ts","ჭ":"ch","ხ":"kh","ჯ":"j","ჰ":"h","ẞ":"SS","Ạ":"A","ạ":"a","Ả":"A","ả":"a","Ấ":"A","ấ":"a","Ầ":"A","ầ":"a","Ẩ":"A","ẩ":"a","Ẫ":"A","ẫ":"a","Ậ":"A","ậ":"a","Ắ":"A","ắ":"a","Ằ":"A","ằ":"a","Ẳ":"A","ẳ":"a","Ẵ":"A","ẵ":"a","Ặ":"A","ặ":"a","Ẹ":"E","ẹ":"e","Ẻ":"E","ẻ":"e","Ẽ":"E","ẽ":"e","Ế":"E","ế":"e","Ề":"E","ề":"e","Ể":"E","ể":"e","Ễ":"E","ễ":"e","Ệ":"E","ệ":"e","Ỉ":"I","ỉ":"i","Ị":"I","ị":"i","Ọ":"O","ọ":"o","Ỏ":"O","ỏ":"o","Ố":"O","ố":"o","Ồ":"O","ồ":"o","Ổ":"O","ổ":"o","Ỗ":"O","ỗ":"o","Ộ":"O","ộ":"o","Ớ":"O","ớ":"o","Ờ":"O","ờ":"o","Ở":"O","ở":"o","Ỡ":"O","ỡ":"o","Ợ":"O","ợ":"o","Ụ":"U","ụ":"u","Ủ":"U","ủ":"u","Ứ":"U","ứ":"u","Ừ":"U","ừ":"u","Ử":"U","ử":"u","Ữ":"U","ữ":"u","Ự":"U","ự":"u","Ỳ":"Y","ỳ":"y","Ỵ":"Y","ỵ":"y","Ỷ":"Y","ỷ":"y","Ỹ":"Y","ỹ":"y","‘":"\'","’":"\'","“":"\\\"","”":"\\\"","†":"+","•":"*","…":"...","₠":"ecu","₢":"cruzeiro","₣":"french franc","₤":"lira","₥":"mill","₦":"naira","₧":"peseta","₨":"rupee","₩":"won","₪":"new shequel","₫":"dong","€":"euro","₭":"kip","₮":"tugrik","₯":"drachma","₰":"penny","₱":"peso","₲":"guarani","₳":"austral","₴":"hryvnia","₵":"cedi","₹":"indian rupee","₽":"russian ruble","₿":"bitcoin","℠":"sm","™":"tm","∂":"d","∆":"delta","∑":"sum","∞":"infinity","♥":"love","元":"yuan","円":"yen","﷼":"rial"}');
-  /* eslint-enable */
+  _createClass(SchematicSide, [{
+    key: "assignEvents",
+    value: function assignEvents() {
+      var _this = this;
+      var sch = this.el;
 
-  function replace(string, options) {
-    if (typeof string !== 'string') {
-      throw new Error('slugify: string argument expected');
+      // schematic numbering
+      //====================
+      [].slice.call(sch.querySelectorAll('.schematic-side__blueprint .schematic__number')).forEach(function (point, i) {
+        // open popup for this point
+        //==================================
+        point.addEventListener('click', function () {
+          _this.relay(point);
+        });
+
+        // close any open popups when focus moves to a new point
+        //==================================
+        point.addEventListener('focus', function () {
+          _this.unrelay();
+        });
+      });
+      document.querySelector('body').addEventListener('keyup', function (event) {
+        if (event.key == "Escape") {
+          _this.unrelay();
+        }
+      });
+
+      // schematic photo numbers
+      //========================
+      [].slice.call(sch.querySelectorAll('.schematic-side__map .schematic__number')).forEach(function (point, i) {
+        //     // expand click listener to the image
+        //     var fig = upTo(point, 'figure');
+        //     if(fig){
+        //         fig.addEventListener('click', function(){_this.relay(point)});
+        //     }            
+        point.addEventListener('click', function () {
+          _this.relay(point);
+        });
+      });
     }
-    options = typeof options === 'string' ? {
-      replacement: options
-    } : options || {};
-    var slug = string.split('').reduce(function (result, ch) {
-      return result + (charMap[ch] || ch
-      // allowed
-      ).replace(options.remove || /[^\w\s$*_+~.()'"!\-:@]/g, '');
-    }, '')
-    // trim leading/trailing spaces
-    .trim()
-    // convert spaces
-    .replace(/[-\s]+/g, options.replacement || '-');
-    return options.lower ? slug.toLowerCase() : slug;
-  }
-  replace.extend = function (customMap) {
-    for (var key in customMap) {
-      charMap[key] = customMap[key];
+  }, {
+    key: "unrelay",
+    value: function unrelay() {
+      var _this = this.el;
+      //console.log('unrelay ' + _this);
+      [].slice.call(_this.querySelectorAll('.schematic-focus')).forEach(function (n) {
+        n.classList.remove('schematic-focus');
+        //console.log('rem from ' + n)
+      });
     }
-  };
-  return replace;
-});
+  }, {
+    key: "relay",
+    value: function relay(point) {
+      var _this = this;
+      _this.unrelay();
+      // allow time for unrelay to work
+      setTimeout(function () {
+        var dataImgID = point.getAttribute("data-img");
+        var img = document.querySelectorAll('#' + dataImgID);
+        if (_this.supportsAnchor && _this.anchorMediaQuery.matches) {
+          // show image popup
+          if (img) {
+            img[0].classList.add("schematic-focus");
+          }
+        } else {
+          // jump focus to image grid
+          img[2].focus();
+        }
+      }, 50);
+    }
+  }]);
+  return SchematicSide;
+}();
+var initialiseSchematicSide = function initialiseSchematicSide() {
+  [].slice.call((0, _polyfills.queryAll)('.schematic-side')).forEach(function (s) {
+    new SchematicSide({
+      el: s
+    });
+  });
+};
+exports.initialiseSchematicSide = initialiseSchematicSide;
 
-},{}],7:[function(require,module,exports){
+},{"./polyfills.js":2}],4:[function(require,module,exports){
 "use strict";
 
 var _schematic = require("./app/schematic");
 var _lazyLoadThumbnails = _interopRequireDefault(require("./app/lazyLoadThumbnails"));
-var _loadPages = _interopRequireDefault(require("./app/loadPages"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //import Moments from "./app/moments"
+
+//import loadPages from "./app/loadPages"
 
 /*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
 "document" in self && ("classList" in document.createElement("_") && (!document.createElementNS || "classList" in document.createElementNS("http://www.w3.org/2000/svg", "g")) || !function (t) {
@@ -792,15 +666,16 @@ window.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.hero__image')) {
     (0, _lazyLoadThumbnails.default)('hero__image');
   }
-  (0, _loadPages.default)();
+  //loadPages();
 }); // eslint-disable-line no-unused-vars, max-len
 
 window.onload = function () {
   (0, _schematic.initialiseSchematic)();
+  (0, _schematic.initialiseSchematicSide)();
 };
 //resize, needs debouncing
 addEventListener('resize', function () {
   (0, _schematic.initialiseSchematic)();
 });
 
-},{"./app/lazyLoadThumbnails":2,"./app/loadPages":3,"./app/schematic":5}]},{},[7]);
+},{"./app/lazyLoadThumbnails":1,"./app/schematic":3}]},{},[4]);

@@ -12,6 +12,7 @@ images:
         server : "65535"
         media : "photo"
         alt : "The B on the rolling road, front wheels checked and rear on rollers."
+        marker : "01"
     -
         caption : "Between sessions"
         id : "49763560963"
@@ -19,6 +20,7 @@ images:
         server : "65535"
         media : "photo"
         alt : "View at the front of the B showing the cooling fan ducting with diagnostic kit in the background."
+        marker : "02"
     -
         caption : "Results sheet"
         id : "49764094866"
@@ -26,6 +28,7 @@ images:
         server : "65535"
         media : "photo"
         alt : "Printout of the runs showing max of 85.9 horsepower at the engine, 67.9 at the wheels, all at around 4600 RPM. Max torque of 104 at 2700 RPM."
+        marker : "03"
     -
         caption : "New ballast resistor"
         id : "49764096196"
@@ -33,6 +36,7 @@ images:
         server : "65535"
         media : "photo"
         alt : "White ballast resistor wired in next to the coil."
+        marker : "04"
 ---
 
 With the intermittent but persistent engine miss still causing issues, most recently while in the middle of the North Yorkshire Moors, I thought a rolling road session would be the best way to get the issue to appear and administer a fix.
@@ -41,8 +45,20 @@ I booked a session at Motorscope in Northallerton, their Facebook pages having s
 
 The rolling road itself sits around the back of the workshop and was a little different to photos of ones I'd seen online. Instead of webbing straps securing the car, here there is a fully adjustable set of chocks set on a grid, with a heavy duty fan directing air to the car's radiator. This definitely felt more secure.
 
+<div class="photoinsert">
+//PH01 //PH02
+</div>
+
 Richard gave the B a few runs, adjusting the carbs and timing slightly in-between sessions. Eventually the miss appeared, thank goodness - I was starting to think it was going to go through the entire day without showing itself. Some investigation and Richard believed he knew what we were looking at. The later Bs have a ballasted coil in conjunction with a ballast wire which reduces the supply to the coil when running. Here however we were seeing the coil getting too much voltage whilst running, suggesting the ballast wire had lost its resistance over time. The addition of a stand-alone ballast resistor and the problem didn't reappear during the day.
+
+<div class="photoinsert">
+//PH04
+</div>
 
 Richard did let me have a run print-out, but we weren't running it for a power reading so it likely doesn't show the full output. It was odd however to hear and see the car doing what seemed to be fast speeds from outside for once. The read-out did show peak power being achieved at a little over 4500 rpm, given that I currently change gear at 3500 rpm, maybe I should be a bit more brave?
 
 Risking tempting fate, I've done around 300 miles since that day and the issue has not reappeared.
+
+<div class="photoinsert">
+//PH03
+</div>

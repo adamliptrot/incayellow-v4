@@ -1,21 +1,21 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate } = require("./_source/assets/js/app/filters");
+const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate, mediaDisplay, placeholders } = require("./_source/assets/js/app/filters");
 
 module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginRss);
 
     eleventyConfig.addCollection("posts", (collection) => {
-		return collection.getFilteredByGlob("_source/posts/**/*.md").sort((a, b) => {
+		return collection.getFilteredByGlob(["_source/posts/**/*.md", "_source/posts/**/*.njk"]).sort((a, b) => {
             return a.date - b.date;
         })
     });
     eleventyConfig.addCollection("postsRev", (collection) => {
-		return collection.getFilteredByGlob("_source/posts/**/*.md").sort((a, b) => {
+		return collection.getFilteredByGlob(["_source/posts/**/*.md", "_source/posts/**/*.njk"]).sort((a, b) => {
             return b.date - a.date;
         })
     });
     eleventyConfig.addCollection("latestPosts", (collection) => {
-        return collection.getFilteredByGlob("_source/posts/**/*.md").sort((a, b) => {
+        return collection.getFilteredByGlob(["_source/posts/**/*.md", "_source/posts/**/*.njk"]).sort((a, b) => {
             return a.date - b.date;
         }).reverse().slice(0,5);
     });
@@ -30,6 +30,14 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addNunjucksFilter("imageList", function(images){
         return imageList(images);
     })
+
+    eleventyConfig.addNunjucksFilter("mediaDisplay", function(image, passthrough){
+        return mediaDisplay(image, passthrough);
+    })
+
+    eleventyConfig.addNunjucksFilter('placeholders', function(content, imgs){        
+        return placeholders(content, imgs);
+    });
 
     eleventyConfig.addNunjucksFilter("tagTemplate", function(tags){
         return tagTemplate(tags);
@@ -242,6 +250,8 @@ module.exports = (eleventyConfig) => {
         if (!_.isArray(arr)) { return []; } // remove this line if you don't want the lodash/underscore dependency
         return arr.slice(0, limit);
     });
+
+
 
     eleventyConfig.addNunjucksFilter('firstPara', function (context) {
         if(!context){return}

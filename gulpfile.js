@@ -55,7 +55,7 @@ gulp.task('eleventy', shell.task('eleventy'));
 // });
 
 gulp.task('watch', () => {
-    gulp.watch('_source/assets/css/**/*', gulp.series('default'));
+    gulp.watch('_source/assets/css/**/*.scss', gulp.series('default'));
     gulp.watch('_source/assets/fonts/**/*', gulp.series('default'));
     gulp.watch('_source/assets/images/**/*', gulp.series('default'));
     gulp.watch('_source/assets/js/**/*', gulp.series('default'));

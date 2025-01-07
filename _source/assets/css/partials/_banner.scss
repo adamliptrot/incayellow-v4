@@ -99,12 +99,12 @@
             z-index: -1;
             transform: skewX(-14deg);
         }
-        .primary-nav [aria‐current="page"] {
+        .primary-nav [aria-current="page"] {
             background-color: var(--incayellow);
             color: var(--textOnLight);
             padding: 0.5rem 0;
         }
-        .primary-nav [aria‐current="page"]:before {
+        .primary-nav [aria-current="page"]:before {
             background: var(--incayellow);
         }
         .primary-nav.primary-nav a:focus,

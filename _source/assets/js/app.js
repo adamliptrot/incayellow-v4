@@ -163,11 +163,13 @@ var Schematic = /*#__PURE__*/function () {
       if (tagNav) {
         tagNav.classList.remove('inactive');
         tagNav.classList.add('active');
+        tagNav.setAttribute('aria-current', 'page');
       }
       var tagSchematic = this.el.querySelector("#".concat(tagName));
       if (tagSchematic) {
         tagSchematic.classList.remove('inactive');
         tagSchematic.classList.add('active');
+        tagSchematic.setAttribute('aria-current', 'page');
       }
     }
   }, {
@@ -215,6 +217,7 @@ var Schematic = /*#__PURE__*/function () {
       [].slice.call((0, _polyfills.queryAll)(_this.nav + ' a')).forEach(function (n, i) {
         n.classList.remove('active');
         n.classList.add('inactive');
+        n.removeAttribute('aria-current');
       });
 
       // reset active components

@@ -25,7 +25,7 @@ One of the problems with the GT version of the B is the lack of 'hidden' space. 
 The MGOC did produce an aftermarket parcel shelf for a short while but they're no longer available, so you have to either fabricate your own or hunt around on ebay.
 
 
-I had a saved search running on ebay for one of the MGOC shelves for 2 years before it popped a result into my inbox. Patience is a virtue, but that was a long wait! As could be expected there was a lot of interest, the final price hiking to Â£77 - near Â£100 with postage - and with a flurry of late bids it was a nail-biting finish.
+I had a saved search running on ebay for one of the MGOC shelves for 2 years before it popped a result into my inbox. Patience is a virtue, but that was a long wait! As could be expected there was a lot of interest, the final price hiking to £77 - near £100 with postage - and with a flurry of late bids it was a nail-biting finish.
 
 
 The shelf comes in two parts - the main section is U-shaped and stays in place on two metal arms, whilst the smaller section sits inside the U and is hinged to allow access to the area underneath.
@@ -40,4 +40,8 @@ The shelf was a little worn, with a few marks here and there and a bit of fading
 
 
 
-2014-05-28: Quick update - so it turns out the fit isn't very good. The shelf is a good inch or so too narrow and if you pull it over to one side fully it can almost fall off the bracket on the other side! This means it also jiggles and jumps about with loads of accompanying noise, squeaks and rattles. Not very good. Also the hatch part can jump when encountering rough roads giving an extra bang to go with all that. I had the B out the other day and added some foam style pipe lagging lengths (about 1.5cm wide) on each lug of the brackets. As it is foam it compresses quite nicely and holds the shelf pretty solid - result, no more rattles!  Now I know that works I'll probably spray the foam black to blend it in a bit better, but it doesn't really stand out as it is. The banging hatch will take a little more sorting but I'm thinking some kind of catch like on the armrest should be enough to hold it without making it too awkward to use.
+__2014-05-28: Quick update__ - so it turns out the fit isn't very good. The shelf is a good inch or so too narrow and if you pull it over to one side fully it can almost fall off the bracket on the other side! This means it also jiggles and jumps about with loads of accompanying noise, squeaks and rattles. Not very good. 
+
+Also the hatch part can jump when encountering rough roads giving an extra bang to go with all that. I had the B out the other day and added some foam style pipe lagging lengths (about 1.5cm wide) on each lug of the brackets. As it is foam it compresses quite nicely and holds the shelf pretty solid - result, no more rattles!
+
+Now I know that works I'll probably spray the foam black to blend it in a bit better, but it doesn't really stand out as it is. The banging hatch will take a little more sorting but I'm thinking some kind of catch like on the armrest should be enough to hold it without making it too awkward to use.

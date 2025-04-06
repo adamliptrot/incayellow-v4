@@ -19,6 +19,13 @@ images:
         secret : "94c01baedb"
         server : "847"
         media : "photo"
+    -
+       caption : "The switch"
+       id : "41538221602"
+       secret : "0cf2aef0e4"
+       server : "930"
+       media : "photo"
+       alt : "A black plastic circular knurled knob with white writing stating 'OFF' and an arrow indicating the direction to turn it."
 ---
 
 Partially for security, but primarily as a piece of mind against electrical fires I've been wanting to install a cut-off switch for a while now. Most of these switches come with a red plastic key which you can remove, but I knew that this would just mean I'd lose it or, due to the size of these keys, I just wouldn't take it with me. Additionally the security benefit of removable red keys is a bit dubious as most thieves targeting classic cars will likely carry one themselves.

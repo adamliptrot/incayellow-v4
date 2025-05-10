@@ -33,4 +33,4 @@ images:
 The morning of the MOT was probably the nicest morning of the year so far. The car passed with no problems or advisories and not a little interest from the younger lads at the garage. As the day was shaping up to be a good one we decided on a trip to the Lakes.
 
 
-The scenery in the National Park gave us the opportunity for some MG 'glamour' shots and I've posted a couple here - the first is of Brough Castle and the second is near Grasmere as the light was failing towards the end of the day.
+The scenery in the National Park gave us the opportunity for some MG 'glamour' shots and I've posted a couple here - the first is of Brougham Castle and the second is near Grasmere as the light was failing towards the end of the day.

@@ -19,7 +19,7 @@ comments:
         comment : "Hardknott will have to wait until I've changed the bushings on the front suspension :)"
 images:
     -
-        caption : "Brough Castle"
+        caption : "Brougham Castle"
         id : "5541608484"
         secret : "c16184e64e"
         server : "5138"

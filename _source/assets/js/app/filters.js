@@ -26,7 +26,7 @@ exports.heroTemplate = function(images, thresholdExceeded){
         //ret = `<video src="https://live.staticflickr.com/video/${ images[0].id }/${images[0].secret }/appletv.mp4" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
         //ret = `<video src="/assets/videos/${images[0].url}" width="100%" poster="https://farm9.static.flickr.com/${ images[0].server }/${ images[0].id }_${ images[0].secret }_d.jpg" controls=""></video>`
         ret = `
-        <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/${ images[0].url }?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/${ images[0].url }?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe><script src="https://player.vimeo.com/api/player.js"></script></div>
             `
     } else {
         if (images.length == 1 && images[0].caption && images[0].caption > ""){
@@ -98,13 +98,15 @@ var allMonthNames = function(format){
 }
 
 var mediaDisplay = function(image, passthrough = ""){
-    var videoImage = ""
+    var videoImage = "";
+    var ret = "";
     if(image.media == "video"){
-        videoImage = `data-video="${ image.secret },${ image.id }"`
-    }
+        videoImage = `data-video="${ image.secret },${ image.id }"`;
+        ret = `<figure style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/${ image.url }?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe><script src="https://player.vimeo.com/api/player.js"></script><figcaption>${ image.caption }</figure>`
 
-    var ret = `
-            <figure>                
+    } else {
+
+    ret = `<figure>                
                 <img loading="lazy" data-source="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }"
                             srcset="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_m.jpg 500w,
                             https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_z.jpg 640w,
@@ -115,6 +117,6 @@ var mediaDisplay = function(image, passthrough = ""){
                             data-orient="${ image.orient || "landscape" }" src="https://farm9.static.flickr.com/${ image.server }/${ image.id }_${ image.secret }_b.jpg" alt="${ image.alt? image.alt : '' }" />                
                 <figcaption>${passthrough} ${ image.caption } <a href="https://flickr.com/photos/adamliptrot/${ image.id }">View photo</a></figcaption>
             </figure>`
-    
+    }
     return ret;
 }

@@ -7,7 +7,7 @@ tags : ["driving"]
 images :
 
    -
-       caption : ""
+       caption : "Racked up for the trip home"
        id : "54217266904"
        secret : "38cc6592c4"
        server : "65535"
@@ -15,7 +15,7 @@ images :
        alt : "Side-on view of the B with a roof-rack and Christmas tree on top"
 
    -
-       caption : ""
+       caption : "Desite being a 7 foot tree it didn't overhang too much"
        id : "54204732109"
        secret : "7dabb37ca5"
        server : "65535"
@@ -23,7 +23,7 @@ images :
        alt : "Top-down view of the B with a roof-rack and Christmas tree on top"
 
    -
-       caption : ""
+       caption : "Aerodynamics may have suffered"
        id : "54204902710"
        secret : "6aede56ac3"
        server : "65535"

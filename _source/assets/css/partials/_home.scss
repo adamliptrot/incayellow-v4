@@ -225,9 +225,11 @@
 
 @media screen and (min-width: 1000px){
     .latest h2 {
-        font-size: 3rem;
+        font-size: 4rem;
         text-align: left;
-        padding-left: 3rem;
+        padding-right: 3rem;
+        line-height: 1;
+        justify-self: end;
     }
     .latest {
         display: grid;

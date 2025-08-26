@@ -1,22 +1,24 @@
 {% include "partials/header.njk" %}
 <body class="{{bodyClass}}">
-<div class="hero">
     {% include "partials/menu.njk" %}
-    <div class="imgWrap">
-        <img src="https://farm3.staticflickr.com/2201/2193245601_733447c46e_d.jpg" data-orient="landscape" alt="" />
-    </div>
-</div>
+    <main>
+        <div class="wrap">
+            <article>
+                <h1>{{title}}</h1>
 
-<article>
-        <h1>{{title}}</h1>
+                {{ content | placeholders(images) | safe }}
 
-        {{content | safe }}
-
-    </article>
-
-
-
-
-
+            </article>
+            {# {% if images %}
+            <div class="hero">
+                <div class="hero__outer">
+                    <div class="hero__imagewrap">
+                        {{ images | heroTemplate(content.length > threshold) | safe }}
+                    </div>
+                </div>
+            </div>
+            {% endif %} #}
+        </div>
+    </main>
 
 {% include "partials/footer.njk" %}

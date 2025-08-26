@@ -9,12 +9,12 @@ pagination:
         - post
         - posts
 layout: tags.njk
-renderData:
+eleventyComputed:
     title: Tagged “{{ tag }}”
 permalink: /archives/{{ tag | slug }}/
 tag: tag
 ---
-<h1>Tagged “{{ tag }}”</h1>
+
 {% set postlist = collections[ tag ] | reverse %}
 
 

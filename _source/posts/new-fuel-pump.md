@@ -6,6 +6,27 @@ archives : ["2017", "2017/07"]
 tags : ["fuel and air"]
 images:
     -
+        caption : "New SU pump"
+        id : "54798138596"
+        secret : "3151eb55c1"
+        server : "65535"
+        media : "photo"
+        alt : "Fuel pump with SU branding. Two banjo bolts are showing." 
+    -
+        caption : "Installation point in the boot"
+        id : "54798469285"
+        secret : "897953cf9e"
+        server : "65535"
+        media : "photo"
+        alt : "The MG with the boot open showing a circular hole in the leading edge where the fuel pump sits"
+    -
+        caption : "Fuel sender outlet"
+        id : "54798469455"
+        secret : "bd50d6c419"
+        server : "65535"
+        media : "photo"
+        alt : "Metal pipe on the side of the fuel tank"      
+    -
         caption : ""
         id : "35753914934"
         secret : "65a9c0101b"

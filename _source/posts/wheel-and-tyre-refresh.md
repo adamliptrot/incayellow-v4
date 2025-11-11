@@ -4,6 +4,7 @@ slug : "wheel-and-tyre-refresh"
 date : 2025-11-07T18:53:00.000Z
 archives : ["2025", "2025/11"]
 tags : ["general"]
+bodycss: "shortcopy"
 images :
 
    -
@@ -13,6 +14,7 @@ images :
        server : "65535"
        media : "photo"
        alt : "A side-on, low-down profile of the B on an autumnal tree-lined street."
+       marker : "01"
 
    -
        caption : "The old tyres from 2016"
@@ -21,6 +23,7 @@ images :
        server : "65535"
        media : "photo"
        alt : "The date code on the old tyres reads 0316"
+       marker : "02"
 
    -
        caption : "Blockley tyres freshly arrived"
@@ -29,6 +32,7 @@ images :
        server : "65535"
        media : "photo"
        alt : "A tyre wrapped in bright blue plastic with a Blockley label"
+       marker : "03"
 
    -
        caption : "The new Blockley compared to the Vredestein spare which had been unused. The Blockley actually seems a little taller."
@@ -37,6 +41,7 @@ images :
        server : "65535"
        media : "photo"
        alt : "The old and new tyres standing next to each other, tread facing the camera. The Blockley has a dogbone pattern tread whilst the Vredestein has a more modern style with central channels."
+       marker : "04"
 
    -
        caption : "Blockleys mounted on the fresh wheels ready to go on the car"
@@ -45,9 +50,14 @@ images :
        server : "65535"
        media : "photo"
        alt : "The wheels with fresh tyres stacked on top of each other. The B can be seen in the garage behind."
+       marker : "05"
 ---
 
 The current tyres are nearly 10 years old so really at the point of needing replacing and the steel wheels were [powder-coated](/posts/rostyles/) over 11 years and are starting to look shabby with a few rust-spots making themselves known. It makes sense then to get them both sorted at the same time to avoid having to go through balancing twice.
+
+<div class="photoinsert">
+ //PH02
+</div>
 
 The rostyles went back to Romax for a full strip and fresh powder-coat in silver just like last time at £54 a wheel. This time I also got the spare done as it has been sitting n my previous spray paint since and would stand out as it had the black inserts painted.
 
@@ -68,9 +78,17 @@ But I kept hearing good things about Blockleys. On several forums people who lik
 
 I ordered a set of 5 tyres and they duly arrived wrapped in blue plastic to protect them from sunlight and damage in transit. The tread looks very smart, though will be interesting to see how well it shifts water as there is no clear channel like my existing ones have.
 
+<div class="photoinsert">
+ //PH03 //PH04
+</div>
+
 The last time I had the wheels balanced I managed to find a tyre shop with a bolt adapter so the wheels could be lug-balanced rather than cone balanced. Unfortunately that garage has since closed and calling round all the local tyre shops showed that this seems to be something no-one longer carries. There is some split opinion on whether rostyles need lug balancing or not, so I figured in the absence of immediately available alternatives I'd try it out and see how bad cone balancing would be.
 
 I got all the tyres fitted and balanced (on a cone), but had to get two redone as the stick-on weights fell off before the wheels had made a revolution. Newly powder-coated wheels need careful cleaning where the weights are to be applied so the adhesive will take hold.
+
+<div class="photoinsert">
+ //PH05
+</div>
 
 Blockley advise to take the first 30 or so miles easy to bed the tyres in and remove any of the mould-release chemicals. With this done we took the B for a 100 mile round-trip to Harrogate. Everything was ok and we ran at 70mph with no issues until about 30 miles in there was a sudden onset of vibration through the steering wheel.
 

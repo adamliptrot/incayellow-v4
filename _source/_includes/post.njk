@@ -1,5 +1,8 @@
 {% include "partials/header.njk" %}
 {% set bodyClass = "post" %}
+{% if bodycss %}
+    {% set bodyClass = "post " + bodycss %}
+{% endif %}
 {% set threshold = 1000 %}
 {% if ((content.length < threshold and ((images[0].media) and (images[0].media != "video")))) or images.length == 1 %}
     {% set bodyClass = "post shortcopy" %}

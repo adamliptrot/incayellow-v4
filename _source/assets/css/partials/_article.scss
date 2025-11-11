@@ -97,6 +97,7 @@
         }
         .shortcopy .inner {
             grid-row-start: 2;
+            grid-column: 2 / -1;
             // margin-top: -22rem;
             background: var(--background);
             // transition: all 0.5s ease-in-out;
@@ -104,6 +105,11 @@
             position: relative;
             z-index: 2;
         }
+    }
+}
+@media screen and (min-width: 1200px){
+    .shortcopy .inner {
+        grid-column: 2 / 2;
     }
 }
 

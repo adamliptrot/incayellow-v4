@@ -136,8 +136,8 @@ a {
     }
     .shortcopy .wrap {
         margin-top: 0;
-        grid-template-columns: 1fr 2fr;
-        // grid-template-rows: minmax(800px, 100vh) 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: none;
         column-gap: 0;
     }
     .wrap article {

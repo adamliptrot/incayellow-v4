@@ -67,11 +67,11 @@ As we did last year, this year we used the B to collect our Christmas tree in wh
 Even compared to when we transported the tree using the boot space of a much larger modern SUV, we find using the B with a roof-rack so much easier and simpler. The B is low enough that dropping the tree on top is easy and 3 straps secures it for the 18 mile trip home. The added bonus is that you don't keep finding pine needles in the car for the next year.
 
 <div class="photoinsert">
-//PH01 //PH02
+//PH02
 </div>
 
 <div class="photoinsert">
-//PH03 //PH04 //PH05
+//PH01 //PH03 //PH04 //PH05
 </div>
 
 This year with us collecting the tree on a Friday instead of a Saturday, we hit some major tailbacks on the road home. While sat in traffic with the temperature rising I noticed that the radiator fan had failed to kick in. Luckily we were in a town where we could pull down a side street to investigate.

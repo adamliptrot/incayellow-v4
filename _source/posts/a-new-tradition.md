@@ -4,6 +4,7 @@ slug : "a-new-tradition"
 date : 2025-12-05T14:00:00.000Z
 archives : ["2025", "2025/12"]
 tags : ["cooling","electrics","driving"]
+bodycss: "shortcopy"
 images :
 
    -

@@ -6,7 +6,7 @@
             <article>
                 <h1>{{title}}</h1>
 
-                {{ content | placeholders(images) | safe }}
+                {{ content | placeholders(images, sizes) | safe }}
 
             </article>
             {# {% if images %}

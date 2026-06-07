@@ -17,6 +17,21 @@ window.addEventListener('DOMContentLoaded', () => {
         lazyLoadThumbnails('hero__image');
     }
     //loadPages();
+    [].slice.call(document.querySelectorAll(".photoZoom")).forEach(function(btn){        
+        var dialog = document.querySelector(`#${btn.getAttribute("data-target")}`);
+        var closeButton = dialog.querySelector("button");
+        
+        btn.addEventListener("click", () => {
+            dialog.showModal();
+        });
+
+        closeButton.addEventListener("click", () => {
+            dialog.close();
+        });
+    });
+
+    
+    
 
 }); // eslint-disable-line no-unused-vars, max-len
 

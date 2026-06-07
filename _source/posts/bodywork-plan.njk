@@ -631,7 +631,7 @@ article object {
                         {%
                             set passthrough = ['<button class="schematic__number" data-img="img-', img.id, '" id="img-', img.id, '"><span>', loop.index0 + 1, '</span><span class="hide"> Jump to this location on schematic</span></button>'] | join
                         %}
-                        {{ img | mediaDisplay(passthrough)  | safe }}
+                        {{ img | mediaDisplay(passthrough, sizes)  | safe }}
                     </div>
                 </div>
             {% endfor %}
@@ -644,7 +644,7 @@ article object {
                 {%
                     set passthrough = ['<button class="schematic__number" data-img="img-', img.id, '" id="img-', img.id, '"><span>', loop.index0 + 1, '</span><span class="hide"> Jump to this location on schematic</span></button>'] | join
                 %}
-                {{ img | mediaDisplay(passthrough)  | safe }}
+                {{ img | mediaDisplay(passthrough, sizes)  | safe }}
             </li>
             {% endfor %}
         </ol>
@@ -662,7 +662,7 @@ article object {
                         {%
                             set passthrough = ['<button class="schematic__number" data-img="img-', img.id, '" id="img-', img.id, '"><span>', loop.index0 + 1, '</span><span class="hide"> Jump to this location on schematic</span></button>'] | join
                         %}
-                        {{ img | mediaDisplay(passthrough)  | safe }}
+                        {{ img | mediaDisplay(passthrough, sizes)  | safe }}
                     </div>
                 </div>
             {% endfor %}
@@ -675,7 +675,7 @@ article object {
                 {%
                     set passthrough = ['<button class="schematic__number" data-img="img-', img.id, '" id="img-', img.id, '"><span>', schematicPassenger.length + loop.index0 + 1, '</span><span class="hide"> Jump to this location on schematic</span></button>'] | join
                 %} 
-                {{ img | mediaDisplay(passthrough) | safe }}
+                {{ img | mediaDisplay(passthrough, sizes) | safe }}
             </li>
             {% endfor %}
         </ol>

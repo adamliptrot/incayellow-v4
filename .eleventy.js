@@ -1,6 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { parseDate, allMonthNames, tagTemplate, imageList, heroTemplate, mediaDisplay, placeholders } = require("./_source/assets/js/app/filters");
-
+const debug = require("debug")("incayellow");
 module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginRss);
 
@@ -23,20 +23,20 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
-    eleventyConfig.addNunjucksFilter("heroTemplate", function(images){
-        return heroTemplate(images);
+    eleventyConfig.addNunjucksFilter("heroTemplate", function(images, threshold, sizes){
+        return heroTemplate(images, threshold, sizes);
     })
 
-    eleventyConfig.addNunjucksFilter("imageList", function(images){
-        return imageList(images);
+    eleventyConfig.addNunjucksFilter("imageList", function(images, threshold, sizes){
+        return imageList(images, sizes);
     })
 
-    eleventyConfig.addNunjucksFilter("mediaDisplay", function(image, passthrough){
-        return mediaDisplay(image, passthrough);
+    eleventyConfig.addNunjucksFilter("mediaDisplay", function(image, passthrough, sizes){
+        return mediaDisplay(image, passthrough, sizes);
     })
 
-    eleventyConfig.addNunjucksFilter('placeholders', function(content, imgs){        
-        return placeholders(content, imgs);
+    eleventyConfig.addNunjucksFilter('placeholders', function(content, imgs, sizes){        
+        return placeholders(content, imgs, sizes);
     });
 
     eleventyConfig.addNunjucksFilter("tagTemplate", function(tags){
@@ -98,6 +98,12 @@ module.exports = (eleventyConfig) => {
     // eleventyConfig.addNunjucksFilter('slugify', function(str) {
     //     return slug(str);
     // });
+
+    eleventyConfig.addNunjucksFilter('ev', function(context) {
+        // console.log(context);
+        var ret = eval(context)
+        return ret;
+    });
 
     eleventyConfig.addNunjucksFilter('json', function(context) {
     return JSON.stringify(context);
@@ -302,7 +308,8 @@ module.exports = (eleventyConfig) => {
         dir: {
             input: "_source",
             output: "_site",
-            includes: "_includes"
+            includes: "_includes",
+            data: '_data'
         }
 	};
 }

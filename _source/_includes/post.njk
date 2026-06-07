@@ -18,14 +18,14 @@
                         <time class="post-date" datetime="{{ date | getYear }}-{{ date | getMonth }}-{{ date | getDay }}">{{ date | parseDate }}</time>
                     </div>
                     <div class="content">
-                    {{ content | placeholders(images) | safe }}
+                    {{ content | placeholders(images, sizes) | safe }}
                     {# {{ content | safe }} #}
 
                     </div>
                     
                     <div class="photos">
                         {% if images.length > 1 %}
-                        {{ images | imageList(content.length > threshold) | safe }}
+                        {{ images | imageList((content.length > threshold), sizes) | safe }}
                         {% endif %}
                     </div>
                     
@@ -41,7 +41,7 @@
             <div class="hero">
                 <div class="hero__outer">
                     <div class="hero__imagewrap">
-                        {{ images | heroTemplate(content.length > threshold) | safe }}
+                        {{ images | heroTemplate((content.length > threshold), sizes) | safe }}
                     </div>
                 </div>
             </div>

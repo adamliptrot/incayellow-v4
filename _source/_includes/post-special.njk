@@ -17,7 +17,7 @@
                 </div>
                 
                 {% if images %}
-                    {{ content | placeholders(images) | safe }}
+                    {{ content | placeholders(images, sizes) | safe }}
                 {% else %}
                     {{ content | safe }}
                 {% endif %}
@@ -25,7 +25,7 @@
                 {% if images %}
                 <div class="inner">
                     <div class="photos">
-                        {{ images | imageList(content.length > threshold) | safe }}
+                        {{ images | imageList(content.length > threshold, sizes) | safe }}
                     </div>
                 </div>
                 {% endif %}

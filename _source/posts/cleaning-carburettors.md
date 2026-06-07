@@ -10,6 +10,7 @@ images:
         id : "3595724435"
         secret : "be296a9b42"
         server : "3561"
+        media : "photo"
 ---
 
 While I've got the carbs. off, I thought I'd shine them up a bit and clear any gunk from around the linkages.

@@ -670,6 +670,16 @@ window.addEventListener('DOMContentLoaded', function () {
     (0, _lazyLoadThumbnails.default)('hero__image');
   }
   //loadPages();
+  [].slice.call(document.querySelectorAll(".photoZoom")).forEach(function (btn) {
+    var dialog = document.querySelector("#".concat(btn.getAttribute("data-target")));
+    var closeButton = dialog.querySelector("button");
+    btn.addEventListener("click", function () {
+      dialog.showModal();
+    });
+    closeButton.addEventListener("click", function () {
+      dialog.close();
+    });
+  });
 }); // eslint-disable-line no-unused-vars, max-len
 
 window.onload = function () {

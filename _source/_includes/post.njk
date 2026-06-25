@@ -4,7 +4,7 @@
     {% set bodyClass = "post " + bodycss %}
 {% endif %}
 {% set threshold = 1000 %}
-{% if ((content.length < threshold and ((images[0].media) and (images[0].media != "video")))) or images.length == 1 %}
+{% if ((postlayout == "hero") or (content.length < threshold and ((images[0].media) and (images[0].media != "video")))) or images.length == 1 %}
     {% set bodyClass = "post shortcopy" %}
 {% endif %}
 <body class="{{ bodyClass }}">

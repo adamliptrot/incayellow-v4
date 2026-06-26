@@ -77,6 +77,24 @@ images :
        media : "photo"
        alt : "Brake pads. The new ones have a distinct cut in the pad from long edge to long edge, and a metal backing plate."
        marker : "08"
+
+   -
+       caption : "Motul Racing Brake Fluid"
+       id : "55357413004"
+       secret : "7deef0d00a"
+       server : "65535"
+       media : "photo"
+       alt : "Bottles of brake fluid"
+       marker : "09"
+
+   -
+       caption : "Non-return valve bleeding aid"
+       id : "55356268872"
+       secret : "509d77981c"
+       server : "65535"
+       media : "photo"
+       alt : "A plastic tube with a valve at one end and a short rubber tube for connecting to the bleed nipple at the other"
+       marker : "10"
 ---
 
 We had a trip to Scotland planned and the B was due a service, so I wanted to get it done before we left.
@@ -108,6 +126,10 @@ I also changed the gearbox filter / gasket. Many of these gaskets have the filte
 This hadn't been changed for a couple of years and as it absorbs water it becomes less effective I was probably overdue a change. For this I used another Motul product, RBF 600 brake fluid. This was also on offer and is marketed as a racing / fast road fluid. After the heavy brake use on the hills above Nidderdale, changing the fluid would make me feel happier on the hills in Scotland. 
 
 For bleeding the brakes I have used a Gunson Easibleed before, but this time I had picked up a non-return valve in Halfords which allowed me to just use the pedal to pull the fluid through. As I wasn't changing any of the lines there was no air to expel so this was relatively easy, certainly easier than hooking up the Easibleed.
+
+<div class="photoinsert">
+ //PH09 //PH10
+</div>
 
 ## Brake pad change
 
